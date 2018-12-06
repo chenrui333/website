@@ -190,8 +190,8 @@ Once both deployments are created and the pods are running, we forward the `stoc
 
 ```
 $ kubectl get -n dok po --selector=app=stock-con  \
-                     -o=custom-columns=:metadata.name --no-headers |  \
-                     xargs -IPOD kubectl -n dok port-forward POD 9898:9898
+                    -o=custom-columns=:metadata.name --no-headers |  \
+                    xargs -IPOD kubectl -n dok port-forward POD 9898:9898
 ```
 
 With that we should be able to consume the `stock-con` service from our local machine; we do this by regularly checking the response of the `healthz` endpoint like so (in a separate terminal session):
@@ -224,8 +224,8 @@ Once both deployments are created and the pods are running, we forward the `stoc
 
 ```
 $ kubectl get -n dok po --selector=app=stock-con  \
-                     -o=custom-columns=:metadata.name --no-headers |  \
-                     xargs -IPOD kubectl -n dok port-forward POD 9898:9898 &
+                    -o=custom-columns=:metadata.name --no-headers |  \
+                    xargs -IPOD kubectl -n dok port-forward POD 9898:9898 &
 $ watch curl localhost:9898/healthz
 ```
 
@@ -256,7 +256,7 @@ Note that initially we experienced an authentication error when doing `skaffold 
 
 ```
 {
-   "auths": {}
+  "auths": {}
 }
 ```
 
@@ -351,8 +351,8 @@ Above command triggers a build of the `stock-con` image and then a deployment. O
 
 ```bash
 $ kubectl get -n dok po --selector=app=stock-con  \
-                     -o=custom-columns=:metadata.name --no-headers |  \
-                     xargs -IPOD kubectl -n dok port-forward POD 9898:9898 &
+                    -o=custom-columns=:metadata.name --no-headers |  \
+                    xargs -IPOD kubectl -n dok port-forward POD 9898:9898 &
 $ watch curl localhost:9898/healthz
 ```
 

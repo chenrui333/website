@@ -33,7 +33,7 @@ monitoring statistics by default:
   for CPU and memory usage. The Kubelet fetches the data from
   [cAdvisor](https://github.com/google/cadvisor). `metrics-server` is a
   lightweight short-term in-memory store.
-  
+
 - A [**full metrics pipeline**](#full-metrics-pipelines), such as Prometheus, gives you access to richer
   metrics. In addition, Kubernetes can respond to these metrics by automatically
   scaling or adapting the cluster based on its current state, using mechanisms

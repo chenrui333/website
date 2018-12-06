@@ -167,4 +167,3 @@ kubectl get pod private-reg
 * See the `imagePullSecrets` field of [PodSpec](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podspec-v1-core).
 
 {{% /capture %}}
-

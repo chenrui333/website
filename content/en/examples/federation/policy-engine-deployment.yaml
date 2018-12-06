@@ -28,9 +28,9 @@ spec:
           - "-kubeconfig=/srv/kubernetes/kubeconfig"
           - "-cluster=federation/v1beta1/clusters"
           volumeMounts:
-           - name: federation-kubeconfig
-             mountPath: /srv/kubernetes
-             readOnly: true
+          - name: federation-kubeconfig
+            mountPath: /srv/kubernetes
+            readOnly: true
       volumes:
       - name: federation-kubeconfig
         secret:

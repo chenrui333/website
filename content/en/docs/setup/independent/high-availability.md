@@ -64,8 +64,8 @@ All commands in this guide on any control plane or etcd node should be run as ro
 {{< /note >}}
 
 - Find your pod CIDR. For details, see [the CNI network
-   documentation](/docs/setup/independent/create-cluster-kubeadm/#pod-network).
-   The example uses Calico, so the pod CIDR is `192.168.0.0/16`.
+  documentation](/docs/setup/independent/create-cluster-kubeadm/#pod-network).
+  The example uses Calico, so the pod CIDR is `192.168.0.0/16`.
 
 ### Configure SSH
 
@@ -403,7 +403,7 @@ Remember that your config may differ from this example.
 ### Set up the cluster
 
 - Follow [these instructions](/docs/setup/independent/setup-ha-etcd-with-kubeadm/)
-   to set up the etcd cluster.
+  to set up the etcd cluster.
 
 #### Copy required files from an etcd node to all control plane nodes
 

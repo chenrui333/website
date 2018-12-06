@@ -42,7 +42,7 @@ If the resource metrics API is available, the output includes a
 reference to `metrics.k8s.io`.
 
 ```shell
-NAME      
+NAME
 v1beta1.metrics.k8s.io
 ```
 
@@ -172,12 +172,12 @@ The output shows that the Container was killed because it is out of memory (OOM)
 
 ```shell
 lastState:
-   terminated:
-     containerID: docker://65183c1877aaec2e8427bc95609cc52677a454b56fcb24340dbd22917c23b10f
-     exitCode: 137
-     finishedAt: 2017-06-20T20:52:19Z
-     reason: OOMKilled
-     startedAt: null
+  terminated:
+    containerID: docker://65183c1877aaec2e8427bc95609cc52677a454b56fcb24340dbd22917c23b10f
+    exitCode: 137
+    finishedAt: 2017-06-20T20:52:19Z
+    reason: OOMKilled
+    startedAt: null
 ```
 
 The Container in this exercise can be restarted, so the kubelet restarts it. Repeat
@@ -280,7 +280,7 @@ The output shows that the Container cannot be scheduled because of insufficient 
 ```shell
 Events:
   ...  Reason            Message
-       ------            -------
+      ------            -------
   ...  FailedScheduling  No nodes are available that match all of the following predicates:: Insufficient memory (3).
 ```
 
@@ -357,6 +357,3 @@ kubectl delete namespace mem-example
 * [Configure Quotas for API Objects](/docs/tasks/administer-cluster/quota-api-object/)
 
 {{% /capture %}}
-
-
-

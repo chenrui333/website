@@ -141,5 +141,3 @@ template:
 - [Kubectl Command Reference](/docs/reference/generated/kubectl/kubectl/)
 - [Kubernetes API Reference](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/)
 {{% /capture %}}
-
-

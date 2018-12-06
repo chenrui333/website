@@ -29,8 +29,8 @@ content_template: templates/task
 
 1. 列出你集群中的 PersistentVolumes
 
-       kubectl get pv
-       
+      kubectl get pv
+
     输出类似于这样：
 
         NAME                                       CAPACITY   ACCESSMODES   RECLAIMPOLICY   STATUS    CLAIM                  REASON    AGE
@@ -39,18 +39,18 @@ content_template: templates/task
         pvc-bb3ca71d-b7b5-11e6-9d58-0ed433a7dd94   4Gi        RWO           Delete          Bound     default/claim3                   3s
 
 
-   这个列表同样包含了绑定到每个 volume 的 claims 名称，以便更容易的识别动态配置的 volumes。
+  这个列表同样包含了绑定到每个 volume 的 claims 名称，以便更容易的识别动态配置的 volumes。
 
 
 2. 选择你的 PersistentVolumes 中的一个并更改它的回收策略：
 
-       kubectl patch pv <your-pv-name> -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+      kubectl patch pv <your-pv-name> -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 
     这里的 `<your-pv-name>` 是你选择的 PersistentVolume 的名字。
 
 3. 验证你选择的 PersistentVolume 拥有正确的策略：
 
-       kubectl get pv
+      kubectl get pv
 
     输出类似于这样：
 
@@ -77,5 +77,3 @@ content_template: templates/task
 
 * 查阅  [PersistentVolumeSpec](/docs/api-reference/{{< param "version" >}}/#persistentvolumeclaim-v1-core) 的 `persistentVolumeReclaimPolicy` 字段。
 {{% /capture %}}
-
-

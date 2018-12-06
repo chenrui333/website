@@ -3,7 +3,7 @@ reviewers:
 - bprashanth
 - janetkuo
 title: ReplicationController
-feature: 
+feature:
   title: Self-healing
   anchor: How a ReplicationController Works
   description: >
@@ -73,7 +73,7 @@ Pods Status: 0 Running / 3 Waiting / 0 Succeeded / 0 Failed
 Pod Template:
   Labels:       app=nginx
   Containers:
-   nginx:
+  nginx:
     Image:              nginx
     Port:               80/TCP
     Environment:        <none>
@@ -146,7 +146,7 @@ If specified, the `.spec.template.metadata.labels` must be equal to the `.spec.s
 be rejected by the API.  If `.spec.selector` is unspecified, it will be defaulted to
 `.spec.template.metadata.labels`.
 
-Also you should not normally create any pods whose labels match this selector, either directly, with 
+Also you should not normally create any pods whose labels match this selector, either directly, with
 another ReplicationController, or with another controller such as Job. If you do so, the
 ReplicationController thinks that it created the other pods.  Kubernetes does not stop you
 from doing this.
@@ -283,5 +283,3 @@ safe to terminate when the machine is otherwise ready to be rebooted/shutdown.
 Read [Run Stateless AP Replication Controller](/docs/tutorials/stateless-application/run-stateless-ap-replication-controller/).
 
 {{% /capture %}}
-
-

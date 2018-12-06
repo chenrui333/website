@@ -62,7 +62,7 @@ memory is reclaimable under pressure.
 
 1. The `nodefs` filesystem that kubelet uses for volumes, daemon logs, etc.
 1. The `imagefs` filesystem that container runtimes uses for storing images and
-   container writable layers.
+  container writable layers.
 
 `imagefs` is optional. `kubelet` auto-discovers these filesystems using
 cAdvisor. `kubelet` does not care about any other filesystems. Any other types

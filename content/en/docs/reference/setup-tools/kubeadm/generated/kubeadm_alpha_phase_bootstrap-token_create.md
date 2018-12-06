@@ -4,9 +4,9 @@ Creates a bootstrap token to be used for node joining
 ### Synopsis
 
 
-Creates a bootstrap token. If no token value is given, kubeadm will generate a random token instead. 
+Creates a bootstrap token. If no token value is given, kubeadm will generate a random token instead.
 
-Alternatively, you can use kubeadm token. 
+Alternatively, you can use kubeadm token.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -109,6 +109,3 @@ kubeadm alpha phase bootstrap-token create [flags]
 
   </tbody>
 </table>
-
-
-

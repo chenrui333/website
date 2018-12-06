@@ -123,16 +123,16 @@ Containers](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-pa
 _Why not just run multiple programs in a single (Docker) container?_
 
 1. Transparency. Making the containers within the pod visible to the
-   infrastructure enables the infrastructure to provide services to those
-   containers, such as process management and resource monitoring. This
-   facilitates a number of conveniences for users.
+  infrastructure enables the infrastructure to provide services to those
+  containers, such as process management and resource monitoring. This
+  facilitates a number of conveniences for users.
 1. Decoupling software dependencies. The individual containers may be
-   versioned, rebuilt and redeployed independently. Kubernetes may even support
-   live updates of individual containers someday.
+  versioned, rebuilt and redeployed independently. Kubernetes may even support
+  live updates of individual containers someday.
 1. Ease of use. Users don't need to run their own process managers, worry about
-   signal and exit-code propagation, etc.
+  signal and exit-code propagation, etc.
 1. Efficiency. Because the infrastructure takes on more responsibility,
-   containers can be lighter weight.
+  containers can be lighter weight.
 
 _Why not support affinity-based co-scheduling of containers?_
 

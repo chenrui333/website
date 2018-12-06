@@ -282,5 +282,3 @@ See the [Sample CLI Plugin](https://github.com/kubernetes/sample-cli-plugin) for
 * Binary plugins is still an alpha feature, so this is the time to contribute ideas and improvements to the codebase. We're also excited to hear about what you're planning to implement with plugins, so [let us know](https://github.com/kubernetes/community/tree/master/sig-cli)!
 
 {{% /capture %}}
-
-

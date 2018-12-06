@@ -18,7 +18,7 @@ ConfigMaps allow you to decouple configuration artifacts from image content to k
 {{% capture steps %}}
 
 
-## Create a ConfigMap 
+## Create a ConfigMap
 
 Use the `kubectl create configmap` command to create configmaps from [directories](#create-configmaps-from-directories), [files](#create-configmaps-from-files), or [literal values](#create-configmaps-from-literal-values):
 
@@ -331,10 +331,10 @@ metadata:
       restartPolicy: Never
     ```
 
-1.  Save the changes to the Pod specification. Now, the Pod's output includes `SPECIAL_LEVEL_KEY=very`. 
- 
+1.  Save the changes to the Pod specification. Now, the Pod's output includes `SPECIAL_LEVEL_KEY=very`.
+
 ### Define container environment variables with data from multiple ConfigMaps
- 
+
 1.  As with the previous example, create the ConfigMaps first.
 
     ```yaml
@@ -382,16 +382,16 @@ metadata:
                   key: log_level
       restartPolicy: Never
     ```
- 
-1.  Save the changes to the Pod specification. Now, the Pod's output includes `SPECIAL_LEVEL_KEY=very` and `LOG_LEVEL=INFO`. 
 
-## Configure all key-value pairs in a ConfigMap as container environment variables 
+1.  Save the changes to the Pod specification. Now, the Pod's output includes `SPECIAL_LEVEL_KEY=very` and `LOG_LEVEL=INFO`.
 
-   {{< note >}}
-   This functionality is available in Kubernetes v1.6 and later.
-   {{< /note >}}
+## Configure all key-value pairs in a ConfigMap as container environment variables
 
-1.  Create a ConfigMap containing multiple key-value pairs. 
+  {{< note >}}
+  This functionality is available in Kubernetes v1.6 and later.
+  {{< /note >}}
+
+1.  Create a ConfigMap containing multiple key-value pairs.
 
     ```yaml
     apiVersion: v1
@@ -405,7 +405,7 @@ metadata:
     ```
 
 1.  Use `envFrom` to define all of the ConfigMap's data as container environment variables. The key from the ConfigMap becomes the environment variable name in the Pod.
-   
+
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -422,10 +422,10 @@ metadata:
       restartPolicy: Never
     ```
 
-1. Save the changes to the Pod specification. Now, the Pod's output includes `SPECIAL_LEVEL=very` and `SPECIAL_TYPE=charm`. 
+1. Save the changes to the Pod specification. Now, the Pod's output includes `SPECIAL_LEVEL=very` and `SPECIAL_TYPE=charm`.
 
 
-## Use ConfigMap-defined environment variables in Pod commands  
+## Use ConfigMap-defined environment variables in Pod commands
 
 You can use ConfigMap-defined environment variables in the `command` section of the Pod specification using the `$(VAR_NAME)` Kubernetes substitution syntax.
 
@@ -463,9 +463,9 @@ produces the following output in the `test-container` container:
 very charm
 ```
 
-## Add ConfigMap data to a Volume 
+## Add ConfigMap data to a Volume
 
-As explained in [Create ConfigMaps from files](#create-configmaps-from-files), when you create a ConfigMap using ``--from-file``, the filename becomes a key stored in the `data` section of the ConfigMap. The file contents become the key's value. 
+As explained in [Create ConfigMaps from files](#create-configmaps-from-files), when you create a ConfigMap using ``--from-file``, the filename becomes a key stored in the `data` section of the ConfigMap. The file contents become the key's value.
 
 The examples in this section refer to a ConfigMap named special-config, shown below.
 
@@ -482,7 +482,7 @@ data:
 
 ### Populate a Volume with data stored in a ConfigMap
 
-Add the ConfigMap name under the `volumes` section of the Pod specification. 
+Add the ConfigMap name under the `volumes` section of the Pod specification.
 This adds the ConfigMap data to the directory specified as `volumeMounts.mountPath` (in this case, `/etc/config`).
 The `command` section references the `special.level` item stored in the ConfigMap.
 
@@ -521,7 +521,7 @@ If there are some files in the `/etc/config/` directory, they will be deleted.
 
 ### Add ConfigMap data to a specific path in the Volume
 
-Use the `path` field to specify the desired file path for specific ConfigMap items. 
+Use the `path` field to specify the desired file path for specific ConfigMap items.
 In this case, the `special.level` item will be mounted in the `config-volume` volume at `/etc/config/keys`.
 
 ```yaml
@@ -606,26 +606,24 @@ data:
 
 - If you use `envFrom` to define environment variables from ConfigMaps, keys that are considered invalid will be skipped. The pod will be allowed to start, but the invalid names will be recorded in the event log (`InvalidVariableNames`). The log message lists each skipped key. For example:
 
-   ```shell
-   kubectl get events
-   LASTSEEN FIRSTSEEN COUNT NAME          KIND  SUBOBJECT  TYPE      REASON                            SOURCE                MESSAGE
-   0s       0s        1     dapi-test-pod Pod              Warning   InvalidEnvironmentVariableNames   {kubelet, 127.0.0.1}  Keys [1badkey, 2alsobad] from the EnvFrom configMap default/myconfig were skipped since they are considered invalid environment variable names.
-   ```
+  ```shell
+  kubectl get events
+  LASTSEEN FIRSTSEEN COUNT NAME          KIND  SUBOBJECT  TYPE      REASON                            SOURCE                MESSAGE
+  0s       0s        1     dapi-test-pod Pod              Warning   InvalidEnvironmentVariableNames   {kubelet, 127.0.0.1}  Keys [1badkey, 2alsobad] from the EnvFrom configMap default/myconfig were skipped since they are considered invalid environment variable names.
+  ```
 
 - ConfigMaps reside in a specific [namespace](/docs/concepts/overview/working-with-objects/namespaces/). A ConfigMap can only be referenced by pods residing in the same namespace.
 
-- Kubelet doesn't support the use of ConfigMaps for pods not found on the API server. 
-   This includes pods created via the Kubelet's --manifest-url flag, --config flag, or the Kubelet REST API.
-   
-   {{< note >}}
-   These are not commonly-used ways to create pods.
-   {{< /note >}}
-   
+- Kubelet doesn't support the use of ConfigMaps for pods not found on the API server.
+  This includes pods created via the Kubelet's --manifest-url flag, --config flag, or the Kubelet REST API.
+
+  {{< note >}}
+  These are not commonly-used ways to create pods.
+  {{< /note >}}
+
 {{% /capture %}}
 
 {{% capture whatsnext %}}
 * Follow a real world example of [Configuring Redis using a ConfigMap](/docs/tutorials/configuration/configure-redis-using-configmap/).
 
 {{% /capture %}}
-
-

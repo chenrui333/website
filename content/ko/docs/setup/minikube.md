@@ -347,7 +347,7 @@ For example:
 
 ```shell
 $ minikube start --docker-env http_proxy=http://$YOURPROXY:PORT \
-                 --docker-env https_proxy=https://$YOURPROXY:PORT
+                --docker-env https_proxy=https://$YOURPROXY:PORT
 ```
 
 If your Virtual Machine address is 192.168.99.100, then chances are your proxy settings will prevent kubectl from directly reaching it.

@@ -139,5 +139,3 @@ contexts:
 [webhook.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/plugin/pkg/authorizer/webhook/webhook.go).
 
 {{% /capture %}}
-
-

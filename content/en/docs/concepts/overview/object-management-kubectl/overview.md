@@ -181,5 +181,3 @@ Disadvantages compared to imperative object configuration:
 {{< comment >}}
 {{< /comment >}}
 {{% /capture %}}
-
-

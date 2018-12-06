@@ -177,13 +177,13 @@ Each feature gate is designed for enabling/disabling a specific feature:
 - `APIListChunking`: Enable the API clients to retrieve (`LIST` or `GET`) resources from API server in chunks.
 - `APIResponseCompression`: Compress the API responses for `LIST` or `GET` requests.
 - `AppArmor`: Enable AppArmor based mandatory access control on Linux nodes when using Docker.
-   See [AppArmor Tutorial](/docs/tutorials/clusters/apparmor/) for more details.
+  See [AppArmor Tutorial](/docs/tutorials/clusters/apparmor/) for more details.
 - `AttachVolumeLimit`: Enable volume plugins to report limits on number of volumes
   that can be attached to a node.
-   See [dynamic volume limits](/docs/concepts/storage/storage-limits/#dynamic-volume-limits) for more details.
+  See [dynamic volume limits](/docs/concepts/storage/storage-limits/#dynamic-volume-limits) for more details.
 - `BlockVolume`: Enable the definition and consumption of raw block devices in Pods.
-   See [Raw Block Volume Support](/docs/concepts/storage/persistent-volumes/#raw-block-volume-support)
-   for more details.
+  See [Raw Block Volume Support](/docs/concepts/storage/persistent-volumes/#raw-block-volume-support)
+  for more details.
 - `CPUCFSQuotaPeriod`: Enable nodes to change CPUCFSQuotaPeriod.
 - `CPUManager`: Enable container level CPU affinity support, see [CPU Management Policies](/docs/tasks/administer-cluster/cpu-management-policies/).
 - `CRIContainerLogRotation`: Enable container log rotation for cri container runtime.
@@ -195,8 +195,8 @@ Each feature gate is designed for enabling/disabling a specific feature:
   compatible volume plugin.
   Check the [`csi` volume type](/docs/concepts/storage/volumes/#csi) documentation for more details.
 - `CustomPodDNS`: Enable customizing the DNS settings for a Pod using its `dnsConfig` property.
-   Check [Pod's DNS Config](/docs/concepts/services-networking/dns-pod-service/#pods-dns-config)
-   for more details.
+  Check [Pod's DNS Config](/docs/concepts/services-networking/dns-pod-service/#pods-dns-config)
+  for more details.
 - `CustomResourceSubresources`: Enable `/status` and `/scale` subresources
   on resources created from [CustomResourceDefinition](/docs/concepts/api-extension/custom-resources/).
 - `CustomResourceValidation`: Enable schema based validation on resources created from
@@ -215,10 +215,10 @@ Each feature gate is designed for enabling/disabling a specific feature:
 - `ExpandPersistentVolumes`: Enable the expanding of persistent volumes. See [Expanding Persistent Volumes Claims](/docs/concepts/storage/persistent-volumes/#expanding-persistent-volumes-claims).
 - `ExperimentalCriticalPodAnnotation`: Enable annotating specific pods as *critical* so that their [scheduling is guaranteed](/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/).
 - `ExperimentalHostUserNamespaceDefaultingGate`: Enabling the defaulting user
-   namespace to host. This is for containers that are using other host namespaces,
-   host mounts, or containers that are privileged or using specific non-namespaced
-   capabilities (e.g. `MKNODE`, `SYS_MODULE` etc.). This should only be enabled
-   if user namespace remapping is enabled in the Docker daemon.
+  namespace to host. This is for containers that are using other host namespaces,
+  host mounts, or containers that are privileged or using specific non-namespaced
+  capabilities (e.g. `MKNODE`, `SYS_MODULE` etc.). This should only be enabled
+  if user namespace remapping is enabled in the Docker daemon.
 - `GCERegionalPersistentDisk`: Enable the regional PD feature on GCE.
 - `HugePages`: Enable the allocation and consumption of pre-allocated [huge pages](/docs/tasks/manage-hugepages/scheduling-hugepages/).
 - `HyperVContainer`: Enable [Hyper-V isolation](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/hyperv-container) for Windows containers.
@@ -262,7 +262,7 @@ Each feature gate is designed for enabling/disabling a specific feature:
 - `StorageObjectInUseProtection`: Postpone the deletion of PersistentVolume or
   PersistentVolumeClaim objects if they are still being used.
 - `StreamingProxyRedirects`: Instructs the API server to intercept (and follow)
-   redirects from the backend (kubelet) for streaming requests.
+  redirects from the backend (kubelet) for streaming requests.
   Examples of streaming requests include the `exec`, `attach` and `port-forward` requests.
 - `SupportIPVSProxyMode`: Enable providing in-cluster service load balancing using IPVS.
   See [service proxies](/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies) for more details.

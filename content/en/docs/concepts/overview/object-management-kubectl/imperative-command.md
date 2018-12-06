@@ -160,5 +160,3 @@ kubectl create --edit -f /tmp/srv.yaml
 - [Kubectl Command Reference](/docs/reference/generated/kubectl/kubectl/)
 - [Kubernetes API Reference](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/)
 {{% /capture %}}
-
-

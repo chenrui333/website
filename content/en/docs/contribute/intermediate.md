@@ -628,9 +628,9 @@ dead links are issues that need to be manually fixed and can be assigned a P3.
 #### Blog issues
 
 [Kubernetes Blog](https://kubernetes.io/blog/) entries are expected to become
-outdated over time, so we maintain only blog entries that are less than one year old. 
+outdated over time, so we maintain only blog entries that are less than one year old.
 If an issue is related to a blog entry that is more than one year old, it should be closed
-without fixing. 
+without fixing.
 
 #### Support requests or code bug reports
 
@@ -810,13 +810,13 @@ or in `#sig-docs` on Slack if you are interested in helping out.
 
 Follow these guidelines for working with localized content:
 
-- Limit PRs to a single language. 
+- Limit PRs to a single language.
 
-   Each language has its own reviewers and approvers.
+  Each language has its own reviewers and approvers.
 
 - Reviewers, verify that PRs contain changes to only one language.
 
-   If a PR contains changes to source in more than one language, ask the PR contributor to open separate PRs for each language.
+  If a PR contains changes to source in more than one language, ask the PR contributor to open separate PRs for each language.
 
 {{% /capture %}}
 

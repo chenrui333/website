@@ -310,7 +310,7 @@ running on the node as follows
  * pods that tolerate the taint without specifying `tolerationSeconds` in
   their toleration specification remain bound forever
  * pods that tolerate the taint with a specified `tolerationSeconds` remain
-   bound for the specified amount of time
+  bound for the specified amount of time
   -->
   前文我们提到过 taint 的 effect 值 `NoExecute`  ，它会影响已经在节点上运行的 pod
  * 如果 pod 不能忍受effect 值为 `NoExecute` 的 taint，那么 pod 将马上被驱逐
@@ -323,9 +323,9 @@ problems. In other words, the node controller automatically taints a node when
 certain condition is true. The following taints are built in:
 
  * `node.kubernetes.io/not-ready`: Node is not ready. This corresponds to
-   the NodeCondition `Ready` being "`False`".
+  the NodeCondition `Ready` being "`False`".
  * `node.kubernetes.io/unreachable`: Node is unreachable from the node
-   controller. This corresponds to the NodeCondition `Ready` being "`Unknown`".
+  controller. This corresponds to the NodeCondition `Ready` being "`Unknown`".
  * `node.kubernetes.io/out-of-disk`: Node becomes out of disk.
  * `node.kubernetes.io/memory-pressure`: Node has memory pressure.
  * `node.kubernetes.io/disk-pressure`: Node has disk pressure.

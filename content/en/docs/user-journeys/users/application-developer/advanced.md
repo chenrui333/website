@@ -116,5 +116,3 @@ Congrats on completing the Application Developer user journey! You've covered th
 * If you are interested in learning more about the inner workings of Kubernetes (e.g. networking), consider checking out the {{< link text="Cluster Operator journey" url="/docs/user-journeys/users/cluster-operator/foundational/" >}}.
 
 {{% /capture %}}
-
-

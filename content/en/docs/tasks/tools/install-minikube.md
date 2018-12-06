@@ -51,5 +51,3 @@ If you do not already have a hypervisor installed, install the appropriate one f
 * [Running Kubernetes Locally via Minikube](/docs/getting-started-guides/minikube/)
 
 {{% /capture %}}
-
-

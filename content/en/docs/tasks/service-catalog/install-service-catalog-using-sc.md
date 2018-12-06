@@ -73,6 +73,3 @@ sc uninstall
 * Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
 
 {{% /capture %}}
-
-
-

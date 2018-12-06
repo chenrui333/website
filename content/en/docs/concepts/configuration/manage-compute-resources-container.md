@@ -368,7 +368,7 @@ spec:
 ### How Pods with ephemeral-storage requests are scheduled
 
 When you create a Pod, the Kubernetes scheduler selects a node for the Pod to
-run on. Each node has a maximum amount of local ephemeral storage it can provide for Pods. For more information, see ["Node Allocatable"](/docs/tasks/administer-cluster/reserve-compute-resources/#node-allocatable). 
+run on. Each node has a maximum amount of local ephemeral storage it can provide for Pods. For more information, see ["Node Allocatable"](/docs/tasks/administer-cluster/reserve-compute-resources/#node-allocatable).
 
 The scheduler ensures that the sum of the resource requests of the scheduled Containers is less than the capacity of the node.
 
@@ -444,9 +444,9 @@ cluster-level extended resource "example.com/foo" is handled by the scheduler
 extender.
 
 - The scheduler sends a Pod to the scheduler extender only if the Pod requests
-     "example.com/foo".
+    "example.com/foo".
 - The `ignoredByScheduler` field specifies that the scheduler does not check
-     the "example.com/foo" resource in its `PodFitsResources` predicate.
+    the "example.com/foo" resource in its `PodFitsResources` predicate.
 
 ```json
 {

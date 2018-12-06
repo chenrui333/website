@@ -203,7 +203,7 @@ For more information about working from forks or directly from the repository, s
 
 ### Upstream contributions
 
-SIG Docs welcomes [upstream contributions and corrections](/docs/contribute/intermediate#localize-content) to the English source. 
+SIG Docs welcomes [upstream contributions and corrections](/docs/contribute/intermediate#localize-content) to the English source.
 
 {{% /capture %}}
 

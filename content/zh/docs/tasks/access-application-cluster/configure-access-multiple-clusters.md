@@ -313,6 +313,3 @@ export KUBECONFIG=$KUBECONFIG_SAVED
 * [kubectl 配置](/docs/user-guide/kubectl/{{< param "version" >}}/)
 
 {{% /capture %}}
-
-
-

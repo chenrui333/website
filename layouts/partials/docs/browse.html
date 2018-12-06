@@ -11,7 +11,7 @@
 {{ $pages := .page.Pages }}
 {{ $sections := .page.Sections }}
 {{ with $.ctx.Site.Params.language_alternatives }}
-  {{ range . }} 
+  {{ range . }}
     {{ with (where $.page.Translations ".Lang" . ) }}
     {{ $p := index . 0 }}
     {{ $pages =  $pages | lang.Merge $p.Pages }}

@@ -217,8 +217,8 @@ spec:
             cpu: "500m"
             memory: 1Gi
           requests:
-           cpu: "500m"
-           memory: 1Gi
+          cpu: "500m"
+          memory: 1Gi
         securityContext:
           capabilities:
             add:
@@ -848,4 +848,3 @@ $ kubectl delete daemonset cassandra
 
 
 [!Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/cassandra/README.md?pixel)]()
-

@@ -87,6 +87,3 @@ source <(kubeadm completion zsh)
 
   </tbody>
 </table>
-
-
-

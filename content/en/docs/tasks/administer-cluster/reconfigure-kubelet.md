@@ -56,10 +56,10 @@ and is overridden by command-line flags. Unspecified values in the new configura
 will receive default values appropriate to the configuration version
 (e.g. `kubelet.config.k8s.io/v1beta1`), unless overridden by flags.
 
-The status of the Node's Kubelet configuration is reported via 
+The status of the Node's Kubelet configuration is reported via
 `Node.Spec.Status.Config`. Once you have updated a Node to use the new
 ConfigMap, you can observe this status to confirm that the Node is using the
-intended configuration. 
+intended configuration.
 
 This document describes editing Nodes using `kubectl edit`.
 There are other ways to modify a Node's spec, including `kubectl patch`, for
@@ -110,7 +110,7 @@ installed, but you can adapt the tasks if you prefer to extract the
 
 1.  Choose a Node to reconfigure. In this example, the name of this Node is
     referred to as `NODE_NAME`.
-2.  Start the kubectl proxy in the background using the following command: 
+2.  Start the kubectl proxy in the background using the following command:
       ```bash
       kubectl proxy --port=8001 &
       ```
@@ -208,8 +208,8 @@ Retrieve the Node using the `kubectl get node ${NODE_NAME} -o yaml` command and 
 
 The`lastKnownGood` configuration might not be present if it is set to its default value,
 the local config deployed with the node. The status will update `lastKnownGood` to
-match a valid `assigned` config after the Kubelet becomes comfortable with the config. 
-The details of how the Kubelet determines a config should become the `lastKnownGood` are 
+match a valid `assigned` config after the Kubelet becomes comfortable with the config.
+The details of how the Kubelet determines a config should become the `lastKnownGood` are
 not guaranteed by the API, but is currently implemented as a 10-minute grace period.
 
 You can use the following command (using `jq`) to filter down
@@ -297,8 +297,8 @@ kubectl patch node ${NODE_NAME} -p "{\"spec\":{\"configSource\":{\"configMap\":{
 When a new config is assigned to the Node, the Kubelet downloads and unpacks the
 config payload as a set of files on the local disk. The Kubelet also records metadata
 that locally tracks the assigned and last-known-good config sources, so that the
-Kubelet knows which config to use across restarts, even if the API server becomes 
-unavailable. After checkpointing a config and the relevant metadata, the Kubelet 
+Kubelet knows which config to use across restarts, even if the API server becomes
+unavailable. After checkpointing a config and the relevant metadata, the Kubelet
 exits if it detects that the assigned config has changed. When the Kubelet is
 restarted by the OS-level service manager (such as `systemd`), it reads the new
 metadata and uses the new config.
@@ -306,7 +306,7 @@ metadata and uses the new config.
 The recorded metadata is fully resolved, meaning that it contains all necessary
 information to choose a specific config version - typically a `UID` and `ResourceVersion`.
 This is in contrast to `Node.Spec.ConfigSource`, where the intended config is declared
-via the idempotent `namespace/name` that identifies the target ConfigMap; the Kubelet 
+via the idempotent `namespace/name` that identifies the target ConfigMap; the Kubelet
 tries to use the latest version of this ConfigMap.
 
 When you are debugging problems on a node, you can inspect the Kubelet's config

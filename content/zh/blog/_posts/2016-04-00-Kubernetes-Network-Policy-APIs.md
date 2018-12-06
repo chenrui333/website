@@ -52,10 +52,10 @@ url: /blog/2016/04/Kubernetes-Network-Policy-APIs
 kind: ThirdPartyResource
 apiVersion: extensions/v1beta1
 metadata:
-	- name: network-policy.net.alpha.kubernetes.io
+  - name: network-policy.net.alpha.kubernetes.io
 description: "Network policy specification"
 versions:
-	- name: v1alpha1
+  - name: v1alpha1
 ```
 
 ```

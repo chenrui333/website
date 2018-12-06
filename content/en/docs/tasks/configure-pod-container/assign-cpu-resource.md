@@ -44,7 +44,7 @@ reference to `metrics.k8s.io`.
 
 
 ```shell
-NAME      
+NAME
 v1beta1.metrics.k8s.io
 ```
 
@@ -269,6 +269,3 @@ kubectl delete namespace cpu-example
 * [Configure Quotas for API Objects](/docs/tasks/administer-cluster/quota-api-object/)
 
 {{% /capture %}}
-
-
-

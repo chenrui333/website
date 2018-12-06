@@ -4,7 +4,7 @@ Installs the kube-proxy addon to a Kubernetes cluster
 ### Synopsis
 
 
-Installs the kube-proxy addon components via the API server. 
+Installs the kube-proxy addon components via the API server.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -100,6 +100,3 @@ kubeadm alpha phase addon kube-proxy [flags]
 
   </tbody>
 </table>
-
-
-

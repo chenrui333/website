@@ -268,8 +268,8 @@ $ kubectl describe node kubernetes-node-861h
 Name:			kubernetes-node-861h
 Role
 Labels:		 beta.kubernetes.io/arch=amd64
-           beta.kubernetes.io/os=linux
-           kubernetes.io/hostname=kubernetes-node-861h
+          beta.kubernetes.io/os=linux
+          kubernetes.io/hostname=kubernetes-node-861h
 Annotations:        node.alpha.kubernetes.io/ttl=0
                     volumes.kubernetes.io/controller-managed-attach-detach=true
 Taints:             <none>

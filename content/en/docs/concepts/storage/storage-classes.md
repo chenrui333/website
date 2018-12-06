@@ -505,7 +505,7 @@ parameters:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-   name: slow
+  name: slow
 provisioner: kubernetes.io/quobyte
 parameters:
     quobyteAPIServer: "http://138.68.74.142:7860"
@@ -588,8 +588,8 @@ parameters:
   When `kind` is `shared`, all unmanaged disks are created in a few shared
   storage accounts in the same resource group as the cluster. When `kind` is
   `dedicated`, a new dedicated storage account will be created for the new
-  unmanaged disk in the same resource group as the cluster. When `kind` is 
-  `managed`, all managed disks are created in the same resource group as 
+  unmanaged disk in the same resource group as the cluster. When `kind` is
+  `managed`, all managed disks are created in the same resource group as
   the cluster.
 
 - Premium VM can attach both Standard_LRS and Premium_LRS disks, while Standard

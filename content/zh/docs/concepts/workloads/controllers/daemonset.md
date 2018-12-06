@@ -16,7 +16,7 @@ redirect_from:
  _DaemonSet_ 确保全部（或者某些）节点上运行一个 Pod 的副本。当有节点加入集群时，也会为他们新增一个 Pod 。
  当有节点从集群移除时，这些 Pod 也会被回收。删除 DaemonSet 将会删除它创建的所有 Pod。
 
- 
+
 
 使用 DaemonSet 的一些典型用法：
 
@@ -160,4 +160,3 @@ Daemon Pod 关心 [Taint 和 Toleration](/docs/concepts/configuration/assign-pod
 DaemonSet 与 [Replication Controller](/docs/user-guide/replication-controller) 非常类似，它们都能创建 Pod，这些 Pod 对应的进程都不希望被终止掉（例如，Web 服务器、存储服务器）。
 为无状态的 Service 使用 Replication Controller，比如前端（Frontend）服务，实现对副本的数量进行扩缩容、平滑升级，比之于精确控制 Pod 运行在某个主机上要重要得多。
 需要 Pod 副本总是运行在全部或特定主机上，并需要先于其他 Pod 启动，当这被认为非常重要时，应该使用 Daemon Controller。
-

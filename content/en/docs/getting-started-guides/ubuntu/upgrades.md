@@ -160,5 +160,3 @@ Upgrading easyrsa should result in zero downtime as it is not a running service:
     juju upgrade-charm easyrsa
 
 {{% /capture %}}
-
-

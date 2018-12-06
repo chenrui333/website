@@ -22,7 +22,7 @@ The `snapshot` action of the etcd charm allows the operator to snapshot
 a running cluster's data for use in cloning,
 backing up, or migrating to a new cluster.
 
-    juju run-action etcd/0 snapshot 
+    juju run-action etcd/0 snapshot
 
 This will create a snapshot in `/home/ubuntu/etcd-snapshots` by default.
 
@@ -93,7 +93,7 @@ results:
 status: completed
 ```
 
-Copy the snapshot to the local disk and then check the sha256sum. 
+Copy the snapshot to the local disk and then check the sha256sum.
 
 ```
 juju scp etcd/0:/home/ubuntu/etcd-snapshots/etcd-snapshot-2016-11-09-02.41.47.tar.gz .
@@ -140,5 +140,3 @@ During the snapshot restore phase, a new cluster ID is initialized, and peers
 are dropped from the snapshot state to enable snapshot restoration. Please
 follow the migration instructions above in the restore action description.
 {{% /capture %}}
-
-

@@ -32,7 +32,7 @@ A rolling update works by:
 
 1. Creating a new replication controller with the updated configuration.
 2. Increasing/decreasing the replica count on the new and old controllers until
-   the correct number of replicas is reached.
+  the correct number of replicas is reached.
 3. Deleting the original replication controller.
 
 Rolling updates are initiated with the `kubectl rolling-update` command:

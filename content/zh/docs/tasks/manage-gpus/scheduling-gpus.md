@@ -35,22 +35,22 @@ Kubernetes 提供对分布在节点上的 NVIDIA GPU 进行管理的**实验**�
 
 ```yaml
 apiVersion: v1
-kind: Pod 
+kind: Pod
 metadata:
   name: gpu-pod
-spec: 
-  containers: 
-    - 
+spec:
+  containers:
+    -
       name: gpu-container-1
       image: k8s.gcr.io/pause:2.0
-      resources: 
-        limits: 
+      resources:
+        limits:
           alpha.kubernetes.io/nvidia-gpu: 2 # requesting 2 GPUs
     -
       name: gpu-container-2
       image: k8s.gcr.io/pause:2.0
-      resources: 
-        limits: 
+      resources:
+        limits:
           alpha.kubernetes.io/nvidia-gpu: 3 # requesting 3 GPUs
 ```
 
@@ -175,5 +175,3 @@ spec:
 - 类似访问 CUDA 库这种关键的可用性问题将得到解决
 
 {{% /capture %}}
-
-

@@ -27,7 +27,7 @@ You need 2 or more machines with Fedora installed.
     "Backend": {
         "Type": "vxlan",
         "VNI": 1
-     }
+    }
 }
 ```
 
@@ -152,7 +152,7 @@ Issue the following commands on any 2 nodes:
 
 ```shell
 # docker run -it fedora:latest bash
-bash-4.3# 
+bash-4.3#
 ```
 
 This will place you inside the container. Install iproute and iputils packages to install ip and ping utilities. Due to a [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1142311), it is required to modify capabilities of ping binary to work around "Operation not permitted" error.

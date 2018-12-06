@@ -96,5 +96,3 @@ to try out Kubernetes NetworkPolicy with Cilium.
 Have fun, and if you have questions, contact us using the
 [Cilium Slack Channel](https://cilium.herokuapp.com/).
 {{% /capture %}}
-
-

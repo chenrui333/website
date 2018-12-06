@@ -220,5 +220,3 @@ curl http://<EXTERNAL-IP>
 * 了解更多 [ConfigMaps](/docs/tasks/configure-pod-container/configure-pod-configmap/)
 
 {{% /capture %}}
-
-

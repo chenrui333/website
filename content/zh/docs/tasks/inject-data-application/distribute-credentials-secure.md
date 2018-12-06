@@ -34,17 +34,17 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 创建 Secret
 
-       kubectl create -f secret.yaml
+      kubectl create -f secret.yaml
 
     {{< note >}}
     **注意：** 如果想要跳过 Base64 编码的步骤，可以使用 `kubectl create secret` 命令来创建 Secret：
     {{< /note >}}
 
-       kubectl create secret generic test-secret --from-literal=username='my-app' --from-literal=password='39528$vdg7Jb'
+      kubectl create secret generic test-secret --from-literal=username='my-app' --from-literal=password='39528$vdg7Jb'
 
 1. 查看 Secret 相关信息：
 
-       kubectl get secret test-secret
+      kubectl get secret test-secret
 
     输出：
 
@@ -53,7 +53,7 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 查看 Secret 相关的更多详细信息：
 
-       kubectl describe secret test-secret
+      kubectl describe secret test-secret
 
     输出：
 
@@ -77,11 +77,11 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 创建 Pod：
 
-       kubectl create -f secret-pod.yaml
+      kubectl create -f secret-pod.yaml
 
 1. 确认 Pod 正在运行：
 
-       kubectl get pod secret-test-pod
+      kubectl get pod secret-test-pod
 
     输出：
 
@@ -91,16 +91,16 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 在 Pod 中运行的容器中获取一个 shell：
 
-       kubectl exec -it secret-test-pod -- /bin/bash
+      kubectl exec -it secret-test-pod -- /bin/bash
 
 1. secret 数据通过挂载在 `/etc/secret-volume` 目录下的卷暴露在容器中。
 在 shell 中，进入 secret 数据被暴露的目录：
 
-       root@secret-test-pod:/# cd /etc/secret-volume
+      root@secret-test-pod:/# cd /etc/secret-volume
 
 1. 在 shell 中，列出 `/etc/secret-volume` 目录的文件：
 
-       root@secret-test-pod:/etc/secret-volume# ls
+      root@secret-test-pod:/etc/secret-volume# ls
 
     输出显示了两个文件，每个对应一条 secret 数据：
 
@@ -108,7 +108,7 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 在 shell 中，显示 `username` 和 `password` 文件的内容：
 
-       root@secret-test-pod:/etc/secret-volume# cat username; echo; cat password; echo
+      root@secret-test-pod:/etc/secret-volume# cat username; echo; cat password; echo
 
     输出为用户名和密码：
 
@@ -123,11 +123,11 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 创建 Pod：
 
-       kubectl create -f secret-envars-pod.yaml
+      kubectl create -f secret-envars-pod.yaml
 
 1. 确认 Pod 正在运行：
 
-       kubectl get pod secret-envars-test-pod
+      kubectl get pod secret-envars-test-pod
 
     输出：
 
@@ -136,7 +136,7 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 
 1. 在 Pod 中运行的容器中获取一个 shell：
 
-       kubectl exec -it secret-envars-test-pod -- /bin/bash
+      kubectl exec -it secret-envars-test-pod -- /bin/bash
 
 1. 在 shell 中，显示环境变量：
 
@@ -163,5 +163,3 @@ base-64 形式的密码为 `Mzk1MjgkdmRnN0pi`。
 * [Pod](/docs/api-reference/{{< param "version" >}}/#pod-v1-core)
 
 {{% /capture %}}
-
-

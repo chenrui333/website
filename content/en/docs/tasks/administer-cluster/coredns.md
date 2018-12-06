@@ -77,5 +77,3 @@ kube-dns by modifying the `Corefile`. For more information, see the
 [CoreDNS site](https://coredns.io/2017/05/08/custom-dns-entries-for-kubernetes/).
 
 {{% /capture %}}
-
-

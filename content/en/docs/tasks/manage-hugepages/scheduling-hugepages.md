@@ -17,8 +17,8 @@ can consume huge pages and the current limitations.
 {{% capture prerequisites %}}
 
 1. Kubernetes nodes must pre-allocate huge pages in order for the node to report
-   its huge page capacity. A node may only pre-allocate huge pages for a single
-   size.
+  its huge page capacity. A node may only pre-allocate huge pages for a single
+  size.
 
 The nodes will automatically discover and report all huge page resources as a
 schedulable resource.
@@ -57,7 +57,7 @@ spec:
         hugepages-2Mi: 100Mi
         memory: 100Mi
       requests:
-        memory: 100Mi      
+        memory: 100Mi
   volumes:
   - name: hugepage
     emptyDir:
@@ -83,5 +83,3 @@ token.
 - LimitRange support.
 
 {{% /capture %}}
-
-

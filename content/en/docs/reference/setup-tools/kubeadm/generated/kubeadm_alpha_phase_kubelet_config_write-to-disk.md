@@ -4,7 +4,7 @@ Writes kubelet configuration to disk, either based on the --config argument.
 ### Synopsis
 
 
-Writes kubelet configuration to disk, based on the kubeadm configuration passed via "--config". 
+Writes kubelet configuration to disk, based on the kubeadm configuration passed via "--config".
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -65,6 +65,3 @@ kubeadm alpha phase kubelet config write-to-disk [flags]
 
   </tbody>
 </table>
-
-
-

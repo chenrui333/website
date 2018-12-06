@@ -73,5 +73,3 @@ We're normally following the following Slack channels:
 
 and we monitor the Kubernetes mailing lists.
 {{% /capture %}}
-
-

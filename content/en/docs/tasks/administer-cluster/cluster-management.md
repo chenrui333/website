@@ -187,11 +187,11 @@ When a new API version is released, you may need to upgrade a cluster to support
 
 This is an infrequent event, but it requires careful management. There is a sequence of steps to upgrade to a new API version.
 
-   1. Turn on the new API version.
-   1. Upgrade the cluster's storage to use the new version.
-   1. Upgrade all config files. Identify users of the old API version endpoints.
-   1. Update existing objects in the storage to new version by running `cluster/update-storage-objects.sh`.
-   1. Turn off the old API version.
+  1. Turn on the new API version.
+  1. Upgrade the cluster's storage to use the new version.
+  1. Upgrade all config files. Identify users of the old API version endpoints.
+  1. Update existing objects in the storage to new version by running `cluster/update-storage-objects.sh`.
+  1. Turn off the old API version.
 
 ### Turn on or off an API version for your cluster
 

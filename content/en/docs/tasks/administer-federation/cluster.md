@@ -115,5 +115,3 @@ The full clusters API reference is currently in `federation/v1beta1` and more de
 [Federation API reference page](/docs/reference/federation/).
 
 {{% /capture %}}
-
-

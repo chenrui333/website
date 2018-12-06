@@ -33,7 +33,7 @@ for database debugging.
     The output of a successful command verifies that the deployment was created:
 
         deployment.apps/redis-master created
- 
+
     View the pod status to check that it is ready:
 
         kubectl get pods
@@ -92,19 +92,19 @@ for database debugging.
 
 1.  `kubectl port-forward` allows using resource name, such as a service name, to select a matching pod to port forward to since Kubernetes v1.10.
 
-        kubectl port-forward redis-master-765d459796-258hz 6379:6379 
+        kubectl port-forward redis-master-765d459796-258hz 6379:6379
 
     which is the same as
 
         kubectl port-forward pods/redis-master-765d459796-258hz 6379:6379
 
-    or  
+    or
 
-        kubectl port-forward deployment/redis-master 6379:6379 
+        kubectl port-forward deployment/redis-master 6379:6379
 
     or
 
-        kubectl port-forward rs/redis-master 6379:6379 
+        kubectl port-forward rs/redis-master 6379:6379
 
     or
 
@@ -148,6 +148,3 @@ The support to UDP protocol is being tracked in
 {{% capture whatsnext %}}
 Learn more about [kubectl port-forward](/docs/reference/generated/kubectl/kubectl-commands/#port-forward).
 {{% /capture %}}
-
-
-

@@ -69,6 +69,3 @@ kubeadm config upload from-file [flags]
 
   </tbody>
 </table>
-
-
-

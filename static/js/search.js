@@ -92,5 +92,3 @@
     } else {
         window.renderGoogleSearchResults()
     }
-
-

@@ -12,11 +12,11 @@
         "generateName": "nginx-"
       },
       "spec": {
-         "containers": [{
-           "name": "nginx",
-           "image": "dockerfile/nginx",
-           "ports": [{"containerPort": 80}]
-         }]
+        "containers": [{
+          "name": "nginx",
+          "image": "dockerfile/nginx",
+          "ports": [{"containerPort": 80}]
+        }]
       }
     }
   }

@@ -13,9 +13,9 @@ memory_total_inactive_file=$(cat /sys/fs/cgroup/memory/memory.stat | grep total_
 memory_working_set=${memory_usage_in_bytes}
 if [ "$memory_working_set" -lt "$memory_total_inactive_file" ];
 then
-    memory_working_set=0
+	memory_working_set=0
 else
-    memory_working_set=$((memory_usage_in_bytes - memory_total_inactive_file))
+	memory_working_set=$((memory_usage_in_bytes - memory_total_inactive_file))
 fi
 
 memory_available_in_bytes=$((memory_capacity_in_bytes - memory_working_set))

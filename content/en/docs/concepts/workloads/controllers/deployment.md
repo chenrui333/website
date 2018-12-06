@@ -55,9 +55,9 @@ In this example:
   In this case, you simply select a label that is defined in the Pod template (`app: nginx`).
   However, more sophisticated selection rules are possible,
   as long as the Pod template itself satisfies the rule.
-  
+
   {{< note >}}
-  `matchLabels` is a map of {key,value} pairs. A single {key,value} in the `matchLabels` map 
+  `matchLabels` is a map of {key,value} pairs. A single {key,value} in the `matchLabels` map
   is equivalent to an element of `matchExpressions`, whose key field is "key", the operator is "In",
   and the values array contains only "value". The requirements are ANDed.
   {{< /note >}}
@@ -92,12 +92,12 @@ When you inspect the Deployments in your cluster, the following fields are displ
 
 * `NAME` lists the names of the Deployments in the cluster.
 * `DESIRED` displays the desired number of _replicas_ of the application, which
-   you define when you create the Deployment. This is the _desired state_.
+  you define when you create the Deployment. This is the _desired state_.
 * `CURRENT` displays how many replicas are currently running.
 * `UP-TO-DATE` displays the number of replicas that have been updated to achieve
-   the desired state.
+  the desired state.
 * `AVAILABLE` displays how many replicas of the application are available to
-   your users.
+  your users.
 * `AGE` displays the amount of time that the application has been running.
 
 Notice how the values in each field correspond to the values in the Deployment specification:
@@ -250,7 +250,7 @@ RollingUpdateStrategy:  25% max unavailable, 25% max surge
 Pod Template:
   Labels:  app=nginx
   Containers:
-   nginx:
+  nginx:
     Image:        nginx:1.9.1
     Port:         80/TCP
     Environment:  <none>
@@ -392,7 +392,7 @@ RollingUpdateStrategy:  25% max unavailable, 25% max surge
 Pod Template:
   Labels:  app=nginx
   Containers:
-   nginx:
+  nginx:
     Image:        nginx:1.91
     Port:         80/TCP
     Host Port:    0/TCP
@@ -448,10 +448,10 @@ deployments "nginx-deployment" revision 2
           pod-template-hash=1159050644
   Annotations:  kubernetes.io/change-cause=kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record=true
   Containers:
-   nginx:
+  nginx:
     Image:      nginx:1.9.1
     Port:       80/TCP
-     QoS Tier:
+    QoS Tier:
         cpu:      BestEffort
         memory:   BestEffort
     Environment Variables:      <none>
@@ -499,7 +499,7 @@ RollingUpdateStrategy:  25% max unavailable, 25% max surge
 Pod Template:
   Labels:  app=nginx
   Containers:
-   nginx:
+  nginx:
     Image:        nginx:1.9.1
     Port:         80/TCP
     Host Port:    0/TCP
@@ -1015,5 +1015,3 @@ in a similar fashion. But Deployments are recommended, since they are declarativ
 additional features, such as rolling back to any previous revision even after the rolling update is done.
 
 {{% /capture %}}
-
-

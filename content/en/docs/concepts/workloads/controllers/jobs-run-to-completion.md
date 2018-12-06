@@ -61,7 +61,7 @@ Pod Template:
   Labels:       controller-uid=b1db589a-2c8d-11e6-b324-0209dc45a495
                 job-name=pi
   Containers:
-   pi:
+  pi:
     Image:      perl
     Port:
     Command:

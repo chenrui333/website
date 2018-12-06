@@ -69,6 +69,3 @@ kubeadm config print-default [flags]
 
   </tbody>
 </table>
-
-
-

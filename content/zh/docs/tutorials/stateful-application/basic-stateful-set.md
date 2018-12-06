@@ -67,7 +67,7 @@ kubectl get pods -w -l app=nginx
 在另一个终端中，使用 [`kubectl create`](/docs/user-guide/kubectl/{{< param "version" >}}/#create) 来创建定义在 `web.yaml` 中的 Headless Service 和 StatefulSet。
 
 ```shell
-kubectl create -f web.yaml 
+kubectl create -f web.yaml
 service "nginx" created
 statefulset "web" created
 ```
@@ -149,7 +149,7 @@ web-1
 使用 [`kubectl run`](/docs/user-guide/kubectl/{{< param "version" >}}/#run)  运行一个提供 `nslookup` 命令的容器，该命令来自于 `dnsutils` 包。通过对 Pod 的主机名执行 `nslookup`，你可以检查他们在集群内部的 DNS 地址。
 
 ```shell
-kubectl run -i --tty --image busybox dns-test --restart=Never --rm /bin/sh 
+kubectl run -i --tty --image busybox dns-test --restart=Never --rm /bin/sh
 nslookup web-0.nginx
 Server:    10.0.0.10
 Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
@@ -206,7 +206,7 @@ for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done
 web-0
 web-1
 
-kubectl run -i --tty --image busybox dns-test --restart=Never --rm /bin/sh 
+kubectl run -i --tty --image busybox dns-test --restart=Never --rm /bin/sh
 nslookup web-0.nginx
 Server:    10.0.0.10
 Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
@@ -433,7 +433,7 @@ Kubernetes 1.7 版本的 StatefulSet 控制器支持自动更新。更新策略�
 `OnDelete` 更新策略实现了传统（1.7之前）行为，它也是默认的更新策略。当你选择这个更新策略并修改 StatefulSet 的 `.spec.template` 字段时， StatefulSet 控制器将不会自动的更新Pod。
 
 
-Patch `web` StatefulSet 的容器镜像。 
+Patch `web` StatefulSet 的容器镜像。
 
 ```shell
 kubectl patch statefulset web --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/image", "value":"k8s.gcr.io/nginx-slim:0.7"}]'
@@ -477,7 +477,7 @@ web-1   k8s.gcr.io/nginx-slim:0.8
 web-2   k8s.gcr.io/nginx-slim:0.8
 ```
 
-`web-0` has had its image updated, but `web-0` and `web-1` still have the original 
+`web-0` has had its image updated, but `web-0` and `web-1` still have the original
 image. Complete the update by deleting the remaining Pods.
 
 ​```shell
@@ -846,7 +846,7 @@ kubectl get pods -w -l app=nginx
 在另一个终端里重新创建 StatefulSet。请注意，除非你删除了 `nginx` Service （你不应该这样做），你将会看到一个错误，提示 Service 已经存在。
 
 ```shell
-kubectl create -f web.yaml 
+kubectl create -f web.yaml
 statefulset "web" created
 Error from server (AlreadyExists): error when creating "web.yaml": services "nginx" already exists
 ```
@@ -939,7 +939,7 @@ service "nginx" deleted
 再一次重新创建 StatefulSet 和 Headless Service。
 
 ```shell
-kubectl create -f web.yaml 
+kubectl create -f web.yaml
 service "nginx" created
 statefulset "web" created
 ```
@@ -1004,7 +1004,7 @@ kubectl get po -lapp=nginx -w
 在另一个终端窗口创建清单中的 StatefulSet 和 Service。
 
 ```shell
-kubectl create -f webp.yaml 
+kubectl create -f webp.yaml
 service "nginx" created
 statefulset "web" created
 ```
@@ -1048,7 +1048,7 @@ web-3     1/1       Running   0         26s
 ```
 
 <!
-The StatefulSet controller launched two new Pods, and it did not wait for 
+The StatefulSet controller launched two new Pods, and it did not wait for
 the first to become Running and Ready prior to launching the second.
 
 Keep this terminal open, and in another terminal delete the `web` StatefulSet.
@@ -1105,5 +1105,3 @@ kubectl delete svc nginx
 
 你需要删除本教程中用到的 PersistentVolumes 的持久化存储媒体。基于你的环境、存储配置和提供方式，按照必须的步骤保证回收所有的存储。
 {{% /capture %}}
-
-

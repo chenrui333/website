@@ -188,7 +188,7 @@ pod "myapp-pod" created
 $ kubectl get -f myapp.yaml
 NAME        READY     STATUS     RESTARTS   AGE
 myapp-pod   0/1       Init:0/2   0          6m
-$ kubectl describe -f myapp.yaml 
+$ kubectl describe -f myapp.yaml
 Name:          myapp-pod
 Namespace:     default
 [...]
@@ -268,7 +268,7 @@ Init 容器的端口将不会在 Service 中进行聚集。
 特别地，被写到 `EmptyDirs` 中文件的代码，应该对输出文件可能已经存在做好准备。
 
 Init 容器具有应用容器的所有字段。
-然而 Kubernetes 禁止使用 `readinessProbe`，因为 Init 容器不能够定义不同于完成（completion）的就绪（readiness）。 
+然而 Kubernetes 禁止使用 `readinessProbe`，因为 Init 容器不能够定义不同于完成（completion）的就绪（readiness）。
 这会在验证过程中强制执行。
 
 
@@ -326,6 +326,3 @@ Apiserver 版本为 1.6 或更高版本的集群，通过使用 `spec.initContai
 * [创建具有 Init 容器的 Pod](/docs/tasks/configure-pod-container/configure-pod-initialization/#creating-a-pod-that-has-an-init-container)
 
 {{% /capture %}}
-
-
-

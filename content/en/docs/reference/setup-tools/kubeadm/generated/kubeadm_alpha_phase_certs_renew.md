@@ -49,6 +49,3 @@ kubeadm alpha phase certs renew [flags]
 
   </tbody>
 </table>
-
-
-

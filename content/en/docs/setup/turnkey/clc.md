@@ -127,19 +127,19 @@ order to access the CenturyLinkCloud API
 All options (both short and long form) require arguments, and must include "="
 between option name and option value.
 
-     -h (--help)                   display this help and exit
-     -c= (--clc_cluster_name=)     set the name of the cluster, as used in CLC group names
-     -t= (--minion_type=)          standard -> VM (default), bareMetal -> physical]
-     -d= (--datacenter=)           VA1 (default)
-     -m= (--minion_count=)         number of kubernetes minion nodes
-     -mem= (--vm_memory=)          number of GB ram for each minion
-     -cpu= (--vm_cpu=)             number of virtual cps for each minion node
-     -phyid= (--server_conf_id=)   physical server configuration id, one of
+    -h (--help)                   display this help and exit
+    -c= (--clc_cluster_name=)     set the name of the cluster, as used in CLC group names
+    -t= (--minion_type=)          standard -> VM (default), bareMetal -> physical]
+    -d= (--datacenter=)           VA1 (default)
+    -m= (--minion_count=)         number of kubernetes minion nodes
+    -mem= (--vm_memory=)          number of GB ram for each minion
+    -cpu= (--vm_cpu=)             number of virtual cps for each minion node
+    -phyid= (--server_conf_id=)   physical server configuration id, one of
                                       physical_server_20_core_conf_id
                                       physical_server_12_core_conf_id
                                       physical_server_4_core_conf_id (default)
-     -etcd_separate_cluster=yes    create a separate cluster of three etcd nodes,
-                                   otherwise run etcd on the master node
+    -etcd_separate_cluster=yes    create a separate cluster of three etcd nodes,
+                                  otherwise run etcd on the master node
 ```
 
 ## Cluster Expansion
@@ -164,9 +164,9 @@ existing CLC kubernetes cluster
 Environment variables CLC_V2_API_USERNAME and CLC_V2_API_PASSWD must be set in
 order to access the CenturyLinkCloud API
 
-     -h (--help)                   display this help and exit
-     -c= (--clc_cluster_name=)     set the name of the cluster, as used in CLC group names
-     -m= (--minion_count=)         number of kubernetes minion nodes to add
+    -h (--help)                   display this help and exit
+    -c= (--clc_cluster_name=)     set the name of the cluster, as used in CLC group names
+    -m= (--minion_count=)         number of kubernetes minion nodes to add
 ```
 
 ## Cluster Deletion
@@ -250,17 +250,17 @@ kubectl version
 kubectl cluster-info
 ```
 
-### Accessing the cluster programmatically 
+### Accessing the cluster programmatically
 
-It's possible to use the locally stored client certificates to access the apiserver. For example, you may want to use any of the [Kubernetes API client libraries](/docs/reference/using-api/client-libraries/) to program against your Kubernetes cluster in the programming language of your choice. 
+It's possible to use the locally stored client certificates to access the apiserver. For example, you may want to use any of the [Kubernetes API client libraries](/docs/reference/using-api/client-libraries/) to program against your Kubernetes cluster in the programming language of your choice.
 
 To demonstrate how to use these locally stored certificates, we provide the following example of using ```curl``` to communicate to the master apiserver via https:
 
 ```shell
 curl \
-   --cacert ${CLC_CLUSTER_HOME}/pki/ca.crt  \
-   --key ${CLC_CLUSTER_HOME}/pki/kubecfg.key \
-   --cert ${CLC_CLUSTER_HOME}/pki/kubecfg.crt  https://${MASTER_IP}:6443
+  --cacert ${CLC_CLUSTER_HOME}/pki/ca.crt  \
+  --key ${CLC_CLUSTER_HOME}/pki/kubecfg.key \
+  --cert ${CLC_CLUSTER_HOME}/pki/kubecfg.crt  https://${MASTER_IP}:6443
 ```
 
 But please note, this *does not* work out of the box with the ```curl``` binary
@@ -337,6 +337,3 @@ If you want more information about our Ansible files, please [read this file](ht
 
 Please see the [Kubernetes docs](/docs/) for more details on administering
 and using a Kubernetes cluster.
-
-
-

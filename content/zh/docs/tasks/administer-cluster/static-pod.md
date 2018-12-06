@@ -49,7 +49,7 @@ Kubelet自动为每一个静态pod在Kubernetes的API服务器上创建一个镜
     ```
 
 3.配置节点上的kubelet使用这个目录，kubelet启动时增加`--pod-manifest-path=/etc/kubelet.d/`参数。如果是Fedora系统，在Kubelet配置文件/etc/kubernetes/kubelet中添加下面这行：
-	
+
     ```
     KUBELET_ARGS="--cluster-dns=10.254.0.10 --cluster-domain=kube.local --pod-manifest-path=/etc/kubelet.d/"
     ```

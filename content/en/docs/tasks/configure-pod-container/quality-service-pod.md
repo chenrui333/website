@@ -262,8 +262,3 @@ kubectl delete namespace qos-example
 
 * [Configure Quotas for API Objects](/docs/tasks/administer-cluster/quota-api-object/)
 {{% /capture %}}
-
-
-
-
-

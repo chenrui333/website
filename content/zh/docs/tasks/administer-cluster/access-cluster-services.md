@@ -107,5 +107,3 @@ $ kubectl cluster-info
   - 某些 web 应用可能不能工作，特别是那些使用客户端侧 javascript 的应用，它们构造 url 的方式可能不能理解代理路径前缀。
 
 {{% /capture %}}
-
-

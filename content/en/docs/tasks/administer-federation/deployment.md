@@ -107,5 +107,3 @@ kubectl --context=federation-cluster delete deployment mydep
 ```
 
 {{% /capture %}}
-
-

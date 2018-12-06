@@ -147,5 +147,3 @@ Replace `example.com` above with federation domain.
 Now the federated cluster is ready for cross-cluster service discovery!
 
 {{% /capture %}}
-
-

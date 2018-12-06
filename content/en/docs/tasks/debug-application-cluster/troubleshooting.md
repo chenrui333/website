@@ -11,8 +11,8 @@ title: Troubleshooting
 Sometimes things go wrong. This guide is aimed at making them right. It has
 two sections:
 
-   * [Troubleshooting your application](/docs/tasks/debug-application-cluster/debug-application/) - Useful for users who are deploying code into Kubernetes and wondering why it is not working.
-   * [Troubleshooting your cluster](/docs/tasks/debug-application-cluster/debug-cluster/) - Useful for cluster administrators and people whose Kubernetes cluster is unhappy.
+  * [Troubleshooting your application](/docs/tasks/debug-application-cluster/debug-application/) - Useful for users who are deploying code into Kubernetes and wondering why it is not working.
+  * [Troubleshooting your cluster](/docs/tasks/debug-application-cluster/debug-cluster/) - Useful for cluster administrators and people whose Kubernetes cluster is unhappy.
 
 You should also check the known issues for the [release](https://github.com/kubernetes/kubernetes/releases)
 you're using.
@@ -41,8 +41,8 @@ and command-line interfaces (CLIs), such as [`kubectl`](/docs/user-guide/kubectl
 
 You may also find the Stack Overflow topics relevant:
 
-   * [Kubernetes](http://stackoverflow.com/questions/tagged/kubernetes)
-   * [Google Kubernetes Engine](http://stackoverflow.com/questions/tagged/google-container-engine)
+  * [Kubernetes](http://stackoverflow.com/questions/tagged/kubernetes)
+  * [Google Kubernetes Engine](http://stackoverflow.com/questions/tagged/google-container-engine)
 
 ## Help! My question isn't covered!  I need help now!
 

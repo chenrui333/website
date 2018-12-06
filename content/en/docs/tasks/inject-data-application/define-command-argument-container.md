@@ -142,5 +142,3 @@ Here are some examples:
 * See [Container](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#container-v1-core).
 
 {{% /capture %}}
-
-

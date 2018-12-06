@@ -152,5 +152,3 @@ For further documentation refer to the authorization.v1beta1 API objects and
 [webhook.go](https://github.com/kubernetes/kubernetes/blob/{{< param "githubbranch" >}}/staging/src/k8s.io/apiserver/plugin/pkg/authorizer/webhook/webhook.go).
 
 {{% /capture %}}
-
-

@@ -37,11 +37,11 @@ Service deployments and batch processing pipelines are often multi-dimensional e
 
 Example labels:
 
-   * `"release" : "stable"`, `"release" : "canary"`
-   * `"environment" : "dev"`, `"environment" : "qa"`, `"environment" : "production"`
-   * `"tier" : "frontend"`, `"tier" : "backend"`, `"tier" : "cache"`
-   * `"partition" : "customerA"`, `"partition" : "customerB"`
-   * `"track" : "daily"`, `"track" : "weekly"`
+  * `"release" : "stable"`, `"release" : "canary"`
+  * `"environment" : "dev"`, `"environment" : "qa"`, `"environment" : "production"`
+  * `"tier" : "frontend"`, `"tier" : "backend"`, `"tier" : "cache"`
+  * `"partition" : "customerA"`, `"partition" : "customerB"`
+  * `"track" : "daily"`, `"track" : "weekly"`
 
 These are just examples of commonly used labels; you are free to develop your own conventions. Keep in mind that label Key must be unique for a given object.
 

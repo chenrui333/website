@@ -43,8 +43,8 @@ the corresponding `PersistentVolume` is not be deleted. Instead, it is moved to 
         pvc-b95650f8-b7b5-11e6-9d58-0ed433a7dd94   4Gi        RWO           Delete          Bound     default/claim2    manual                     6s
         pvc-bb3ca71d-b7b5-11e6-9d58-0ed433a7dd94   4Gi        RWO           Delete          Bound     default/claim3    manual                     3s
 
-   This list also includes the name of the claims that are bound to each volume
-   for easier identification of dynamically provisioned volumes.
+  This list also includes the name of the claims that are bound to each volume
+  for easier identification of dynamically provisioned volumes.
 
 1. Choose one of your PersistentVolumes and change its reclaim policy:
 
@@ -83,5 +83,3 @@ the corresponding `PersistentVolume` is not be deleted. Instead, it is moved to 
 * [PersistentVolumeClaim](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#persistentvolumeclaim-v1-core)
 * See the `persistentVolumeReclaimPolicy` field of [PersistentVolumeSpec](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#persistentvolumeclaim-v1-core).
 {{% /capture %}}
-
-

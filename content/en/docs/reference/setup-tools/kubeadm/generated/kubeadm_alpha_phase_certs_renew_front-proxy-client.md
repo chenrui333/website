@@ -4,7 +4,7 @@ Generates the client for the front proxy
 ### Synopsis
 
 
-Renews the client for the front proxy, and saves them into front-proxy-client.cert and front-proxy-client.key files. 
+Renews the client for the front proxy, and saves them into front-proxy-client.cert and front-proxy-client.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew front-proxy-client [flags]
 
   </tbody>
 </table>
-
-
-

@@ -17,10 +17,10 @@
 {{- $tooltip := $tooltip | replaceRE "(?s)<a class='glossary-tooltip'.*?>(.*?)<span class='tooltip-text'>.*</a>" "$1" | plainify -}}
 {{- $tooltip := trim $tooltip " \n" -}}
 <a class='glossary-tooltip' href='{{ $external_link }}' target='_blank'>
-	{{- $text -}}
-	<span class='tooltip-text'>
+  {{- $text -}}
+  <span class='tooltip-text'>
   {{- $tooltip | safeHTML -}}
-	</span>
+  </span>
 </a>
 {{- end -}}
 {{- end -}}

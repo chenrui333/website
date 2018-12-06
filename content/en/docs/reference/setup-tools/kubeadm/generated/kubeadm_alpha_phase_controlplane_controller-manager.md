@@ -4,7 +4,7 @@ Generates the controller-manager static Pod manifest
 ### Synopsis
 
 
-Generates the static Pod manifest file for the controller-manager and saves it into /etc/kubernetes/manifests/kube-controller-manager.yaml file. 
+Generates the static Pod manifest file for the controller-manager and saves it into /etc/kubernetes/manifests/kube-controller-manager.yaml file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -86,6 +86,3 @@ kubeadm alpha phase controlplane controller-manager [flags]
 
   </tbody>
 </table>
-
-
-

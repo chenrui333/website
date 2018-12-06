@@ -4,7 +4,7 @@ Mark a node as master
 ### Synopsis
 
 
-Applies a label that specifies that a node is a master and a taint that forces workloads to be deployed accordingly. 
+Applies a label that specifies that a node is a master and a taint that forces workloads to be deployed accordingly.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -17,7 +17,7 @@ kubeadm alpha phase mark-master [flags]
 ```
   # Applies master label and taint to the current node, functionally equivalent to what executed by kubeadm init.
   kubeadm alpha phase mark-master
-  
+
   # Applies master label and taint to a specific node
   kubeadm alpha phase mark-master --node-name myNode
 ```
@@ -82,6 +82,3 @@ kubeadm alpha phase mark-master [flags]
 
   </tbody>
 </table>
-
-
-

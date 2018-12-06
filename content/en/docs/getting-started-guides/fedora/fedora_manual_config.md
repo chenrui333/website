@@ -145,10 +145,10 @@ current-context: kubelet-context
 * Start the appropriate services on the node (fed-node).
 
 ```shell
-for SERVICES in kube-proxy kubelet docker; do 
+for SERVICES in kube-proxy kubelet docker; do
     systemctl restart $SERVICES
     systemctl enable $SERVICES
-    systemctl status $SERVICES 
+    systemctl status $SERVICES
 done
 ```
 
@@ -180,4 +180,3 @@ IaaS Provider        | Config. Mgmt | OS     | Networking  | Docs               
 Bare-metal           | custom       | Fedora | _none_      | [docs](/docs/getting-started-guides/fedora/fedora_manual_config)            |          | Project
 
 For support level information on all solutions, see the [Table of solutions](/docs/getting-started-guides/#table-of-solutions) chart.
-

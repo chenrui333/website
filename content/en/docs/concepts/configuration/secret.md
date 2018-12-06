@@ -852,24 +852,24 @@ Pod level](#use-case-secret-visible-to-one-container-in-a-pod).
 ### Risks
 
  - In the API server secret data is stored as plaintext in etcd; therefore:
-   - Administrators should limit access to etcd to admin users
-   - Secret data in the API server is at rest on the disk that etcd uses; admins may want to wipe/shred disks
-     used by etcd when no longer in use
+  - Administrators should limit access to etcd to admin users
+  - Secret data in the API server is at rest on the disk that etcd uses; admins may want to wipe/shred disks
+    used by etcd when no longer in use
  - If you configure the secret through a manifest (JSON or YAML) file which has
-   the secret data encoded as base64, sharing this file or checking it in to a
-   source repository means the secret is compromised. Base64 encoding is not an
-   encryption method and is considered the same as plain text.
+  the secret data encoded as base64, sharing this file or checking it in to a
+  source repository means the secret is compromised. Base64 encoding is not an
+  encryption method and is considered the same as plain text.
  - Applications still need to protect the value of secret after reading it from the volume,
-   such as not accidentally logging it or transmitting it to an untrusted party.
+  such as not accidentally logging it or transmitting it to an untrusted party.
  - A user who can create a pod that uses a secret can also see the value of that secret.  Even
-   if apiserver policy does not allow that user to read the secret object, the user could
-   run a pod which exposes the secret.
+  if apiserver policy does not allow that user to read the secret object, the user could
+  run a pod which exposes the secret.
  - If multiple replicas of etcd are run, then the secrets will be shared between them.
-   By default, etcd does not secure peer-to-peer communication with SSL/TLS, though this can be configured.
+  By default, etcd does not secure peer-to-peer communication with SSL/TLS, though this can be configured.
  - Currently, anyone with root on any node can read any secret from the apiserver,
-   by impersonating the kubelet.  It is a planned feature to only send secrets to
-   nodes that actually require them, to restrict the impact of a root exploit on a
-   single node.
+  by impersonating the kubelet.  It is a planned feature to only send secrets to
+  nodes that actually require them, to restrict the impact of a root exploit on a
+  single node.
 
 {{< note >}}
 As of 1.7 [encryption of secret data at rest is supported](/docs/tasks/administer-cluster/encrypt-data/).

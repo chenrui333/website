@@ -63,5 +63,3 @@ will typically ensure that the latter types are setup correctly.
 Proxies have replaced redirect capabilities.  Redirects have been deprecated.
 
 {{% /capture %}}
-
-

@@ -4,7 +4,7 @@ Generates a kubeconfig file for the admin to use and for kubeadm itself
 ### Synopsis
 
 
-Generates the kubeconfig file for the admin and for kubeadm itself, and saves it to admin.conf file. 
+Generates the kubeconfig file for the admin and for kubeadm itself, and saves it to admin.conf file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -86,6 +86,3 @@ kubeadm alpha phase kubeconfig admin [flags]
 
   </tbody>
 </table>
-
-
-

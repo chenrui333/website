@@ -6,9 +6,9 @@ Generates the certificate for serving etcd
 
 Generates the certificate for serving etcd, and saves them into etcd/server.cert and etcd/server.key files.
 
-Default SANs are localhost, 127.0.0.1, ::1 
+Default SANs are localhost, 127.0.0.1, ::1
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -69,6 +69,3 @@ kubeadm alpha phase certs etcd-server [flags]
 
   </tbody>
 </table>
-
-
-

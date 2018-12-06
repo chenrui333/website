@@ -84,6 +84,3 @@ kubeadm config migrate [flags]
 
   </tbody>
 </table>
-
-
-

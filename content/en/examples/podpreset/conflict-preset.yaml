@@ -15,4 +15,3 @@ spec:
   volumes:
     - name: other-volume
       emptyDir: {}
-

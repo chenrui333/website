@@ -22,9 +22,9 @@ This is *not* a guide for people who want to debug their cluster.  For that you 
 The first step in troubleshooting is triage.  What is the problem?  Is it your Pods, your Replication Controller or
 your Service?
 
-   * [Debugging Pods](#debugging-pods)
-   * [Debugging Replication Controllers](#debugging-replication-controllers)
-   * [Debugging Services](#debugging-services)
+  * [Debugging Pods](#debugging-pods)
+  * [Debugging Replication Controllers](#debugging-replication-controllers)
+  * [Debugging Services](#debugging-services)
 
 ### Debugging Pods
 
@@ -161,8 +161,8 @@ a Service where the labels are:
 ...
 spec:
   - selector:
-     name: nginx
-     type: frontend
+    name: nginx
+    type: frontend
 ```
 
 You can use:
@@ -187,9 +187,9 @@ in the endpoints list, it's likely that the proxy can't contact your pods.
 There are three things to
 check:
 
-   * Are your pods working correctly?  Look for restart count, and [debug pods](#debugging-pods).
-   * Can you connect to your pods directly?  Get the IP address for the Pod, and try to connect directly to that IP.
-   * Is your application serving on the port that you configured?  Kubernetes doesn't do port remapping, so if your application serves on 8080, the `containerPort` field needs to be 8080.
+  * Are your pods working correctly?  Look for restart count, and [debug pods](#debugging-pods).
+  * Can you connect to your pods directly?  Get the IP address for the Pod, and try to connect directly to that IP.
+  * Is your application serving on the port that you configured?  Kubernetes doesn't do port remapping, so if your application serves on 8080, the `containerPort` field needs to be 8080.
 
 {{% /capture %}}
 

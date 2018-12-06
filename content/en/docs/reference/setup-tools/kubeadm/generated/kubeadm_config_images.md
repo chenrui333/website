@@ -56,6 +56,3 @@ kubeadm config images [flags]
 
   </tbody>
 </table>
-
-
-

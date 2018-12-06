@@ -35,17 +35,17 @@ content_template: templates/task
 
 1. 基于YAML文件创建一个Pod：
 
-       kubectl create -f https://k8s.io/docs/tasks/inject-data-application/commands.yaml
+      kubectl create -f https://k8s.io/docs/tasks/inject-data-application/commands.yaml
 
 1. 获取一下当前正在运行的Pods信息：
 
-       kubectl get pods
+      kubectl get pods
 
     查询结果显示在command-demo这个Pod下运行的容器已经启动完成
 
 1. 如果要获取容器启动时执行命令的输出结果，可以通过Pod的日志进行查看
 
-       kubectl logs command-demo
+      kubectl logs command-demo
 
     日志中显示了HOSTNAME 与KUBERNETES_PORT 这两个环境变量的值：
 
@@ -69,7 +69,7 @@ content_template: templates/task
 [Secrets](/docs/concepts/configuration/secret/).
 
 {{< note >}}
-**注意：** 环境变量需要加上括号，类似于`"$(VAR)"`。这是在`command` 
+**注意：** 环境变量需要加上括号，类似于`"$(VAR)"`。这是在`command`
 或 `args`字段使用变量的格式要求。
 {{< /note >}}
 
@@ -125,6 +125,3 @@ content_template: templates/task
 * 参考 [Container](/docs/api-reference/{{< param "version" >}}/#container-v1-core).
 
 {{% /capture %}}
-
-
-

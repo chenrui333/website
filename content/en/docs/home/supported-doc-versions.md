@@ -22,5 +22,3 @@ The current version is
 {{< versions-other >}}
 
 {{% /capture %}}
-
-

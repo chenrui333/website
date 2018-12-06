@@ -294,6 +294,3 @@ Kubernetes 通过支持通过多级别的 [服务质量](http://issue.k8s.io/168
 - [ResourceRequirements](/docs/resources-reference/{{< param "version" >}}/#resourcerequirements-v1-core)
 
 {{% /capture %}}
-
-
-

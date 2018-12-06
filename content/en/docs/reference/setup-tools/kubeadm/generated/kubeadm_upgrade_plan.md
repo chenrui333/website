@@ -98,6 +98,3 @@ kubeadm upgrade plan [version] [flags]
 
   </tbody>
 </table>
-
-
-

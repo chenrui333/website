@@ -83,4 +83,3 @@ Replication Controllers相当简单。他们能或不能创建pod。如果他们
 [上面的说明](#debugging_pods)来调试你的pod。
 
 您也可以使用`kubectl describe rc ${CONTROLLER_NAME}`来检查和Replication Controllers有关的事件。
-

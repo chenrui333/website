@@ -143,7 +143,7 @@ The examples we've used so far apply at most a single label to any resource. The
 For instance, different applications would use different values for the `app` label, but a multi-tier application, such as the [guestbook example](https://github.com/kubernetes/examples/tree/{{< param "githubbranch" >}}/guestbook/), would additionally need to distinguish each tier. The frontend could carry the following labels:
 
 ```yaml
-     labels:
+    labels:
         app: guestbook
         tier: frontend
 ```
@@ -151,7 +151,7 @@ For instance, different applications would use different values for the `app` la
 while the Redis master and slave would have different `tier` labels, and perhaps even an additional `role` label:
 
 ```yaml
-     labels:
+    labels:
         app: guestbook
         tier: backend
         role: master
@@ -160,7 +160,7 @@ while the Redis master and slave would have different `tier` labels, and perhaps
 and
 
 ```yaml
-     labels:
+    labels:
         app: guestbook
         tier: backend
         role: slave
@@ -195,29 +195,29 @@ For instance, you can use a `track` label to differentiate different releases.
 The primary, stable release would have a `track` label with value as `stable`:
 
 ```yaml
-     name: frontend
-     replicas: 3
-     ...
-     labels:
+    name: frontend
+    replicas: 3
+    ...
+    labels:
         app: guestbook
         tier: frontend
         track: stable
-     ...
-     image: gb-frontend:v3
+    ...
+    image: gb-frontend:v3
 ```
 
 and then you can create a new release of the guestbook frontend that carries the `track` label with different value (i.e. `canary`), so that two sets of pods would not overlap:
 
 ```yaml
-     name: frontend-canary
-     replicas: 1
-     ...
-     labels:
+    name: frontend-canary
+    replicas: 1
+    ...
+    labels:
         app: guestbook
         tier: frontend
         track: canary
-     ...
-     image: gb-frontend:v4
+    ...
+    image: gb-frontend:v4
 ```
 
 
@@ -225,8 +225,8 @@ The frontend service would span both sets of replicas by selecting the common su
 
 ```yaml
   selector:
-     app: guestbook
-     tier: frontend
+    app: guestbook
+    tier: frontend
 ```
 
 You can tweak the number of replicas of the stable and canary releases to determine the ratio of each release that will receive live production traffic (in this case, 3:1).

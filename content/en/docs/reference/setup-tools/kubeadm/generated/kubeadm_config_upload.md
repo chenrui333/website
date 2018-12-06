@@ -56,6 +56,3 @@ kubeadm config upload [flags]
 
   </tbody>
 </table>
-
-
-

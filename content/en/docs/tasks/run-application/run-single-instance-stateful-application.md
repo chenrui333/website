@@ -75,7 +75,7 @@ for a secure solution.
         Pod Template:
           Labels:       app=mysql
           Containers:
-           mysql:
+          mysql:
             Image:      mysql:5.6
             Port:       3306/TCP
             Environment:
@@ -83,7 +83,7 @@ for a secure solution.
             Mounts:
               /var/lib/mysql from mysql-persistent-storage (rw)
           Volumes:
-           mysql-persistent-storage:
+          mysql-persistent-storage:
             Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
             ClaimName:  mysql-pv-claim
             ReadOnly:   false
@@ -194,5 +194,3 @@ underlying resource upon deleting the PersistentVolume.
 * [Volumes](/docs/concepts/storage/volumes/) and [Persistent Volumes](/docs/concepts/storage/persistent-volumes/)
 
 {{% /capture %}}
-
-

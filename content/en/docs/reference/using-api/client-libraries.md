@@ -67,5 +67,3 @@ their authors, not the Kubernetes team.
 | Elixir               | [github.com/obmarg/kazan](https://github.com/obmarg/kazan/) |
 | Haskell              | [github.com/soundcloud/haskell-kubernetes](https://github.com/soundcloud/haskell-kubernetes) |
 {{% /capture %}}
-
-

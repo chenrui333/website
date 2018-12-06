@@ -70,12 +70,12 @@ kubectl create -f https://k8s.io/docs/tasks/run-application/gce-volume.yaml
 
 1. 部署YAML文件中定义的内容:
 
-       kubectl create -f https://k8s.io/docs/tasks/run-application/mysql-deployment.yaml
+      kubectl create -f https://k8s.io/docs/tasks/run-application/mysql-deployment.yaml
 
 
 1. 展示Deployment相关信息:
 
-       kubectl describe deployment mysql
+      kubectl describe deployment mysql
 
         Name:                 mysql
         Namespace:            default
@@ -89,7 +89,7 @@ kubectl create -f https://k8s.io/docs/tasks/run-application/gce-volume.yaml
         Pod Template:
           Labels:       app=mysql
           Containers:
-           mysql:
+          mysql:
             Image:      mysql:5.6
             Port:       3306/TCP
             Environment:
@@ -97,7 +97,7 @@ kubectl create -f https://k8s.io/docs/tasks/run-application/gce-volume.yaml
             Mounts:
               /var/lib/mysql from mysql-persistent-storage (rw)
           Volumes:
-           mysql-persistent-storage:
+          mysql-persistent-storage:
             Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
             ClaimName:  mysql-pv-claim
             ReadOnly:   false
@@ -116,7 +116,7 @@ kubectl create -f https://k8s.io/docs/tasks/run-application/gce-volume.yaml
 
 1. 列举出Deployment创建的pods:
 
-       kubectl get pods -l app=mysql
+      kubectl get pods -l app=mysql
 
         NAME                   READY     STATUS    RESTARTS   AGE
         mysql-63082529-2z3ki   1/1       Running   0          3m
@@ -124,7 +124,7 @@ kubectl create -f https://k8s.io/docs/tasks/run-application/gce-volume.yaml
 
 1. 查看持久卷:
 
-       kubectl describe pv mysql-pv
+      kubectl describe pv mysql-pv
 
         Name:            mysql-pv
         Labels:          <none>
@@ -145,7 +145,7 @@ kubectl create -f https://k8s.io/docs/tasks/run-application/gce-volume.yaml
 
 1. 查看PersistentVolumeClaim:
 
-       kubectl describe pvc mysql-pv-claim
+      kubectl describe pvc mysql-pv-claim
 
         Name:         mysql-pv-claim
         Namespace:    default
@@ -223,5 +223,3 @@ gcloud compute disks delete mysql-disk
 * 卷和持久卷请参考[Volumes](/docs/concepts/storage/volumes/) and [Persistent Volumes](/docs/concepts/storage/persistent-volumes/)
 
 {{% /capture %}}
-
-

@@ -4,7 +4,7 @@ Generates a kubeconfig file for the scheduler to use
 ### Synopsis
 
 
-Generates the kubeconfig file for the scheduler to use and saves it to /etc/kubernetes/scheduler.conf file. 
+Generates the kubeconfig file for the scheduler to use and saves it to /etc/kubernetes/scheduler.conf file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -86,6 +86,3 @@ kubeadm alpha phase kubeconfig scheduler [flags]
 
   </tbody>
 </table>
-
-
-

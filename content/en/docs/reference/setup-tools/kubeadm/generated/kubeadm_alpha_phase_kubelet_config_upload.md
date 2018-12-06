@@ -4,7 +4,7 @@ Uploads kubelet configuration to a ConfigMap based on a kubeadm InitConfiguratio
 ### Synopsis
 
 
-Uploads kubelet configuration extracted from the kubeadm InitConfiguration object to a ConfigMap of the form kubelet-config-1.X in the cluster, where X is the minor version of the current (API Server) Kubernetes version. 
+Uploads kubelet configuration extracted from the kubeadm InitConfiguration object to a ConfigMap of the form kubelet-config-1.X in the cluster, where X is the minor version of the current (API Server) Kubernetes version.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -72,6 +72,3 @@ kubeadm alpha phase kubelet config upload [flags]
 
   </tbody>
 </table>
-
-
-

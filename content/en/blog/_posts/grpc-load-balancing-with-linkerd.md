@@ -73,7 +73,7 @@ destination, and balance *requests* across these connections, as shown below:
 ![](/images/blog/grpc-load-balancing-with-linkerd/Stereo-09aff9d7-1c98-4a0a-9184-9998ed83a531.png)
 
 In network terms, this means we need to make decisions at L5/L7 rather than
-L3/L4, i.e. we need to understand the protocol sent over the TCP connections. 
+L3/L4, i.e. we need to understand the protocol sent over the TCP connections.
 
 How do we accomplish this? There are a couple options. First, our application
 code could manually maintain its own load balancing pool of destinations, and

@@ -58,7 +58,7 @@ represents.
 
 1. Display information about a Pod:
 
-       kubectl describe pod <pod-name>
+      kubectl describe pod <pod-name>
 
     where `<pod-name>` is the name of one of your Pods.
 
@@ -266,11 +266,11 @@ Beware.
 
 ### Katacoda Embedded Live Environment
 
-This button lets users run Minikube in their browser using the [Katacoda Terminal](https://www.katacoda.com/embed/panel). 
-It lowers the barier of entry by allowing users to use Minikube with one click instead of going through the complete 
+This button lets users run Minikube in their browser using the [Katacoda Terminal](https://www.katacoda.com/embed/panel).
+It lowers the barier of entry by allowing users to use Minikube with one click instead of going through the complete
 Minikube and Kubectl installation process locally.
 
-The Embedded Live Environment is configured to run `minikube start` and lets users complete tutorials in the same window 
+The Embedded Live Environment is configured to run `minikube start` and lets users complete tutorials in the same window
 as the documentation.
 
 {{< caution >}}
@@ -283,7 +283,7 @@ For example:
 {{</* kat-button */>}}
 ```
 
-The output is: 
+The output is:
 
 {{< kat-button >}}
 
@@ -298,7 +298,7 @@ For example:
     1. Preheat oven to 350˚F
 
     1. Prepare the batter, and pour into springform pan.
-       {{</* note */>}}**Note:** Grease the pan for best results.{{</* /note */>}}
+      {{</* note */>}}**Note:** Grease the pan for best results.{{</* /note */>}}
 
     1. Bake for 20-25 minutes or until set.
 

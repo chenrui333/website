@@ -109,5 +109,3 @@ A [Cluster-level logging](/docs/concepts/cluster-administration/logging/) mechan
 saving container logs to a central log store with search/browsing interface.
 
 {{% /capture %}}
-
-

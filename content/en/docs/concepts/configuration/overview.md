@@ -104,5 +104,3 @@ The caching semantics of the underlying image provider make even `imagePullPolic
 - Use `kubectl run` and `kubectl expose` to quickly create single-container Deployments and Services. See [Use a Service to Access an Application in a Cluster](/docs/tasks/access-application-cluster/service-access-application-cluster/) for an example.
 
 {{% /capture %}}
-
-

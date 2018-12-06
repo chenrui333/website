@@ -25,7 +25,7 @@ content_template: templates/concept
 
 ```gRPC
 service Registration {
-	rpc Register(RegisterRequest) returns (Empty) {}
+  rpc Register(RegisterRequest) returns (Empty) {}
 }
 ```
 设备插件通过该 gRPC 服务将自身注册到 kubelet 。
@@ -93,5 +93,3 @@ Kubernetes能够重新启动 Pods 。 否则就需要额外的设备插件故障
 [基于 COS 操作系统的 nvidia GPU 设备插件](https://github.com/GoogleCloudPlatform/container-engine-accelerators/tree/master/cmd/nvidia_gpu)。
 
 {{% /capture %}}
-
-

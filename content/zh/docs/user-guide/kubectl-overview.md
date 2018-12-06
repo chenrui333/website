@@ -25,9 +25,9 @@ kubectl [command] [TYPE] [NAME] [flags]
 
 `NAME`：指定资源的名称。名称区分大小写。如果省略名称，则会显示所有资源的详细信息,比如`$ kubectl get pods`。
 
-   在多个资源上执行操作时，可以按类型和名称指定每个资源，或指定一个或多个文件：
+  在多个资源上执行操作时，可以按类型和名称指定每个资源，或指定一个或多个文件：
 
-   * 按类型和名称指定资源：
+  * 按类型和名称指定资源：
 
         * 要分组资源，如果它们都是相同的类型：`TYPE1 name1 name2 name<#>`.<br/>
         例: `$ kubectl get pod example-pod1 example-pod2`
@@ -35,8 +35,8 @@ kubectl [command] [TYPE] [NAME] [flags]
         * 要分别指定多种资源类型:  `TYPE1/name1 TYPE1/name2 TYPE2/name3 TYPE<#>/name<#>`.<br/>
         例: `$ kubectl get pod/example-pod1 replicationcontroller/example-rc1`
 
-     使用一个或多个文件指定资源： `-f file1 -f file2 -f file<#>` 使用[YAML而不是JSON](/docs/concepts/configuration/overview/#general-config-tips)，因为YAML往往更加用户友好，特别是对于配置文件。<br/>
-     例：$ kubectl get pod -f ./pod.yaml
+    使用一个或多个文件指定资源： `-f file1 -f file2 -f file<#>` 使用[YAML而不是JSON](/docs/concepts/configuration/overview/#general-config-tips)，因为YAML往往更加用户友好，特别是对于配置文件。<br/>
+    例：$ kubectl get pod -f ./pod.yaml
 
 * flags：指定可选标志。例如，您可以使用`-s`或`--serverflags`来指定Kubernetes API服务器的地址和端口。
 **重要提示**：从命令行指定的标志将覆盖默认值和任何相应的环境变量。

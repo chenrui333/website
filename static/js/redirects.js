@@ -6,15 +6,15 @@ $( document ).ready(function() {
     var oldURLs = ["/README.md","/README.html","/index.md",".html",".md"];
 
     /* var:  forwardingRules
-     * type: array of objects
-     * example rule object:
-     * {
-     *   "from":    "/path/from/old/location", //search in incoming forwardingURL for this string
-     *   "pattern": "#([0-9a-zA-Z\-\_]+)",     //[optional] regex to parse out a token of digits, letters, hyphen, or underscore
-     *   "to":      "/path/to/new/location",   //base URL to forward to
-     *   "postfix": "/#<token>"                //[optional] append this to base URL w/ <token> found by "pattern"
-     * }
-     */
+    * type: array of objects
+    * example rule object:
+    * {
+    *   "from":    "/path/from/old/location", //search in incoming forwardingURL for this string
+    *   "pattern": "#([0-9a-zA-Z\-\_]+)",     //[optional] regex to parse out a token of digits, letters, hyphen, or underscore
+    *   "to":      "/path/to/new/location",   //base URL to forward to
+    *   "postfix": "/#<token>"                //[optional] append this to base URL w/ <token> found by "pattern"
+    * }
+    */
     var forwardingRules = [];
 
     forwardingRules.forEach(function(rule) {

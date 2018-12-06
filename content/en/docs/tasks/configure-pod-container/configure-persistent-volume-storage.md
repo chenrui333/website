@@ -209,5 +209,3 @@ PersistentVolume are not present on the Pod resource itself.
 * [PersistentVolumeClaimSpec](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#persistentvolumeclaimspec-v1-core)
 
 {{% /capture %}}
-
-

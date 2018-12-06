@@ -5,7 +5,7 @@ but we are not accessing its content. The .Content is lazily loaded in Hugo, so 
 {{- $block := .page.Scratch.Get $capture -}}
 {{- if and (not $block) (not $.optional) -}}
 {{ partial "templates/errorthrower.html" (dict "block" .block "heading" .heading "purpose" .purpose) . }}
-{{- end -}} 
+{{- end -}}
 {{- with $block -}}
 {{- with $.heading }}
 <h2 id="{{ . | anchorize }}">{{ . }}</h2>

@@ -28,7 +28,7 @@ the kubelet exports a `Registration` gRPC service:
 
 ```gRPC
 service Registration {
-	rpc Register(RegisterRequest) returns (Empty) {}
+  rpc Register(RegisterRequest) returns (Empty) {}
 }
 ```
 A device plugin can register itself with the kubelet through this gRPC service.
@@ -151,4 +151,3 @@ For examples of device plugin implementations, see:
 * The [Intel device plugins](https://github.com/intel/intel-device-plugins-for-kubernetes) for GPU, FPGA and QuickAssist devices
 
 {{% /capture %}}
-

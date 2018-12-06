@@ -15,7 +15,7 @@ kubeadm upgrade node experimental-control-plane [flags]
 ```
   # Downloads the kubelet configuration from the ConfigMap in the cluster. Uses a specific desired kubelet version.
   kubeadm upgrade node config --kubelet-version v1.12.0
-  
+
   # Simulates the downloading of the kubelet configuration from the ConfigMap in the cluster with a specific desired
   # version. Does not change any state locally on the node.
   kubeadm upgrade node config --kubelet-version v1.12.0 --dry-run
@@ -74,6 +74,3 @@ kubeadm upgrade node experimental-control-plane [flags]
 
   </tbody>
 </table>
-
-
-

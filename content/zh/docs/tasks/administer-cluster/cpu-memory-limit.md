@@ -255,5 +255,3 @@ default         Active        12m
 * 查看 [资源](/docs/concepts/configuration/manage-compute-resources-container/) 获取关于 Kubernetes 资源模型的详细描述。
 
 {{% /capture %}}
-
-

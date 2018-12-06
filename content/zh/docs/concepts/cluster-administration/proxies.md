@@ -36,7 +36,7 @@ content_template: templates/concept
 
     - 在每个节点上运行
     - 代理 UDP 和 TCP
-    - 不支持 HTTP 
+    - 不支持 HTTP
     - 提供负载均衡能力
     - 只用来访问 Service
 
@@ -60,5 +60,3 @@ Kubernetes 用户通常只需要关心前两种类型的代理，集群管理员
 代理已经取代重定向功能，重定向已被弃用。
 
 {{% /capture %}}
-
-

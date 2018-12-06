@@ -156,15 +156,15 @@ this example.
     The certificates have been generated and now they must be moved to their
     respective hosts.
 
-     ```sh
-     USER=ubuntu
-     HOST=${HOST1}
-     scp -r /tmp/${HOST}/* ${USER}@${HOST}:
-     ssh ${USER}@${HOST}
-     USER@HOST $ sudo -Es
-     root@HOST $ chown -R root:root pki
-     root@HOST $ mv pki /etc/kubernetes/
-     ```
+    ```sh
+    USER=ubuntu
+    HOST=${HOST1}
+    scp -r /tmp/${HOST}/* ${USER}@${HOST}:
+    ssh ${USER}@${HOST}
+    USER@HOST $ sudo -Es
+    root@HOST $ chown -R root:root pki
+    root@HOST $ mv pki /etc/kubernetes/
+    ```
 
 1. Ensure all expected files exist
 
@@ -261,5 +261,3 @@ highly available control plane using the [external etcd method with
 kubeadm](/docs/setup/independent/high-availability/).
 
 {{% /capture %}}
-
-

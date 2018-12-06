@@ -273,7 +273,7 @@ spec:
     shortNames:
     - ct
   validation:
-   # openAPIV3Schema is the schema for validating custom objects.
+  # openAPIV3Schema is the schema for validating custom objects.
     openAPIV3Schema:
       properties:
         spec:

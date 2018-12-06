@@ -142,4 +142,3 @@ spec:
 
 该 pod 属于 `Guaranteed` 服务质量类型，因其指定了 `limits` 值，
 同时当未显式指定时，`requests` 值被设置为与 `limits` 值相等。同时，容器对 CPU 资源的限制值是一个大于或等于 1 的整数值。所以，该 `nginx` 容器被赋予 2 个独占 CPU。
-

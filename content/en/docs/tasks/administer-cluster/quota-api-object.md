@@ -168,8 +168,3 @@ kubectl delete namespace quota-object-example
 
 
 {{% /capture %}}
-
-
-
-
-

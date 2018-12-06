@@ -249,7 +249,7 @@ Pod Template:
   Labels:       controller-uid=41d75705-92df-11e7-b85e-fa163ee3c11f
                 job-name=job-wq-1
   Containers:
-   c:
+  c:
     Image:      gcr.io/causal-jigsaw-637/job-wq-1
     Port:
     Environment:

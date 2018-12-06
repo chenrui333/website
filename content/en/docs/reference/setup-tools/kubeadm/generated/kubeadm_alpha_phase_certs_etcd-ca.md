@@ -4,9 +4,9 @@ Generates the self-signed CA to provision identities for etcd
 ### Synopsis
 
 
-Generates the self-signed CA to provision identities for etcd, and saves them into etcd/ca.cert and etcd/ca.key files. 
+Generates the self-signed CA to provision identities for etcd, and saves them into etcd/ca.cert and etcd/ca.key files.
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -67,6 +67,3 @@ kubeadm alpha phase certs etcd-ca [flags]
 
   </tbody>
 </table>
-
-
-

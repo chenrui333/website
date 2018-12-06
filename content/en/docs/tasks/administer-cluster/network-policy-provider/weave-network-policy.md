@@ -55,5 +55,3 @@ Each Node has a weave Pod, and all Pods are `Running` and `2/2 READY`. (`2/2` me
 Once you have installed the Weave Net addon, you can follow the [Declare Network Policy](/docs/tasks/administer-cluster/declare-network-policy/) to try out Kubernetes NetworkPolicy. If you have any question, contact us at [#weave-community on Slack or Weave User Group](https://github.com/weaveworks/weave#getting-help).
 
 {{% /capture %}}
-
-

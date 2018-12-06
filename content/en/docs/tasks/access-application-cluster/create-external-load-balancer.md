@@ -219,5 +219,3 @@ Once the external load balancers provide weights, this functionality can be adde
 Internal pod to pod traffic should behave similar to ClusterIP services, with equal probability across all pods.
 
 {{% /capture %}}
-
-

@@ -313,5 +313,3 @@ case, you should not use `host`, but rather set the `Host` header in `httpHeader
 * [Probe](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#probe-v1-core)
 
 {{% /capture %}}
-
-

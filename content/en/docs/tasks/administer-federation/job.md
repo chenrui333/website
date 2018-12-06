@@ -105,5 +105,3 @@ You must delete the underlying jobs manually.
 {{< /note >}}
 
 {{% /capture %}}
-
-

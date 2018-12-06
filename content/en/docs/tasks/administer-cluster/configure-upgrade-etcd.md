@@ -81,7 +81,7 @@ To run a load balancing etcd cluster:
 
 1. Set up an etcd cluster.
 2. Configure a load balancer in front of the etcd cluster.
-   For example, let the address of the load balancer be `$LB`.
+  For example, let the address of the load balancer be `$LB`.
 3. Start Kubernetes API Servers with the flag `--etcd-servers=$LB:2379`.
 
 ## Securing etcd clusters
@@ -130,15 +130,15 @@ Though etcd keeps unique member IDs internally, it is recommended to use a uniqu
 
       The following message is displayed:
 
-       Removed member 8211f1d0f64f3269 from cluster
+      Removed member 8211f1d0f64f3269 from cluster
 
 3. Add the new member:
 
     `./etcdctl member add member4 --peer-urls=http://10.0.0.4:2380`
 
-     The following message is displayed:
+    The following message is displayed:
 
-       Member 2be1eb8f84b7f63e added to cluster ef37ad9dc622a7c4
+      Member 2be1eb8f84b7f63e added to cluster ef37ad9dc622a7c4
 
 4. Start the newly added member on a machine with the IP `10.0.0.4`:
 
@@ -149,8 +149,8 @@ Though etcd keeps unique member IDs internally, it is recommended to use a uniqu
 
 5. Do either of the following:
 
-   1. Update its `--etcd-servers` flag to make Kubernetes aware of the configuration changes, then restart the Kubernetes API server.
-   2. Update the load balancer configuration if a load balancer is used in the deployment.
+  1. Update its `--etcd-servers` flag to make Kubernetes aware of the configuration changes, then restart the Kubernetes API server.
+  2. Update the load balancer configuration if a load balancer is used in the deployment.
 
 For more information on cluster reconfiguration, see [etcd Reconfiguration Documentation](https://github.com/coreos/etcd/blob/master/Documentation/op-guide/runtime-configuration.md#remove-a-member).
 
@@ -208,8 +208,8 @@ The upgrade procedure described in this document assumes that either:
 1. The etcd cluster has only a single node.
 2. The etcd cluster has multiple nodes.
 
-   In this case, the upgrade procedure requires shutting down the
-   etcd cluster. During the time the etcd cluster is shut down, the Kubernetes API Server will be read only.
+  In this case, the upgrade procedure requires shutting down the
+  etcd cluster. During the time the etcd cluster is shut down, the Kubernetes API Server will be read only.
 
 {{< warning >}}
 Deviations from the assumptions are untested by continuous
@@ -321,51 +321,51 @@ The migration script that will be part of the etcd Docker image is a bash
 script that works as follows:
 
 1. Detect which version of etcd we were previously running.
-   For that purpose, we have added a dedicated file, `version.txt`, that
-   holds that information and is stored in the etcd-data-specific directory,
-   next to the etcd data. If the file doesn’t exist, we default it to version 2.2.1.
+  For that purpose, we have added a dedicated file, `version.txt`, that
+  holds that information and is stored in the etcd-data-specific directory,
+  next to the etcd data. If the file doesn’t exist, we default it to version 2.2.1.
 1. If we are in version 2.2.1 and are supposed to upgrade, backup
-   data.
+  data.
 1. Based on the detected previous etcd version and the desired one
-   (communicated via environment variable), do the upgrade steps as
-   needed. This means that for every minor etcd release greater than the detected one and
-   less than or equal to the desired one:
-   1. Start etcd in that version.
-   1. Wait until it is healthy. Healthy means that you can write some data to it.
-   1. Stop this etcd. Note that this etcd will not listen on the default
-   etcd port. It is hard coded to listen on ports that the API server is not
-   configured to connect to, which means that API server won’t be able to connect
-   to it. Assuming no other client goes out of its way to try to
-   connect and write to this obscure port, no new data will be written during
-   this period.
+  (communicated via environment variable), do the upgrade steps as
+  needed. This means that for every minor etcd release greater than the detected one and
+  less than or equal to the desired one:
+  1. Start etcd in that version.
+  1. Wait until it is healthy. Healthy means that you can write some data to it.
+  1. Stop this etcd. Note that this etcd will not listen on the default
+  etcd port. It is hard coded to listen on ports that the API server is not
+  configured to connect to, which means that API server won’t be able to connect
+  to it. Assuming no other client goes out of its way to try to
+  connect and write to this obscure port, no new data will be written during
+  this period.
 1. If the desired API version is v3 and the detected version is v2, do the offline
-   migration from the v2 to v3 data format. For that we use two tools:
-   * ./etcdctl migrate: This is the official tool for migration provided by the etcd team.
-   * A custom script that is attaching TTLs to events in the etcd. Note that etcdctl
+  migration from the v2 to v3 data format. For that we use two tools:
+  * ./etcdctl migrate: This is the official tool for migration provided by the etcd team.
+  * A custom script that is attaching TTLs to events in the etcd. Note that etcdctl
       migrate doesn’t support TTLs.
 1. After every successful step, update contents of the version file.
-   This will protect us from the situation where something crashes in the
-   meantime ,and the version file gets completely unsynchronized with the
-   real data. Note that it is safe if the script crashes after the step is
-   done and before the file is updated. This will only result in redoing one
-   step in the next try.
+  This will protect us from the situation where something crashes in the
+  meantime ,and the version file gets completely unsynchronized with the
+  real data. Note that it is safe if the script crashes after the step is
+  done and before the file is updated. This will only result in redoing one
+  step in the next try.
 
 All the previous steps are for the case where the detected version is less than or
 equal to the desired version. In the opposite case, that is for a rollback, the
 script works as follows:
 
 1. Verify that the detected version is 3.0.x with the v3 API, and the
-   desired version is 2.2.1 with the v2 API. We don’t support any other rollback.
+  desired version is 2.2.1 with the v2 API. We don’t support any other rollback.
 1. If so, we run the custom tool provided by etcd team to do the offline
-   rollback. This tool reads the v3 formatted data and writes it back to disk
-   in v2 format.
+  rollback. This tool reads the v3 formatted data and writes it back to disk
+  in v2 format.
 1. Finally update the contents of the version file.
 
 ### Upgrade procedure
 Simply modify the command line in the etcd manifest to:
 
 1. Run the migration script. If the previously run version is already in the
-   desired version, this will be no-op.
+  desired version, this will be no-op.
 1. Start etcd in the desired version.
 
 Starting in Kubernetes version 1.6, this has been done in the manifests for new

@@ -64,5 +64,3 @@ Refer to the [model management](https://jujucharms.com/docs/2.2/models) page in 
 
 有关如何管理 ssh 密钥的说明，请参阅 Juju 文档中的 [模型管理](https://jujucharms.com/docs/2.2/models) 页面。
 {{% /capture %}}
-
-

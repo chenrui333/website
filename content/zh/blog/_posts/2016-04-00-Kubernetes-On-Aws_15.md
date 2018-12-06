@@ -101,8 +101,8 @@ coreos:
 $ kube-aws validate
 
  \> Validating UserData...
-     Error: cloud-config validation errors:
-     UserDataWorker: line 4: warning: unrecognized key "interrface"
+    Error: cloud-config validation errors:
+    UserDataWorker: line 4: warning: unrecognized key "interrface"
 
 <!-- To get started, check out the [kube-aws documentation](https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html). -->
 考虑如何起步？看看[kube-aws 文档](https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html)！

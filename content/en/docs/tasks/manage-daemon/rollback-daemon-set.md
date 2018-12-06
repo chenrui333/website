@@ -7,7 +7,7 @@ content_template: templates/task
 
 {{% capture overview %}}
 
-This page shows how to perform a rollback on a DaemonSet. 
+This page shows how to perform a rollback on a DaemonSet.
 
 {{% /capture %}}
 
@@ -93,8 +93,8 @@ DaemonSet. The real rollback is done asynchronously on the server side.
 
 To watch the progress of the rollback:
 
-```shell 
-kubectl rollout status ds/<daemonset-name> 
+```shell
+kubectl rollout status ds/<daemonset-name>
 ```
 
 When the rollback is complete, the output is similar to this:
@@ -153,5 +153,3 @@ have revision 1 and 2 in the system, and roll back from revision 2 to revision
   update](/docs/tasks/manage-daemon/update-daemon-set/#troubleshooting).
 
 {{% /capture %}}
-
-

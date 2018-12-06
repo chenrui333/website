@@ -20,7 +20,7 @@ Imported docs must follow these guidelines:
     Rest of the .md file...
     ```
 1. Be listed somewhere in a file under the `data` subdirectory, for example,
-   the `data/imported.yml` file.
+  the `data/imported.yml` file.
 
 1. Make sure the `PyYAML` package is installed:
 

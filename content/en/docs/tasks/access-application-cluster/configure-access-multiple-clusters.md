@@ -341,6 +341,3 @@ export KUBECONFIG=$KUBECONFIG_SAVED
 * [kubectl config](/docs/reference/generated/kubectl/kubectl-commands/)
 
 {{% /capture %}}
-
-
-

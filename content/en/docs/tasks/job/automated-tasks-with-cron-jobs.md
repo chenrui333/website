@@ -169,7 +169,7 @@ That means 120 schedules were missed, so the cron job is no longer scheduled. If
 field is set (not null), the CronJob controller counts how many missed jobs occurred from the value of
 `.spec.startingDeadlineSeconds` until now. For example, if it is set to `200`, it counts how many missed
 schedules occurred in the last 200 seconds. In that case, if there were more than 100 missed schedules in the
-last 200 seconds, the cron job is no longer scheduled. 
+last 200 seconds, the cron job is no longer scheduled.
 
 ### Concurrency Policy
 

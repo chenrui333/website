@@ -65,5 +65,3 @@ Here's something interesting about the code you ran in the preceding steps.
 * See [Using Page Templates - Tutorial template](/docs/home/contribute/page-templates/#tutorial_template) for how to use this template.
 
 {{% /capture %}}
-
-

@@ -9,13 +9,13 @@
 {{ end }}
 {{ end }}
 <div id="vendorStrip" class="light-text">
-	<ul>
-		{{ range $menuSections }}
-		{{ $yah := $p.IsDescendant . }}
-		<li><a href="{{ .RelPermalink }}"{{ if $yah }} class="YAH"{{ end }}>{{ .LinkTitle | upper }}</a></li>
-		{{ end }}
-	</ul>
-	<form id="searchBox" action="/docs/search/">
-		<input type="text" id="search" name="q" placeholder="{{ T "ui_search_placeholder" }}" aria-label="Search">
-	</form>
+  <ul>
+    {{ range $menuSections }}
+    {{ $yah := $p.IsDescendant . }}
+    <li><a href="{{ .RelPermalink }}"{{ if $yah }} class="YAH"{{ end }}>{{ .LinkTitle | upper }}</a></li>
+    {{ end }}
+  </ul>
+  <form id="searchBox" action="/docs/search/">
+    <input type="text" id="search" name="q" placeholder="{{ T "ui_search_placeholder" }}" aria-label="Search">
+  </form>
 </div>

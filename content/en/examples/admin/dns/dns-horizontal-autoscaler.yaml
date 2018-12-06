@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-       k8s-app: dns-autoscaler
+      k8s-app: dns-autoscaler
   template:
     metadata:
       labels:

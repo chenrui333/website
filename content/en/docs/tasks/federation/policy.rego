@@ -25,9 +25,9 @@ import data.kubernetes.clusters
 # <head> if <body> where <body> is true if <expr-1> AND <expr-2> AND ...
 # <expr-N> is true (for some set of data.)
 annotations["federation.kubernetes.io/replica-set-preferences"] = preferences {
-    input.kind = "ReplicaSet"
-    value = {"clusters": cluster_map, "rebalance": true}
-    json.marshal(value, preferences)
+	input.kind = "ReplicaSet"
+	value = {"clusters": cluster_map, "rebalance": true}
+	json.marshal(value, preferences)
 }
 
 # This "annotations" rule generates a value for the "federation.alpha.kubernetes.io/cluster-selector"
@@ -37,38 +37,38 @@ annotations["federation.kubernetes.io/replica-set-preferences"] = preferences {
 # that are not annotated with "criticality=low" MUST be placed on clusters
 # labelled with "on-premises=true".
 annotations["federation.alpha.kubernetes.io/cluster-selector"] = selector {
-    input.metadata.namespace = "production"
-    not input.metadata.annotations.criticality = "low"
-    json.marshal([{
-        "operator": "=",
-        "key": "on-premises",
-        "values": "[true]",
-    }], selector)
+	input.metadata.namespace = "production"
+	not input.metadata.annotations.criticality = "low"
+	json.marshal([{
+		"operator": "=",
+		"key": "on-premises",
+		"values": "[true]",
+	}], selector)
 }
 
 # Generates a set of cluster names that satisfy the incoming Federated
 # ReplicaSet's requirements. In this case, just PCI compliance.
 replica_set_clusters[cluster_name] {
-    clusters[cluster_name]
-    not insufficient_pci[cluster_name]
+	clusters[cluster_name]
+	not insufficient_pci[cluster_name]
 }
 
 # Generates a set of clusters that must not be used for Federated ReplicaSets
 # that request PCI compliance.
 insufficient_pci[cluster_name] {
-    clusters[cluster_name]
-    input.metadata.annotations["requires-pci"] = "true"
-    not pci_clusters[cluster_name]
+	clusters[cluster_name]
+	input.metadata.annotations["requires-pci"] = "true"
+	not pci_clusters[cluster_name]
 }
 
 # Generates a set of clusters that are PCI certified. In this case, we assume
 # clusters are annotated to indicate if they have passed PCI compliance audits.
 pci_clusters[cluster_name] {
-    clusters[cluster_name].metadata.annotations["pci-certified"] = "true"
+	clusters[cluster_name].metadata.annotations["pci-certified"] = "true"
 }
 
 # Helper rule to generate a mapping of desired clusters to weights. In this
 # case, weights are static.
 cluster_map[cluster_name] = {"weight": 1} {
-    replica_set_clusters[cluster_name]
+	replica_set_clusters[cluster_name]
 }

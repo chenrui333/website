@@ -66,32 +66,32 @@ mount each volume.
 
 Kubernetes supports several types of Volumes:
 
-   * [awsElasticBlockStore](#awselasticblockstore)
-   * [azureDisk](#azuredisk)
-   * [azureFile](#azurefile)
-   * [cephfs](#cephfs)
-   * [configMap](#configmap)
-   * [csi](#csi)
-   * [downwardAPI](#downwardapi)
-   * [emptyDir](#emptydir)
-   * [fc (fibre channel)](#fc)
-   * [flocker](#flocker)
-   * [gcePersistentDisk](#gcepersistentdisk)
-   * [gitRepo (deprecated)](#gitrepo)
-   * [glusterfs](#glusterfs)
-   * [hostPath](#hostpath)
-   * [iscsi](#iscsi)
-   * [local](#local)
-   * [nfs](#nfs)
-   * [persistentVolumeClaim](#persistentvolumeclaim)
-   * [projected](#projected)
-   * [portworxVolume](#portworxvolume)
-   * [quobyte](#quobyte)
-   * [rbd](#rbd)
-   * [scaleIO](#scaleio)
-   * [secret](#secret)
-   * [storageos](#storageos)
-   * [vsphereVolume](#vspherevolume)
+  * [awsElasticBlockStore](#awselasticblockstore)
+  * [azureDisk](#azuredisk)
+  * [azureFile](#azurefile)
+  * [cephfs](#cephfs)
+  * [configMap](#configmap)
+  * [csi](#csi)
+  * [downwardAPI](#downwardapi)
+  * [emptyDir](#emptydir)
+  * [fc (fibre channel)](#fc)
+  * [flocker](#flocker)
+  * [gcePersistentDisk](#gcepersistentdisk)
+  * [gitRepo (deprecated)](#gitrepo)
+  * [glusterfs](#glusterfs)
+  * [hostPath](#hostpath)
+  * [iscsi](#iscsi)
+  * [local](#local)
+  * [nfs](#nfs)
+  * [persistentVolumeClaim](#persistentvolumeclaim)
+  * [projected](#projected)
+  * [portworxVolume](#portworxvolume)
+  * [quobyte](#quobyte)
+  * [rbd](#rbd)
+  * [scaleIO](#scaleio)
+  * [secret](#secret)
+  * [storageos](#storageos)
+  * [vsphereVolume](#vspherevolume)
 
 We welcome additional contributions.
 
@@ -1243,35 +1243,35 @@ Mount propagation of a volume is controlled by `mountPropagation` field in Conta
 Its values are:
 
  * `None` - This volume mount will not receive any subsequent mounts
-   that are mounted to this volume or any of its subdirectories by the host.
-   In similar fashion, no mounts created by the Container will be visible on
-   the host. This is the default mode.
+  that are mounted to this volume or any of its subdirectories by the host.
+  In similar fashion, no mounts created by the Container will be visible on
+  the host. This is the default mode.
 
-   This mode is equal to `private` mount propagation as described in the
-   [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
+  This mode is equal to `private` mount propagation as described in the
+  [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
 
  * `HostToContainer` - This volume mount will receive all subsequent mounts
-   that are mounted to this volume or any of its subdirectories.
+  that are mounted to this volume or any of its subdirectories.
 
-   In other words, if the host mounts anything inside the volume mount, the
-   Container will see it mounted there.
+  In other words, if the host mounts anything inside the volume mount, the
+  Container will see it mounted there.
 
-   Similarly, if any Pod with `Bidirectional` mount propagation to the same
-   volume mounts anything there, the Container with `HostToContainer` mount
-   propagation will see it.
+  Similarly, if any Pod with `Bidirectional` mount propagation to the same
+  volume mounts anything there, the Container with `HostToContainer` mount
+  propagation will see it.
 
-   This mode is equal to `rslave` mount propagation as described in the
-   [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
+  This mode is equal to `rslave` mount propagation as described in the
+  [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
 
  * `Bidirectional` - This volume mount behaves the same the `HostToContainer` mount.
-   In addition, all volume mounts created by the Container will be propagated
-   back to the host and to all Containers of all Pods that use the same volume.
+  In addition, all volume mounts created by the Container will be propagated
+  back to the host and to all Containers of all Pods that use the same volume.
 
-   A typical use case for this mode is a Pod with a Flexvolume or CSI driver or
-   a Pod that needs to mount something on the host using a `hostPath` volume.
+  A typical use case for this mode is a Pod with a Flexvolume or CSI driver or
+  a Pod that needs to mount something on the host using a `hostPath` volume.
 
-   This mode is equal to `rshared` mount propagation as described in the
-   [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
+  This mode is equal to `rshared` mount propagation as described in the
+  [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
 
 {{< caution >}}
 `Bidirectional` mount propagation can be dangerous. It can damage

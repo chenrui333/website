@@ -4,7 +4,7 @@ Generates the client apiserver uses to access etcd
 ### Synopsis
 
 
-Renews the client apiserver uses to access etcd, and saves them into apiserver-etcd-client.cert and apiserver-etcd-client.key files. 
+Renews the client apiserver uses to access etcd, and saves them into apiserver-etcd-client.cert and apiserver-etcd-client.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew apiserver-etcd-client [flags]
 
   </tbody>
 </table>
-
-
-

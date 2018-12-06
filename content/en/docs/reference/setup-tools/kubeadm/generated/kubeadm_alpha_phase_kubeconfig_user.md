@@ -4,7 +4,7 @@ Outputs a kubeconfig file for an additional user
 ### Synopsis
 
 
-Outputs a kubeconfig file for an additional user. 
+Outputs a kubeconfig file for an additional user.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -107,6 +107,3 @@ kubeadm alpha phase kubeconfig user [flags]
 
   </tbody>
 </table>
-
-
-

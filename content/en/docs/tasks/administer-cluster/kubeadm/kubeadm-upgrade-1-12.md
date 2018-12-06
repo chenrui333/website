@@ -13,11 +13,11 @@ This page explains how to upgrade a Kubernetes cluster created with `kubeadm` fr
 
 {{% capture prerequisites %}}
 
-- You need to have a `kubeadm` Kubernetes cluster running version 1.11.0 or later. 
-  [Swap must be disabled][swap]. 
+- You need to have a `kubeadm` Kubernetes cluster running version 1.11.0 or later.
+  [Swap must be disabled][swap].
   The cluster should use a static control plane and etcd pods.
 - Make sure you read the [release notes](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.12.md) carefully.
-- Make sure to back up any important components, such as app-level state stored in a database. 
+- Make sure to back up any important components, such as app-level state stored in a database.
   `kubeadm upgrade` does not touch your workloads, only components internal to Kubernetes, but backups are always a best practice.
 
 
@@ -25,8 +25,8 @@ This page explains how to upgrade a Kubernetes cluster created with `kubeadm` fr
 ### Additional information
 
 - All containers are restarted after upgrade, because the container spec hash value is changed.
-- You can upgrade only from one minor version to the next minor version. 
-  That is, you cannot skip versions when you upgrade. 
+- You can upgrade only from one minor version to the next minor version.
+  That is, you cannot skip versions when you upgrade.
   For example, you can upgrade only from 1.10 to 1.11, not from 1.9 to 1.11.
 
 {{% /capture %}}
@@ -91,7 +91,7 @@ This page explains how to upgrade a Kubernetes cluster created with `kubeadm` fr
 
     You can now apply the upgrade by executing the following command:
 
-        kubeadm upgrade apply v1.12.0 
+        kubeadm upgrade apply v1.12.0
 
     _____________________________________________________________________
 
@@ -275,7 +275,7 @@ This page explains how to upgrade a Kubernetes cluster created with `kubeadm` fr
 
 ## Recovering from a failure state
 
-If `kubeadm upgrade` fails and does not roll back, for example because of an unexpected shutdown during execution, you can run `kubeadm upgrade` again. 
+If `kubeadm upgrade` fails and does not roll back, for example because of an unexpected shutdown during execution, you can run `kubeadm upgrade` again.
 This command is idempotent and eventually makes sure that the actual state is the desired state you declare.
 
 To recover from a bad state, you can also run `kubeadm upgrade --force` without changing the version that your cluster is running.

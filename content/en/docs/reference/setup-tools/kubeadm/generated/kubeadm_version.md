@@ -56,6 +56,3 @@ kubeadm version [flags]
 
   </tbody>
 </table>
-
-
-

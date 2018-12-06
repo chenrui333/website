@@ -17,15 +17,15 @@ title: 配置你的云平台防火墙
 
 ## 负载均衡（LoadBalancer）服务的访问限制
 
- 
- 
- 
+
+
+
  当以 `spec.type: LoadBalancer` 使用服务时，你可以使用 `spec.loadBalancerSourceRanges` 指定允许访问负载均衡的 IP 段。
  这个字段采用 CIDR 的 IP 段，Kubernetes 会使用这个段配置防火墙。支持这个功能的平台目前有 Google Compute Engine，Google Kubernetes Engine 和 AWS。
  如果云服务商不支持这个功能，这个字段会被忽略。
 
- 
- 
+
+
  假设 10.0.0.0/8 是内部的子网。在下面这个例子中，会创建一个只有集群内部 ip 可以访问的负载均衡器。
  集群外部的客户端是无法访问这个负载均衡器的。
 
@@ -45,7 +45,7 @@ spec:
   - 10.0.0.0/8
 ```
 
- 
+
  这个例子中，会创建一个只能被 IP 为 130.211.204.1 和 130.211.204.2 的客户端访问的负载据衡器。
 
 ```yaml
@@ -103,11 +103,11 @@ $ gcloud compute firewall-rules create my-rule --allow=tcp:<port>
 
 考虑一下:
 
-   * 你创建了一个服务，使用了外部服务均衡 (IP 地址为 1.2.3.4) 和 80 端口。
-   * 你在防火墙上为集群的所有节点都打开了 80 端口，所以外部的服务可以向你的
-     服务发送数据包。
-   * 你又在虚拟机（IP 为2.3.4.5）上使用 80 端口启动了一台 nginx 服务器.
-     这个 nginx 在虚拟机的外部 IP 地址上也被暴露到了 internet 上。
+  * 你创建了一个服务，使用了外部服务均衡 (IP 地址为 1.2.3.4) 和 80 端口。
+  * 你在防火墙上为集群的所有节点都打开了 80 端口，所以外部的服务可以向你的
+    服务发送数据包。
+  * 你又在虚拟机（IP 为2.3.4.5）上使用 80 端口启动了一台 nginx 服务器.
+    这个 nginx 在虚拟机的外部 IP 地址上也被暴露到了 internet 上。
 
 
 
@@ -123,4 +123,3 @@ $ gcloud compute firewall-rules create my-rule --allow=tcp:<port>
 
 
 即将更新
-

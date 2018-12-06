@@ -130,9 +130,3 @@ kubectl delete pod oir-demo
 * [给节点配置非透明整型资源](/docs/tasks/administer-cluster/opaque-integer-resource-node/)
 
 {{% /capture %}}
-
-
-
-
-
-

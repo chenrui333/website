@@ -161,8 +161,8 @@ This must be done manually.
 
 ### Pod Name Label
 
-When the StatefulSet controller creates a Pod, it adds a label, `statefulset.kubernetes.io/pod-name`, 
-that is set to the name of the Pod. This label allows you to attach a Service to a specific Pod in 
+When the StatefulSet controller creates a Pod, it adds a label, `statefulset.kubernetes.io/pod-name`,
+that is set to the name of the Pod. This label allows you to attach a Service to a specific Pod in
 the StatefulSet.
 
 ## Deployment and Scaling Guarantees
@@ -244,4 +244,3 @@ update, roll out a canary, or perform a phased roll out.
 * Follow an example of [deploying Cassandra with Stateful Sets](/docs/tutorials/stateful-application/cassandra/).
 
 {{% /capture %}}
-

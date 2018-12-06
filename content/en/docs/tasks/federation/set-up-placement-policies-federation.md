@@ -52,7 +52,7 @@ The ConfigMap contains three files:
 Edit the Federation API server deployment to enable the `SchedulingPolicy`
 Admission Controller.
 
-	kubectl -n federation-system edit deployment federation-apiserver
+  kubectl -n federation-system edit deployment federation-apiserver
 
 Update the Federation API server command line arguments to enable the Admission
 Controller and mount the ConfigMap into the container. If there's an existing
@@ -141,5 +141,3 @@ Inspect the ReplicaSet to confirm the appropriate annotations have been applied:
     kubectl --context=federation get rs nginx-pci -o jsonpath='{.metadata.annotations}'
 
 {{% /capture %}}
-
-

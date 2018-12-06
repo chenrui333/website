@@ -461,19 +461,19 @@ spec:
 Here are the merge calculations that would be performed by `kubectl apply`:
 
 1. Calculate the fields to delete by reading values from
-   `last-applied-configuration` and comparing them to values in the
-   configuration file.
-   Clear fields explicitly set to null in the local object configuration file
-   regardless of whether they appear in the `last-applied-configuration`.
-   In this example, `minReadySeconds` appears in the
-   `last-applied-configuration` annotation, but does not appear in the configuration file.
+  `last-applied-configuration` and comparing them to values in the
+  configuration file.
+  Clear fields explicitly set to null in the local object configuration file
+  regardless of whether they appear in the `last-applied-configuration`.
+  In this example, `minReadySeconds` appears in the
+  `last-applied-configuration` annotation, but does not appear in the configuration file.
     **Action:** Clear `minReadySeconds` from the live configuration.
 2. Calculate the fields to set by reading values from the configuration
-   file and comparing them to values in the live configuration. In this example,
-   the value of `image` in the configuration file does not match
+  file and comparing them to values in the live configuration. In this example,
+  the value of `image` in the configuration file does not match
     the value in the live configuration. **Action:** Set the value of `image` in the live configuration.
 3. Set the `last-applied-configuration` annotation to match the value
-   of the configuration file.
+  of the configuration file.
 4. Merge the results from 1, 2, 3 into a single patch request to the API server.
 
 Here is the live configuration that is the result of the merge:
@@ -851,13 +851,13 @@ spec:
 
 1. The user creates a Deployment without defining `strategy.type`.
 2. The server defaults `strategy.type` to `RollingUpdate` and defaults the
-   `strategy.rollingUpdate` values.
+  `strategy.rollingUpdate` values.
 3. The user changes `strategy.type` to `Recreate`. The `strategy.rollingUpdate`
-   values remain at their defaulted values, though the server expects them to be cleared.
-   If the `strategy.rollingUpdate` values had been defined initially in the configuration file,
-   it would have been more clear that they needed to be deleted.
+  values remain at their defaulted values, though the server expects them to be cleared.
+  If the `strategy.rollingUpdate` values had been defined initially in the configuration file,
+  it would have been more clear that they needed to be deleted.
 4. Apply fails because `strategy.rollingUpdate` is not cleared. The `strategy.rollingupdate`
-   field cannot be defined with a `strategy.type` of `Recreate`.
+  field cannot be defined with a `strategy.type` of `Recreate`.
 
 Recommendation: These fields should be explicitly defined in the object configuration file:
 
@@ -917,9 +917,9 @@ configuration involves several manual steps:
 
 1. Export the live object to a local configuration file:
 
-     ```shell
-     kubectl get <kind>/<name> -o yaml --export > <kind>_<name>.yaml
-     ```
+    ```shell
+    kubectl get <kind>/<name> -o yaml --export > <kind>_<name>.yaml
+    ```
 
 1. Manually remove the `status` field from the configuration file.
 
@@ -977,5 +977,3 @@ template:
 - [Kubectl Command Reference](/docs/reference/generated/kubectl/kubectl/)
 - [Kubernetes API Reference](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/)
 {{% /capture %}}
-
-

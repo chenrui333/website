@@ -59,20 +59,20 @@ The feature of expanding volume is still undefined in latest CSI 0.2.0. The new 
 ```
 service Controller {
  rpc CreateVolume (CreateVolumeRequest)
-   returns (CreateVolumeResponse) {}
+  returns (CreateVolumeResponse) {}
 ……
  rpc RequiresFSResize (RequiresFSResizeRequest)
-   returns (RequiresFSResizeResponse) {}
+  returns (RequiresFSResizeResponse) {}
  rpc ControllerResizeVolume (ControllerResizeVolumeRequest)
-   returns (ControllerResizeVolumeResponse) {}
+  returns (ControllerResizeVolumeResponse) {}
 }
 
 service Node {
  rpc NodeStageVolume (NodeStageVolumeRequest)
-   returns (NodeStageVolumeResponse) {}
+  returns (NodeStageVolumeResponse) {}
 ……
  rpc NodeResizeVolume (NodeResizeVolumeRequest)
-   returns (NodeResizeVolumeResponse) {}
+  returns (NodeResizeVolumeResponse) {}
 }
 ```
 

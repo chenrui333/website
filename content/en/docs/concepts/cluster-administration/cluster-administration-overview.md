@@ -26,8 +26,8 @@ Before choosing a guide, here are some considerations:
  - **If you are configuring Kubernetes on-premises**, consider which [networking model](/docs/concepts/cluster-administration/networking/) fits best.
  - Will you be running Kubernetes on **"bare metal" hardware** or on **virtual machines (VMs)**?
  - Do you **just want to run a cluster**, or do you expect to do **active development of Kubernetes project code**? If the
-   latter, choose an actively-developed distro. Some distros only use binary releases, but
-   offer a greater variety of choices.
+  latter, choose an actively-developed distro. Some distros only use binary releases, but
+  offer a greater variety of choices.
  - Familiarize yourself with the [components](/docs/admin/cluster-components/) needed to run a cluster.
 
 Note: Not all distros are actively maintained. Choose distros which have been tested with a recent version of Kubernetes.
@@ -70,5 +70,3 @@ Note: Not all distros are actively maintained. Choose distros which have been te
 * [Logging and Monitoring Cluster Activity](/docs/concepts/cluster-administration/logging/) explains how logging in Kubernetes works and how to implement it.
 
 {{% /capture %}}
-
-

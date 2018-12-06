@@ -4,9 +4,9 @@ Generates the client certificate for liveness probes to healtcheck etcd
 ### Synopsis
 
 
-Generates the client certificate for liveness probes to healtcheck etcd, and saves them into etcd/healthcheck-client.cert and etcd/healthcheck-client.key files. 
+Generates the client certificate for liveness probes to healtcheck etcd, and saves them into etcd/healthcheck-client.cert and etcd/healthcheck-client.key files.
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -67,6 +67,3 @@ kubeadm alpha phase certs etcd-healthcheck-client [flags]
 
   </tbody>
 </table>
-
-
-

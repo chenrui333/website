@@ -4,7 +4,7 @@ Installs the CoreDNS addon to a Kubernetes cluster
 ### Synopsis
 
 
-Installs the CoreDNS addon components via the API server. Please note that although the DNS server is deployed, it will not be scheduled until CNI is installed. 
+Installs the CoreDNS addon components via the API server. Please note that although the DNS server is deployed, it will not be scheduled until CNI is installed.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -100,6 +100,3 @@ kubeadm alpha phase addon coredns [flags]
 
   </tbody>
 </table>
-
-
-

@@ -6,9 +6,9 @@ Generates the certificate for serving the kubernetes API
 
 Generates the certificate for serving the kubernetes API, and saves them into apiserver.cert and apiserver.key files.
 
-Default SANs are kubernetes, kubernetes.default, kubernetes.default.svc, kubernetes.default.svc.cluster.local, 10.96.0.1, 127.0.0.1 
+Default SANs are kubernetes, kubernetes.default, kubernetes.default.svc, kubernetes.default.svc.cluster.local, 10.96.0.1, 127.0.0.1
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -97,6 +97,3 @@ kubeadm alpha phase certs apiserver [flags]
 
   </tbody>
 </table>
-
-
-

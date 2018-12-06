@@ -4,9 +4,9 @@ Generates the client apiserver uses to access etcd
 ### Synopsis
 
 
-Generates the client apiserver uses to access etcd, and saves them into apiserver-etcd-client.cert and apiserver-etcd-client.key files. 
+Generates the client apiserver uses to access etcd, and saves them into apiserver-etcd-client.cert and apiserver-etcd-client.key files.
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -67,6 +67,3 @@ kubeadm alpha phase certs apiserver-etcd-client [flags]
 
   </tbody>
 </table>
-
-
-

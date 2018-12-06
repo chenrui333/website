@@ -256,6 +256,3 @@ inject the Pod's name into the well-known environment variable.
 * [ResourceFieldSelector](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#resourcefieldselector-v1-core)
 
 {{% /capture %}}
-
-
-

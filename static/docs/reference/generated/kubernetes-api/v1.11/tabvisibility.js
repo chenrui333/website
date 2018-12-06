@@ -14,7 +14,7 @@ $(document).ready(function() {
             tab.addClass('tab-selected');
             $('.code-block').removeClass('active');
             $(codeClass).addClass('active');
-         
+
         });
     }
 

@@ -111,5 +111,3 @@ resyncInterval: 60s
 masqLinkLocal: true
 ```
 {{% /capture %}}
-
-

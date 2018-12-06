@@ -740,6 +740,3 @@ kube-controller-manager [flags]
 
   </tbody>
 </table>
-
-
-

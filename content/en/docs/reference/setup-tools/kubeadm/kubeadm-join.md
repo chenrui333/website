@@ -20,26 +20,26 @@ This command initializes a Kubernetes worker node and joins it to the cluster.
 This action consists of the following steps:
 
 1. kubeadm downloads necessary cluster information from the API server.
-   By default, it uses the bootstrap token and the CA key hash to verify the
-   authenticity of that data. The root CA can also be discovered directly via a
-   file or URL.
+  By default, it uses the bootstrap token and the CA key hash to verify the
+  authenticity of that data. The root CA can also be discovered directly via a
+  file or URL.
 
 1. If kubeadm is invoked with `--feature-gates=DynamicKubeletConfig` enabled,
-   it first retrieves the kubelet init configuration from the master and writes it to
-   the disk. When kubelet starts up, kubeadm updates the node `Node.spec.configSource` property of the node.
-   See [Set Kubelet parameters via a config file](/docs/tasks/administer-cluster/kubelet-config-file/)
-   and [Reconfigure a Node's Kubelet in a Live Cluster](/docs/tasks/administer-cluster/reconfigure-kubelet/)
-   for more information about Dynamic Kubelet Configuration.
+  it first retrieves the kubelet init configuration from the master and writes it to
+  the disk. When kubelet starts up, kubeadm updates the node `Node.spec.configSource` property of the node.
+  See [Set Kubelet parameters via a config file](/docs/tasks/administer-cluster/kubelet-config-file/)
+  and [Reconfigure a Node's Kubelet in a Live Cluster](/docs/tasks/administer-cluster/reconfigure-kubelet/)
+  for more information about Dynamic Kubelet Configuration.
 
 1. Once the cluster information is known, kubelet can start the TLS bootstrapping
-   process.
+  process.
 
-   The TLS bootstrap uses the shared token to temporarily authenticate
-   with the Kubernetes API server to submit a certificate signing request (CSR); by
-   default the control plane signs this CSR request automatically.
+  The TLS bootstrap uses the shared token to temporarily authenticate
+  with the Kubernetes API server to submit a certificate signing request (CSR); by
+  default the control plane signs this CSR request automatically.
 
 1. Finally, kubeadm configures the local kubelet to connect to the API
-   server with the definitive identity assigned to the node.
+  server with the definitive identity assigned to the node.
 
 ### Discovering what cluster CA to trust
 
@@ -69,17 +69,17 @@ kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert
 **Advantages:**
 
  - Allows bootstrapping nodes to securely discover a root of trust for the
-   master even if other worker nodes or the network are compromised.
+  master even if other worker nodes or the network are compromised.
 
  - Convenient to execute manually since all of the information required fits
-   into a single `kubeadm join` command that is easy to copy and paste.
+  into a single `kubeadm join` command that is easy to copy and paste.
 
 **Disadvantages:**
 
  - The CA hash is not normally known until the master has been provisioned,
-   which can make it more difficult to build automated provisioning tools that
-   use kubeadm. By generating your CA in beforehand, you may workaround this
-   limitation though.
+  which can make it more difficult to build automated provisioning tools that
+  use kubeadm. By generating your CA in beforehand, you may workaround this
+  limitation though.
 
 #### Token-based discovery without CA pinning
 
@@ -101,15 +101,15 @@ kubeadm join --token abcdef.1234567890abcdef --discovery-token-unsafe-skip-ca-ve
  - Still protects against many network-level attacks.
 
  - The token can be generated ahead of time and shared with the master and
-   worker nodes, which can then bootstrap in parallel without coordination. This
-   allows it to be used in many provisioning scenarios.
+  worker nodes, which can then bootstrap in parallel without coordination. This
+  allows it to be used in many provisioning scenarios.
 
 **Disadvantages:**
 
  - If an attacker is able to steal a bootstrap token via some vulnerability,
-   they can use that token (along with network-level access) to impersonate the
-   master to other bootstrapping nodes. This may or may not be an appropriate
-   tradeoff in your environment.
+  they can use that token (along with network-level access) to impersonate the
+  master to other bootstrapping nodes. This may or may not be an appropriate
+  tradeoff in your environment.
 
 #### File or HTTPS-based discovery
 This provides an out-of-band way to establish a root of trust between the master
@@ -125,14 +125,14 @@ using kubeadm.
 **Advantages:**
 
  - Allows bootstrapping nodes to securely discover a root of trust for the
-   master even if the network or other worker nodes are compromised.
+  master even if the network or other worker nodes are compromised.
 
 **Disadvantages:**
 
  - Requires that you have some way to carry the discovery information from
-   the master to the bootstrapping nodes. This might be possible, for example,
-   via your cloud provider or provisioning tool. The information in this file is
-   not secret, but HTTPS or equivalent is required to ensure its integrity.
+  the master to the bootstrapping nodes. This might be possible, for example,
+  via your cloud provider or provisioning tool. The information in this file is
+  not secret, but HTTPS or equivalent is required to ensure its integrity.
 
 ### Securing your installation even more {#securing-more}
 

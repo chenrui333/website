@@ -138,10 +138,10 @@ the [Azure container registry documentation](https://docs.microsoft.com/en-us/az
 
 Once you have created your container registry, you will use the following credentials to login:
 
-   * `DOCKER_USER` : service principal, or admin username
-   * `DOCKER_PASSWORD`: service principal password, or admin user password
-   * `DOCKER_REGISTRY_SERVER`: `${some-registry-name}.azurecr.io`
-   * `DOCKER_EMAIL`: `${some-email-address}`
+  * `DOCKER_USER` : service principal, or admin username
+  * `DOCKER_PASSWORD`: service principal password, or admin user password
+  * `DOCKER_REGISTRY_SERVER`: `${some-registry-name}.azurecr.io`
+  * `DOCKER_EMAIL`: `${some-email-address}`
 
 Once you have those variables filled in you can
 [configure a Kubernetes Secret and use it to deploy a Pod](/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
@@ -189,12 +189,12 @@ You may have to set `HOME=/root` explicitly in your environment file for kubelet
 Here are the recommended steps to configuring your nodes to use a private registry.  In this
 example, run these on your desktop/laptop:
 
-   1. Run `docker login [server]` for each set of credentials you want to use.  This updates `$HOME/.docker/config.json`.
-   1. View `$HOME/.docker/config.json` in an editor to ensure it contains just the credentials you want to use.
-   1. Get a list of your nodes, for example:
+  1. Run `docker login [server]` for each set of credentials you want to use.  This updates `$HOME/.docker/config.json`.
+  1. View `$HOME/.docker/config.json` in an editor to ensure it contains just the credentials you want to use.
+  1. Get a list of your nodes, for example:
       - if you want the names: `nodes=$(kubectl get nodes -o jsonpath='{range.items[*].metadata}{.name} {end}')`
       - if you want to get the IPs: `nodes=$(kubectl get nodes -o jsonpath='{range .items[*].status.addresses[?(@.type=="ExternalIP")]}{.address} {end}')`
-   1. Copy your local `.docker/config.json` to one of the search paths list above.
+  1. Copy your local `.docker/config.json` to one of the search paths list above.
       - for example: `for n in $nodes; do scp ~/.docker/config.json root@$n:/var/lib/kubelet/config.json; done`
 
 Verify by creating a pod that uses a private image, e.g.:
@@ -349,26 +349,26 @@ There are a number of solutions for configuring private registries.  Here are so
 common use cases and suggested solutions.
 
 1. Cluster running only non-proprietary (e.g. open-source) images.  No need to hide images.
-   - Use public images on the Docker hub.
-     - No configuration required.
-     - On GCE/Google Kubernetes Engine, a local mirror is automatically used for improved speed and availability.
+  - Use public images on the Docker hub.
+    - No configuration required.
+    - On GCE/Google Kubernetes Engine, a local mirror is automatically used for improved speed and availability.
 1. Cluster running some proprietary images which should be hidden to those outside the company, but
-   visible to all cluster users.
-   - Use a hosted private [Docker registry](https://docs.docker.com/registry/).
-     - It may be hosted on the [Docker Hub](https://hub.docker.com/account/signup/), or elsewhere.
-     - Manually configure .docker/config.json on each node as described above.
-   - Or, run an internal private registry behind your firewall with open read access.
-     - No Kubernetes configuration is required.
-   - Or, when on GCE/Google Kubernetes Engine, use the project's Google Container Registry.
-     - It will work better with cluster autoscaling than manual node configuration.
-   - Or, on a cluster where changing the node configuration is inconvenient, use `imagePullSecrets`.
+  visible to all cluster users.
+  - Use a hosted private [Docker registry](https://docs.docker.com/registry/).
+    - It may be hosted on the [Docker Hub](https://hub.docker.com/account/signup/), or elsewhere.
+    - Manually configure .docker/config.json on each node as described above.
+  - Or, run an internal private registry behind your firewall with open read access.
+    - No Kubernetes configuration is required.
+  - Or, when on GCE/Google Kubernetes Engine, use the project's Google Container Registry.
+    - It will work better with cluster autoscaling than manual node configuration.
+  - Or, on a cluster where changing the node configuration is inconvenient, use `imagePullSecrets`.
 1. Cluster with a proprietary images, a few of which require stricter access control.
-   - Ensure [AlwaysPullImages admission controller](/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) is active. Otherwise, all Pods potentially have access to all images.
-   - Move sensitive data into a "Secret" resource, instead of packaging it in an image.
+  - Ensure [AlwaysPullImages admission controller](/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) is active. Otherwise, all Pods potentially have access to all images.
+  - Move sensitive data into a "Secret" resource, instead of packaging it in an image.
 1. A multi-tenant cluster where each tenant needs own private registry.
-   - Ensure [AlwaysPullImages admission controller](/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) is active. Otherwise, all Pods of all tenants potentially have access to all images.
-   - Run a private registry with authorization required.
-   - Generate registry credential for each tenant, put into secret, and populate secret to each tenant namespace.
-   - The tenant adds that secret to imagePullSecrets of each namespace.
+  - Ensure [AlwaysPullImages admission controller](/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) is active. Otherwise, all Pods of all tenants potentially have access to all images.
+  - Run a private registry with authorization required.
+  - Generate registry credential for each tenant, put into secret, and populate secret to each tenant namespace.
+  - The tenant adds that secret to imagePullSecrets of each namespace.
 
 {{% /capture %}}

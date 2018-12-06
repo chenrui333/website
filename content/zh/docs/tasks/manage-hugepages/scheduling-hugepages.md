@@ -15,7 +15,7 @@ content_template: templates/task
 {{% capture prerequisites %}}
 
 1. 为了使节点能够上报巨页容量，Kubernetes 节点必须预先分配巨页。
-   每个节点只能预先分配一种特定规格的巨页。
+  每个节点只能预先分配一种特定规格的巨页。
 1. 用户必须在整个系统中将专用的 **alpha** 特性开关 `HugePages` 设置为 true： `--feature-gates=HugePages=true`。
 
 节点会自动发现全部巨页资源，并作为可供调度的资源进行上报。
@@ -56,7 +56,7 @@ spec:
 - 巨页是被隔离在 pod 作用域的，计划在将来的迭代中实现容器级别的隔离。
 - 巨页对 EmptyDir 卷提供支持，EmptyDir 卷所使用的巨页，不能够超出 pod 请求的内存容量。
 - 通过带有 `SHM_HUGETLB` 的 `shmget()` 使用巨页的应用，必须运行在一个与
-   `proc/sys/vm/hugetlb_shm_group` 匹配的补充组下。
+  `proc/sys/vm/hugetlb_shm_group` 匹配的补充组下。
 
 ## （待实现的）特性
 
@@ -66,5 +66,3 @@ spec:
 - 支持 LimitRange 。
 
 {{% /capture %}}
-
-

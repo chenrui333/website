@@ -41,29 +41,29 @@ applications and cluster from other angles as well.
 Make sure:
 
 1. Kubernetes version is at least v1.4 -- Kubernetes support for AppArmor was added in
-   v1.4. Kubernetes components older than v1.4 are not aware of the new AppArmor annotations, and
-   will **silently ignore** any AppArmor settings that are provided. To ensure that your Pods are
-   receiving the expected protections, it is important to verify the Kubelet version of your nodes:
+  v1.4. Kubernetes components older than v1.4 are not aware of the new AppArmor annotations, and
+  will **silently ignore** any AppArmor settings that are provided. To ensure that your Pods are
+  receiving the expected protections, it is important to verify the Kubelet version of your nodes:
 
-   ```shell
-   $ kubectl get nodes -o=jsonpath=$'{range .items[*]}{@.metadata.name}: {@.status.nodeInfo.kubeletVersion}\n{end}'
-   gke-test-default-pool-239f5d02-gyn2: v1.4.0
-   gke-test-default-pool-239f5d02-x1kf: v1.4.0
-   gke-test-default-pool-239f5d02-xwux: v1.4.0
-   ```
+  ```shell
+  $ kubectl get nodes -o=jsonpath=$'{range .items[*]}{@.metadata.name}: {@.status.nodeInfo.kubeletVersion}\n{end}'
+  gke-test-default-pool-239f5d02-gyn2: v1.4.0
+  gke-test-default-pool-239f5d02-x1kf: v1.4.0
+  gke-test-default-pool-239f5d02-xwux: v1.4.0
+  ```
 
 2. AppArmor kernel module is enabled -- For the Linux kernel to enforce an AppArmor profile, the
-   AppArmor kernel module must be installed and enabled. Several distributions enable the module by
-   default, such as Ubuntu and SUSE, and many others provide optional support. To check whether the
-   module is enabled, check the `/sys/module/apparmor/parameters/enabled` file:
+  AppArmor kernel module must be installed and enabled. Several distributions enable the module by
+  default, such as Ubuntu and SUSE, and many others provide optional support. To check whether the
+  module is enabled, check the `/sys/module/apparmor/parameters/enabled` file:
 
-   ```shell
-   $ cat /sys/module/apparmor/parameters/enabled
-   Y
-   ```
+  ```shell
+  $ cat /sys/module/apparmor/parameters/enabled
+  Y
+  ```
 
-   If the Kubelet contains AppArmor support (>= v1.4), it will refuse to run a Pod with AppArmor
-   options if the kernel module is not enabled.
+  If the Kubelet contains AppArmor support (>= v1.4), it will refuse to run a Pod with AppArmor
+  options if the kernel module is not enabled.
 
   {{< note >}}
   Ubuntu carries many AppArmor patches that have not been merged into the upstream Linux
@@ -72,34 +72,34 @@ Make sure:
   {{< /note >}}
 
 3. Container runtime is Docker -- Currently the only Kubernetes-supported container runtime that
-   also supports AppArmor is Docker. As more runtimes add AppArmor support, the options will be
-   expanded. You can verify that your nodes are running docker with:
+  also supports AppArmor is Docker. As more runtimes add AppArmor support, the options will be
+  expanded. You can verify that your nodes are running docker with:
 
-   ```shell
-   $ kubectl get nodes -o=jsonpath=$'{range .items[*]}{@.metadata.name}: {@.status.nodeInfo.containerRuntimeVersion}\n{end}'
-   gke-test-default-pool-239f5d02-gyn2: docker://1.11.2
-   gke-test-default-pool-239f5d02-x1kf: docker://1.11.2
-   gke-test-default-pool-239f5d02-xwux: docker://1.11.2
-   ```
+  ```shell
+  $ kubectl get nodes -o=jsonpath=$'{range .items[*]}{@.metadata.name}: {@.status.nodeInfo.containerRuntimeVersion}\n{end}'
+  gke-test-default-pool-239f5d02-gyn2: docker://1.11.2
+  gke-test-default-pool-239f5d02-x1kf: docker://1.11.2
+  gke-test-default-pool-239f5d02-xwux: docker://1.11.2
+  ```
 
-   If the Kubelet contains AppArmor support (>= v1.4), it will refuse to run a Pod with AppArmor
-   options if the runtime is not Docker.
+  If the Kubelet contains AppArmor support (>= v1.4), it will refuse to run a Pod with AppArmor
+  options if the runtime is not Docker.
 
 4. Profile is loaded -- AppArmor is applied to a Pod by specifying an AppArmor profile that each
-   container should be run with. If any of the specified profiles is not already loaded in the
-   kernel, the Kubelet (>= v1.4) will reject the Pod. You can view which profiles are loaded on a
-   node by checking the `/sys/kernel/security/apparmor/profiles` file. For example:
+  container should be run with. If any of the specified profiles is not already loaded in the
+  kernel, the Kubelet (>= v1.4) will reject the Pod. You can view which profiles are loaded on a
+  node by checking the `/sys/kernel/security/apparmor/profiles` file. For example:
 
-   ```shell
-   $ ssh gke-test-default-pool-239f5d02-gyn2 "sudo cat /sys/kernel/security/apparmor/profiles | sort"
-   apparmor-test-deny-write (enforce)
-   apparmor-test-audit-write (enforce)
-   docker-default (enforce)
-   k8s-nginx (enforce)
-   ```
+  ```shell
+  $ ssh gke-test-default-pool-239f5d02-gyn2 "sudo cat /sys/kernel/security/apparmor/profiles | sort"
+  apparmor-test-deny-write (enforce)
+  apparmor-test-audit-write (enforce)
+  docker-default (enforce)
+  k8s-nginx (enforce)
+  ```
 
-   For more details on loading profiles on nodes, see
-   [Setting up nodes with profiles](#setting-up-nodes-with-profiles).
+  For more details on loading profiles on nodes, see
+  [Setting up nodes with profiles](#setting-up-nodes-with-profiles).
 
 As long as the Kubelet version includes AppArmor support (>= v1.4), the Kubelet will reject a Pod
 with AppArmor options if any of the prerequisites are not met. You can also verify AppArmor support
@@ -443,5 +443,3 @@ Additional resources:
 * [AppArmor core policy reference](http://wiki.apparmor.net/index.php/ProfileLanguage)
 
 {{% /capture %}}
-
-

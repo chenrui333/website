@@ -30,11 +30,11 @@ content_template: templates/task
 
 1. 基于YAML文件创建一个Pod:
 
-       kubectl create -f https://k8s.io/docs/tasks/inject-data-application/envars.yaml
+      kubectl create -f https://k8s.io/docs/tasks/inject-data-application/envars.yaml
 
 1. 获取一下当前正在运行的Pods信息:
 
-       kubectl get pods -l purpose=demonstrate-envars
+      kubectl get pods -l purpose=demonstrate-envars
 
     查询结果应为:
 
@@ -43,11 +43,11 @@ content_template: templates/task
 
 1. 进入该Pod下的容器并打开一个命令终端:
 
-       kubectl exec -it envar-demo -- /bin/bash
+      kubectl exec -it envar-demo -- /bin/bash
 
 1. 在命令终端中通过执行`printenv`打印出环境变量。
 
-       root@envar-demo:/# printenv
+      root@envar-demo:/# printenv
 
     打印结果应为:
 
@@ -68,6 +68,3 @@ content_template: templates/task
 * 关于[EnvVarSource](/docs/api-reference/{{< param "version" >}}/#envvarsource-v1-core)资源的信息。
 
 {{% /capture %}}
-
-
-

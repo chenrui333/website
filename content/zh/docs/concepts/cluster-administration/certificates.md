@@ -88,7 +88,7 @@ title: 证书
         default_md = sha256
         req_extensions = req_ext
         distinguished_name = dn
-        
+
         [ dn ]
         C = <country>
         ST = <state>
@@ -96,10 +96,10 @@ title: 证书
         O = <organization>
         OU = <organization unit>
         CN = <MASTER_IP>
-        
+
         [ req_ext ]
         subjectAltName = @alt_names
-        
+
         [ alt_names ]
         DNS.1 = kubernetes
         DNS.2 = kubernetes.default
@@ -108,7 +108,7 @@ title: 证书
         DNS.5 = kubernetes.default.svc.cluster.local
         IP.1 = <MASTER_IP>
         IP.2 = <MASTER_CLUSTER_IP>
-        
+
         [ v3_ext ]
         authorityKeyIdentifier=keyid,issuer:always
         basicConstraints=CA:FALSE
@@ -215,7 +215,7 @@ title: 证书
             "O": "<organization>",
             "OU": "<organization unit>"
           }]
-        } 
+        }
 1.  为 API 服务器生成密钥和证书，生成的秘钥和证书分别默认保存在文件 `server-key.pem`
     和 `server.pem` 中：
 

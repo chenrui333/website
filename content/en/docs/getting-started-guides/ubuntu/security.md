@@ -32,5 +32,3 @@ Note: The Juju controller node will still have open ssh access in your cloud, an
 
 Refer to the [model management](https://jujucharms.com/docs/2.2/models) page in the Juju documentation for instructions on how to manage ssh keys.
 {{% /capture %}}
-
-

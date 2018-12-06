@@ -6,14 +6,13 @@ full_link: /docs/concepts/workloads/controllers/cron-jobs/
 short_description: >
   Manages a [Job](/docs/concepts/workloads/controllers/jobs-run-to-completion/) that runs on a periodic schedule.
 
-aka: 
+aka:
 tags:
 - core-object
 - workload
 ---
  Manages a [Job](/docs/concepts/workloads/controllers/jobs-run-to-completion/) that runs on a periodic schedule.
 
-<!--more--> 
+<!--more-->
 
 Similar to a line in a *crontab* file, a Cronjob object specifies a schedule using the [Cron](https://en.wikipedia.org/wiki/Cron) format.
-

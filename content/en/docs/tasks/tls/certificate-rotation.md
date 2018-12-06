@@ -78,5 +78,3 @@ write that to disk. Then it will update the connections it has to the
 Kubernetes API to reconnect using the new certificate.
 
 {{% /capture %}}
-
-

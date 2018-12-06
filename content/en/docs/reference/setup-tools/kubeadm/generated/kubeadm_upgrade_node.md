@@ -49,6 +49,3 @@ kubeadm upgrade node [flags]
 
   </tbody>
 </table>
-
-
-

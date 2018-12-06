@@ -88,5 +88,3 @@ consumed by a namespace through claim counts and cumulative storage capacity. Th
 cluster's storage budget without risk of any one project going over their allotment.
 
 {{% /capture %}}
-
-

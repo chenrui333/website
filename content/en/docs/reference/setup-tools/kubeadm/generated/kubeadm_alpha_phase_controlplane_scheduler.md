@@ -4,7 +4,7 @@ Generates the scheduler static Pod manifest
 ### Synopsis
 
 
-Generates the static Pod manifest file for the scheduler and saves it into /etc/kubernetes/manifests/kube-scheduler.yaml file. 
+Generates the static Pod manifest file for the scheduler and saves it into /etc/kubernetes/manifests/kube-scheduler.yaml file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase controlplane scheduler [flags]
 
   </tbody>
 </table>
-
-
-

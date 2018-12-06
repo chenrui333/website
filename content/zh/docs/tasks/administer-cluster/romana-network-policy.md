@@ -47,5 +47,3 @@ content_template: templates/task
 Romana 安装完成之后，您可以通过 [NetworkPolicy 入门指南](/docs/getting-started-guides/network-policy/walkthrough)去尝试使用 Kubernetes NetworkPolicy
 
 {{% /capture %}}
-
-

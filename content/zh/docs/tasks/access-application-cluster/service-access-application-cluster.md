@@ -54,9 +54,9 @@ provides load balancing for an application that has two running instances.
 ## 为运行在两个 pod 中的应用创建一个服务：
 
 1. 在您的集群中运行一个 Hello World 应用：
-   ```shell
-   kubectl run hello-world --replicas=2 --labels="run=load-balancer-example" --image=gcr.io/google-samples/node-hello:1.0  --port=8080
-   ```   
+  ```shell
+  kubectl run hello-world --replicas=2 --labels="run=load-balancer-example" --image=gcr.io/google-samples/node-hello:1.0  --port=8080
+  ```
 <!--
     The preceding command creates a
     [Deployment](/docs/concepts/workloads/controllers/deployment/)
@@ -72,114 +72,114 @@ provides load balancing for an application that has two running instances.
 1. Display information about the Deployment:
 -->
 1. 展示 Deployment 的信息：
-   ```shell
-   kubectl get deployments hello-world
-   kubectl describe deployments hello-world
-   ```
+  ```shell
+  kubectl get deployments hello-world
+  kubectl describe deployments hello-world
+  ```
 
 <!--
 1. Display information about your ReplicaSet objects:
 -->
 1. 展示您的 ReplicaSet 对象信息：
-   ```shell
-   kubectl get replicasets
-   kubectl describe replicasets
-   ```
+  ```shell
+  kubectl get replicasets
+  kubectl describe replicasets
+  ```
 
 <!--
 1. Create a Service object that exposes the deployment:
 -->
 1. 创建一个服务对象来暴露 deployment：
-   ```shell
-   kubectl expose deployment hello-world --type=NodePort --name=example-service
-   ```
+  ```shell
+  kubectl expose deployment hello-world --type=NodePort --name=example-service
+  ```
 
 <!--
 1. Display information about the Service:
 -->
 1. 展示服务信息：
-   ```shell
-   kubectl describe services example-service
-   ```
+  ```shell
+  kubectl describe services example-service
+  ```
 <!--
-   The output is similar to this:
+  The output is similar to this:
 -->
-   输出类似于：
-   ```shell
-   Name:                   example-service
-   Namespace:              default
-   Labels:                 run=load-balancer-example
-   Annotations:            <none>
-   Selector:               run=load-balancer-example
-   Type:                   NodePort
-   IP:                     10.32.0.16
-   Port:                   <unset> 8080/TCP
-   TargetPort:             8080/TCP
-   NodePort:               <unset> 31496/TCP
-   Endpoints:              10.200.1.4:8080,10.200.2.5:8080
-   Session Affinity:       None
-   Events:                 <none>
-   ```
+  输出类似于：
+  ```shell
+  Name:                   example-service
+  Namespace:              default
+  Labels:                 run=load-balancer-example
+  Annotations:            <none>
+  Selector:               run=load-balancer-example
+  Type:                   NodePort
+  IP:                     10.32.0.16
+  Port:                   <unset> 8080/TCP
+  TargetPort:             8080/TCP
+  NodePort:               <unset> 31496/TCP
+  Endpoints:              10.200.1.4:8080,10.200.2.5:8080
+  Session Affinity:       None
+  Events:                 <none>
+  ```
 <!--
-   Make a note of the NodePort value for the service. For example,
-   in the preceding output, the NodePort value is 31496.
+  Make a note of the NodePort value for the service. For example,
+  in the preceding output, the NodePort value is 31496.
 -->
-   注意服务中的 NodePort 值。例如在上面的输出中，NodePort 是 31496。
+  注意服务中的 NodePort 值。例如在上面的输出中，NodePort 是 31496。
 
 <!--
 1. List the pods that are running the Hello World application:
 -->
 1. 列出运行 Hello World 应用的 pod：
-   ```shell
-   kubectl get pods --selector="run=load-balancer-example" --output=wide
-   ```
+  ```shell
+  kubectl get pods --selector="run=load-balancer-example" --output=wide
+  ```
 <!--
-   The output is similar to this:
+  The output is similar to this:
 -->
-   输出类似于：
-   ```shell
-   NAME                           READY   STATUS    ...  IP           NODE
-   hello-world-2895499144-bsbk5   1/1     Running   ...  10.200.1.4   worker1
-   hello-world-2895499144-m1pwt   1/1     Running   ...  10.200.2.5   worker2
-   ```
+  输出类似于：
+  ```shell
+  NAME                           READY   STATUS    ...  IP           NODE
+  hello-world-2895499144-bsbk5   1/1     Running   ...  10.200.1.4   worker1
+  hello-world-2895499144-m1pwt   1/1     Running   ...  10.200.2.5   worker2
+  ```
 <!--
 1. Get the public IP address of one of your nodes that is running
-   a Hello World pod. How you get this address depends on how you set
-   up your cluster. For example, if you are using Minikube, you can
-   see the node address by running `kubectl cluster-info`. If you are
-   using Google Compute Engine instances, you can use the
-   `gcloud compute instances list` command to see the public addresses of your
-   nodes.
+  a Hello World pod. How you get this address depends on how you set
+  up your cluster. For example, if you are using Minikube, you can
+  see the node address by running `kubectl cluster-info`. If you are
+  using Google Compute Engine instances, you can use the
+  `gcloud compute instances list` command to see the public addresses of your
+  nodes.
 
 1. On your chosen node, create a firewall rule that allows TCP traffic
-   on your node port. For example, if your Service has a NodePort value of
-   31568, create a firewall rule that allows TCP traffic on port 31568. Different
-   cloud providers offer different ways of configuring firewall rules.
+  on your node port. For example, if your Service has a NodePort value of
+  31568, create a firewall rule that allows TCP traffic on port 31568. Different
+  cloud providers offer different ways of configuring firewall rules.
 
 1. Use the node address and node port to access the Hello World application:
 -->
 1. 获取运行 Hello World 的 pod 的其中一个节点的公共 IP 地址。如何获得此地址取决于您设置集群的方式。
-   例如，如果您使用的是 Minikube，则可以通过运行 `kubectl cluster-info` 来查看节点地址。
-   如果您使用的是 Google Compute Engine 实例，则可以使用 `gcloud compute instances list` 命令查看节点的公共地址。
+  例如，如果您使用的是 Minikube，则可以通过运行 `kubectl cluster-info` 来查看节点地址。
+  如果您使用的是 Google Compute Engine 实例，则可以使用 `gcloud compute instances list` 命令查看节点的公共地址。
 
 1. 在您选择的节点上，创建一个防火墙规则以开放 node port 上的 TCP 流量。
-   例如，如果您的服务的 NodePort 值为 31568，请创建一个防火墙规则以允许 31568 端口上的 TCP 流量。
-   不同的云提供商提供了不同方法来配置防火墙规则。
+  例如，如果您的服务的 NodePort 值为 31568，请创建一个防火墙规则以允许 31568 端口上的 TCP 流量。
+  不同的云提供商提供了不同方法来配置防火墙规则。
 
 1. 使用节点地址和 node port 来访问 Hello World 应用：
-   ```shell
-   curl http://<public-node-ip>:<node-port>
-   ```
+  ```shell
+  curl http://<public-node-ip>:<node-port>
+  ```
 <!--
-   where `<public-node-ip>` is the public IP address of your node,
-   and `<node-port>` is the NodePort value for your service. The
-   response to a successful request is a hello message:
+  where `<public-node-ip>` is the public IP address of your node,
+  and `<node-port>` is the NodePort value for your service. The
+  response to a successful request is a hello message:
 -->
-   这里的 `<public-node-ip>` 是您节点的公共 IP 地址，`<node-port>` 是您服务的 NodePort 值。
-   对于请求成功的响应是一个 hello 消息：
-   ```shell
-   Hello Kubernetes!
-   ```
+  这里的 `<public-node-ip>` 是您节点的公共 IP 地址，`<node-port>` 是您服务的 NodePort 值。
+  对于请求成功的响应是一个 hello 消息：
+  ```shell
+  Hello Kubernetes!
+  ```
 
 <!--
 ## Using a service configuration file

@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     /**
-     * TODO: Refactor with intent toward pure functions. Mutation of state can lead to bugs and difficult debugging.
-     */
+    * TODO: Refactor with intent toward pure functions. Mutation of state can lead to bugs and difficult debugging.
+    */
 
     var toc = navData.toc;
     var flatToc = navData.flatToc.reverse();
@@ -56,15 +56,15 @@ $(document).ready(function() {
         }
 
         /**
-         * This block deals with L1Nav sections
-         */
+        * This block deals with L1Nav sections
+        */
 
         // If no previous token, set previous to current active and show L1Nav
         if (!prevSectionToken) {
             prevSectionToken = activeSection.token;
             currL1Nav = getNavNode(activeSection.token);
             currL1Nav.show('fast');
-        } 
+        }
         // If active active is not the same as previous, hide previous L1Nav and show current L1Nav; set previous to current
         else if (activeSection.token !== prevSectionToken) {
             prevL1Nav = getNavNode(prevSectionToken);
@@ -75,8 +75,8 @@ $(document).ready(function() {
         }
 
         /**
-         * This block deals with L2Nav subsections
-         */
+        * This block deals with L2Nav subsections
+        */
 
         // If there is a subsections array and it has a non-zero length, set active subsection
         if (activeSection.subsections && activeSection.subsections.length !== 0) {
@@ -105,8 +105,8 @@ $(document).ready(function() {
     }
 
     /**
-     * Checks for active elements by scroll position
-     */
+    * Checks for active elements by scroll position
+    */
 
     var prevElemToken;
     var activeElemToken;

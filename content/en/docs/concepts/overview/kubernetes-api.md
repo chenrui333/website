@@ -101,16 +101,16 @@ Currently there are several API groups in use:
 1. The *core* group, often referred to as the *legacy group*, is at the REST path `/api/v1` and uses `apiVersion: v1`.
 
 1. The named groups are at REST path `/apis/$GROUP_NAME/$VERSION`, and use `apiVersion: $GROUP_NAME/$VERSION`
-   (e.g. `apiVersion: batch/v1`).  Full list of supported API groups can be seen in [Kubernetes API reference](/docs/reference/).
+  (e.g. `apiVersion: batch/v1`).  Full list of supported API groups can be seen in [Kubernetes API reference](/docs/reference/).
 
 
 There are two supported paths to extending the API with [custom resources](/docs/concepts/api-extension/custom-resources/):
 
 1. [CustomResourceDefinition](/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/)
-   is for users with very basic CRUD needs.
+  is for users with very basic CRUD needs.
 1. Users needing the full set of Kubernetes API semantics can implement their own apiserver
-   and use the [aggregator](/docs/tasks/access-kubernetes-api/configure-aggregation-layer/)
-   to make it seamless for clients.
+  and use the [aggregator](/docs/tasks/access-kubernetes-api/configure-aggregation-layer/)
+  to make it seamless for clients.
 
 
 ## Enabling API groups

@@ -182,6 +182,3 @@ clusters up to 5000 nodes. See [Building Large Clusters](/docs/setup/cluster-lar
 * See this [Kubecon2018 Europe Federation-v2 prototype presentation](https://youtu.be/q27rbaX5Jis?t=7m20s)
 * See this [Federation-v2 Userguide](https://github.com/kubernetes-sigs/federation-v2/blob/master/docs/userguide.md)
 {{% /capture %}}
-
-
-

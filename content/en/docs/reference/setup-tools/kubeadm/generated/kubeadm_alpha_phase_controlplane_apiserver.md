@@ -4,7 +4,7 @@ Generates the API server static Pod manifest
 ### Synopsis
 
 
-Generates the static Pod manifest file for the API server and saves it into /etc/kubernetes/manifests/kube-apiserver.yaml file. 
+Generates the static Pod manifest file for the API server and saves it into /etc/kubernetes/manifests/kube-apiserver.yaml file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -107,6 +107,3 @@ kubeadm alpha phase controlplane apiserver [flags]
 
   </tbody>
 </table>
-
-
-

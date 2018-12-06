@@ -32,18 +32,18 @@ content_template: templates/concept
 
   - 使用Google Container Registry
     - 每个集群分别配置
-	- 在Google Compute Engine 或者 Google Kubernetes Engine上自动配置
-	- 所有的pod都能读取项目的私有仓库
+  - 在Google Compute Engine 或者 Google Kubernetes Engine上自动配置
+  - 所有的pod都能读取项目的私有仓库
   - 使用 AWS EC2 Container Registry (ECR)
     - 使用IAM角色和策略来控制对ECR仓库的访问
-	- 自动刷新ECR的登录凭证
+  - 自动刷新ECR的登录凭证
   - 使用 Azure Container Registry (ACR)
   - 配置节点对私有仓库认证
     - 所有的pod都可以读取已配置的私有仓库
-	- 需要集群管理员提供node的配置
+  - 需要集群管理员提供node的配置
   - 提前拉取镜像
-	- 所有的pod都可以使用node上缓存的镜像
-	- 需要以root进入node操作
+  - 所有的pod都可以使用node上缓存的镜像
+  - 需要以root进入node操作
   - pod上指定 ImagePullSecrets
     - 只有提供了密钥的pod才能接入私有仓库
 下面将详细描述每一项
@@ -58,7 +58,7 @@ Kuberetes运行在Google Compute Engine (GCE)时原生支持[Google ContainerReg
 
 Kubelet将使用实例的Google service account向GCR认证。实例的service account拥有
 `https://www.googleapis.com/auth/devstorage.read_only`，所以它可以从项目的GCR拉取，但不能推送。
-	
+
 ### 使用 AWS EC2 Container Registry
 
 当Node是AWS EC2实例时，Kubernetes原生支持[AWS EC2 ContainerRegistry](https://aws.amazon.com/ecr/)。
@@ -102,10 +102,10 @@ Kubelet会获取并且定期刷新ECR的凭证。它需要以下权限
 
 创建好容器仓库后，可以使用以下凭证登录：
 
-   * `DOCKER_USER` : service principal, or admin username
-   * `DOCKER_PASSWORD`: service principal password, or admin user password
-   * `DOCKER_REGISTRY_SERVER`: `${some-registry-name}.azurecr.io`
-   * `DOCKER_EMAIL`: `${some-email-address}`
+  * `DOCKER_USER` : service principal, or admin username
+  * `DOCKER_PASSWORD`: service principal password, or admin user password
+  * `DOCKER_REGISTRY_SERVER`: `${some-registry-name}.azurecr.io`
+  * `DOCKER_EMAIL`: `${some-email-address}`
 
 填写以上变量后，就可以
 [configure a Kubernetes Secret and use it to deploy a Pod](/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod)。
@@ -124,14 +124,14 @@ Docker将私有仓库的密钥存放在`$HOME/.dockercfg`或`$HOME/.docker/confi
 
 推荐如下步骤来为node配置私有仓库。以下示例在PC或笔记本电脑中操作
 
-   1.对于想要使用的每一种凭证，运行 `docker login [server]`，它会更新`$HOME/.docker/config.json`。
-   1.使用编辑器查看`$HOME/.docker/config.json`，保证文件中包含了想要使用的凭证
-   1.获取node列表，例如
-     - 如果使用node名称，`nodes=$(kubectl get nodes -o jsonpath='{range.items[*].metadata}{.name} {end}')`
-	 - 如果使用node IP ，`nodes=$(kubectl get nodes -o jsonpath='{range .items[*].status.addresses[?(@.type=="ExternalIP")]}{.address} {end}')`
-   1.将本地的`.docker/config.json`拷贝到每个节点root用户目录下
-     - 例如： `for n in $nodes; do scp ~/.docker/config.json root@$n:/root/.docker/config.json; done`
-	 
+  1.对于想要使用的每一种凭证，运行 `docker login [server]`，它会更新`$HOME/.docker/config.json`。
+  1.使用编辑器查看`$HOME/.docker/config.json`，保证文件中包含了想要使用的凭证
+  1.获取node列表，例如
+    - 如果使用node名称，`nodes=$(kubectl get nodes -o jsonpath='{range.items[*].metadata}{.name} {end}')`
+  - 如果使用node IP ，`nodes=$(kubectl get nodes -o jsonpath='{range .items[*].status.addresses[?(@.type=="ExternalIP")]}{.address} {end}')`
+  1.将本地的`.docker/config.json`拷贝到每个节点root用户目录下
+    - 例如： `for n in $nodes; do scp ~/.docker/config.json root@$n:/root/.docker/config.json; done`
+
 创建使用私有仓库的pod来验证，例如：
 
 ```yaml
@@ -271,27 +271,25 @@ spec:
 配置私有仓库有多种方案，以下是一些常用场景和建议的解决方案。
 
 1. 集群运行非专有（例如 开源镜像）镜像。镜像不需要隐藏。
-   - 使用Docker hub上的公有镜像
+  - 使用Docker hub上的公有镜像
     - 无需配置
     - 在GCE/GKE上会自动使用高稳定性和高速的Docker hub的本地mirror
 1. 集群运行一些专有镜像，这些镜像对外部公司需要隐藏，对集群用户可见
-   - 使用自主的私有[Docker registry](https://docs.docker.com/registry/).
-     - 可以放置在[Docker Hub](https://hub.docker.com/account/signup/),或者其他地方。
-	 - 按照上面的描述，在每个节点手动配置.docker/config.json
-   - 或者，在防火墙内运行一个内置的私有仓库，并开放读取权限
-     - 不需要配置Kubenretes
-   - 或者，在GCE/GKE上时，使用项目的Google Container Registry
-     - 使用集群自动伸缩比手动配置node工作的更好
-   - 或者，在更改集群node配置不方便时，使用`imagePullSecrets`
+  - 使用自主的私有[Docker registry](https://docs.docker.com/registry/).
+    - 可以放置在[Docker Hub](https://hub.docker.com/account/signup/),或者其他地方。
+  - 按照上面的描述，在每个节点手动配置.docker/config.json
+  - 或者，在防火墙内运行一个内置的私有仓库，并开放读取权限
+    - 不需要配置Kubenretes
+  - 或者，在GCE/GKE上时，使用项目的Google Container Registry
+    - 使用集群自动伸缩比手动配置node工作的更好
+  - 或者，在更改集群node配置不方便时，使用`imagePullSecrets`
 1. 使用专有镜像的集群，有更严格的访问控制
-   - 保证[AlwaysPullImages admission controller](/docs/admin/admission-controllers/#alwayspullimages)开启。否则，所有的pod都可以使用镜像
-   - 将敏感数据存储在"Secret"资源中，而不是打包在镜像里
+  - 保证[AlwaysPullImages admission controller](/docs/admin/admission-controllers/#alwayspullimages)开启。否则，所有的pod都可以使用镜像
+  - 将敏感数据存储在"Secret"资源中，而不是打包在镜像里
 1. 多租户集群下，每个租户需要自己的私有仓库
-   - 保证[AlwaysPullImages admission controller](/docs/admin/admission-controllers/#alwayspullimages)开启。否则，所有租户的所有的pod都可以使用镜像
-   - 私有仓库开启认证
-   - 为每个租户获取仓库凭证，放置在secret中，并发布到每个租户的namespace下
-   - 租户将secret增加到每个namespace下的imagePullSecrets中
+  - 保证[AlwaysPullImages admission controller](/docs/admin/admission-controllers/#alwayspullimages)开启。否则，所有租户的所有的pod都可以使用镜像
+  - 私有仓库开启认证
+  - 为每个租户获取仓库凭证，放置在secret中，并发布到每个租户的namespace下
+  - 租户将secret增加到每个namespace下的imagePullSecrets中
 
 {{% /capture %}}
-
-

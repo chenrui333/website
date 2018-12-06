@@ -40,7 +40,7 @@ juju add-relation kubernetes-e2e:kubernetes-master kubernetes-master:kube-api-en
 juju add-relation kubernetes-e2e:kube-control kubernetes-master:kube-control
 ```
 
-Once the relations have settled, you can do `juju status` until the workload status results in 
+Once the relations have settled, you can do `juju status` until the workload status results in
  `Ready to test.` - you may then kick off an end to end validation test.
 
 ### Running the e2e test
@@ -61,7 +61,7 @@ the charm by inspecting the schema output of the actions:
 
     juju actions kubernetes-e2e --format=yaml --schema
 
-Output: 
+Output:
 
 ```
 test:
@@ -119,7 +119,7 @@ taking more than 1 hour, depending on configuration.
 
 ##### Accessing the results in a flat file
 
-Here's how to copy the output out as a file: 
+Here's how to copy the output out as a file:
 
     juju run-action kubernetes-e2e/0 test
 
@@ -141,7 +141,7 @@ Output:
 
     Action queued with id: 4ceed33a-d96d-465a-8f31-20d63442e51b
 
-Show the results in your terminal: 
+Show the results in your terminal:
 
     juju show-action-output 4ceed33a-d96d-465a-8f31-20d63442e51b
 
@@ -164,6 +164,3 @@ When an upgrade is available, upgrade your deployment:
     juju upgrade-charm kubernetes-e2e
 
 {{% /capture %}}
-
-
-

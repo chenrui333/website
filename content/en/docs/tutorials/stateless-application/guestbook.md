@@ -9,8 +9,8 @@ weight: 20
 {{% capture overview %}}
 This tutorial shows you how to build and deploy a simple, multi-tier web application using Kubernetes and [Docker](https://www.docker.com/). This example consists of the following components:
 
-* A single-instance [Redis](https://redis.io/) master to store guestbook entries 
-* Multiple [replicated Redis](https://redis.io/topics/replication) instances to serve reads 
+* A single-instance [Redis](https://redis.io/) master to store guestbook entries
+* Multiple [replicated Redis](https://redis.io/topics/replication) instances to serve reads
 * Multiple web frontend instances
 
 {{% /capture %}}
@@ -65,9 +65,9 @@ The manifest file, included below, specifies a Deployment controller that runs a
 
 1. Run the following command to view the logs from the Redis Master Pod:
 
-     ```shell
-     kubectl logs -f POD-NAME
-     ```
+    ```shell
+    kubectl logs -f POD-NAME
+    ```
 
 {{< note >}}
 Replace POD-NAME with the name of your Pod.
@@ -79,7 +79,7 @@ The guestbook applications needs to communicate to the Redis master to write its
 
 {{< codenew file="application/guestbook/redis-master-service.yaml" >}}
 
-1. Apply the Redis Master Service from the following `redis-master-service.yaml` file: 
+1. Apply the Redis Master Service from the following `redis-master-service.yaml` file:
 
       ```shell
       kubectl apply -f https://k8s.io/examples/application/guestbook/redis-master-service.yaml
@@ -100,7 +100,7 @@ The guestbook applications needs to communicate to the Redis master to write its
       ```
 
 {{< note >}}
-This manifest file creates a Service named `redis-master` with a set of labels that match the labels previously defined, so the Service routes network traffic to the Redis master Pod.   
+This manifest file creates a Service named `redis-master` with a set of labels that match the labels previously defined, so the Service routes network traffic to the Redis master Pod.
 {{< /note >}}
 
 
@@ -110,9 +110,9 @@ Although the Redis master is a single pod, you can make it highly available to m
 
 ### Creating the Redis Slave Deployment
 
-Deployments scale based off of the configurations set in the manifest file. In this case, the Deployment object specifies two replicas. 
+Deployments scale based off of the configurations set in the manifest file. In this case, the Deployment object specifies two replicas.
 
-If there are not any replicas running, this Deployment would start the two replicas on your container cluster. Conversely, if there are more than two replicas are running, it would scale down until two replicas are running. 
+If there are not any replicas running, this Deployment would start the two replicas on your container cluster. Conversely, if there are more than two replicas are running, it would scale down until two replicas are running.
 
 {{< codenew file="application/guestbook/redis-slave-deployment.yaml" >}}
 
@@ -197,10 +197,10 @@ The guestbook application has a web frontend serving the HTTP requests written i
 
 The `redis-slave` and `redis-master` Services you applied are only accessible within the container cluster because the default type for a Service is [ClusterIP](/docs/concepts/services-networking/service/#publishing-services---service-types). `ClusterIP` provides a single IP address for the set of Pods the Service is pointing to. This IP address is accessible only within the cluster.
 
-If you want guests to be able to access your guestbook, you must configure the frontend Service to be externally visible, so a client can request the Service from outside the container cluster. Minikube can only expose Services through `NodePort`.  
+If you want guests to be able to access your guestbook, you must configure the frontend Service to be externally visible, so a client can request the Service from outside the container cluster. Minikube can only expose Services through `NodePort`.
 
 {{< note >}}
-Some cloud providers, like Google Compute Engine or Google Kubernetes Engine, support external load balancers. If your cloud provider supports load balancers and you want to use it, simply delete or comment out `type: NodePort`, and uncomment `type: LoadBalancer`. 
+Some cloud providers, like Google Compute Engine or Google Kubernetes Engine, support external load balancers. If your cloud provider supports load balancers and you want to use it, simply delete or comment out `type: NodePort`, and uncomment `type: LoadBalancer`.
 {{< /note >}}
 
 {{< codenew file="application/guestbook/frontend-service.yaml" >}}
@@ -214,7 +214,7 @@ Some cloud providers, like Google Compute Engine or Google Kubernetes Engine, su
 1. Query the list of Services to verify that the frontend Service is running:
 
       ```shell
-      kubectl get services 
+      kubectl get services
       ```
 
       The response should be similar to this:
@@ -264,7 +264,7 @@ If you deployed the `frontend-service.yaml` manifest with type: `LoadBalancer` y
 
 1. Copy the external IP address, and load the page in your browser to view your guestbook.
 
-## Scale the Web Frontend 
+## Scale the Web Frontend
 
 Scaling up or down is easy because your servers are defined as a Service that uses a Deployment controller.
 
@@ -280,7 +280,7 @@ Scaling up or down is easy because your servers are defined as a Service that us
       kubectl get pods
       ```
 
-      The response should look similar to this: 
+      The response should look similar to this:
 
       ```
       NAME                            READY     STATUS    RESTARTS   AGE
@@ -316,7 +316,7 @@ Scaling up or down is easy because your servers are defined as a Service that us
       redis-slave-2005841000-fpvqc    1/1       Running   0          1h
       redis-slave-2005841000-phfv9    1/1       Running   0          1h
       ```
-        
+
 {{% /capture %}}
 
 {{% capture cleanup %}}
@@ -338,17 +338,17 @@ Deleting the Deployments and Services also deletes any running Pods. Use labels 
       deployment.apps "redis-slave" deleted
       service "redis-master" deleted
       service "redis-slave" deleted
-      deployment.apps "frontend" deleted    
+      deployment.apps "frontend" deleted
       service "frontend" deleted
       ```
-       
+
 1. Query the list of Pods to verify that no Pods are running:
 
       ```shell
       kubectl get pods
       ```
 
-      The response should be this: 
+      The response should be this:
 
       ```
       No resources found.
@@ -358,8 +358,7 @@ Deleting the Deployments and Services also deletes any running Pods. Use labels 
 
 {{% capture whatsnext %}}
 * Complete the [Kubernetes Basics](/docs/tutorials/kubernetes-basics/) Interactive Tutorials
-* Use Kubernetes to create a blog using [Persistent Volumes for MySQL and Wordpress](/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/#visit-your-new-wordpress-blog) 
+* Use Kubernetes to create a blog using [Persistent Volumes for MySQL and Wordpress](/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/#visit-your-new-wordpress-blog)
 * Read more about [connecting applications](/docs/concepts/services-networking/connect-applications-service/)
 * Read more about [Managing Resources](/docs/concepts/cluster-administration/manage-deployment/#using-labels-effectively)
 {{% /capture %}}
-

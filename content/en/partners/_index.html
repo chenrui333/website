@@ -44,21 +44,21 @@ cid: partners
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
-			var defaultLink = "https://landscape.cncf.io/grouping=landscape&landscape=kubernetes-certified-service-provider&embed=true";
-			var firstLink = "https://landscape.cncf.io/grouping=landscape&landscape=certified-kubernetes-distribution,certified-kubernetes-hosted,certified-kubernetes-installer&embed=true";
+      var defaultLink = "https://landscape.cncf.io/grouping=landscape&landscape=kubernetes-certified-service-provider&embed=true";
+      var firstLink = "https://landscape.cncf.io/grouping=landscape&landscape=certified-kubernetes-distribution,certified-kubernetes-hosted,certified-kubernetes-installer&embed=true";
       var secondLink = "https://landscape.cncf.io/grouping=landscape&landscape=kubernetes-training-partner&embed=true";
 
       function updateSrc(buttonId) {
-      	if (buttonId == "kcsp") {
-        		$("#landscape").attr("src",defaultLink);
+        if (buttonId == "kcsp") {
+            $("#landscape").attr("src",defaultLink);
             window.location.hash = "#kcsp";
         }
         if (buttonId == "conformance") {
-         		$("#landscape").attr("src",firstLink);
+            $("#landscape").attr("src",firstLink);
             window.location.hash = "#conformance";
         }
         if (buttonId == "ktp") {
-        		$("#landscape").attr("src",secondLink);
+            $("#landscape").attr("src",secondLink);
             window.location.hash = "#ktp";
         }
       }

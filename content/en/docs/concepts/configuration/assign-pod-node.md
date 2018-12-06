@@ -99,9 +99,9 @@ feature, currently in beta, greatly expands the types of constraints you can exp
 
 1. the language is more expressive (not just "AND of exact match")
 2. you can indicate that the rule is "soft"/"preference" rather than a hard requirement, so if the scheduler
-   can't satisfy it, the pod will still be scheduled
+  can't satisfy it, the pod will still be scheduled
 3. you can constrain against labels on other pods running on the node (or other topological domain),
-   rather than against labels on the node itself, which allows rules about which pods can and cannot be co-located
+  rather than against labels on the node itself, which allows rules about which pods can and cannot be co-located
 
 The affinity feature consists of two types of affinity, "node affinity" and "inter-pod affinity/anti-affinity".
 Node affinity is like the existing `nodeSelector` (but with the first two benefits listed above),

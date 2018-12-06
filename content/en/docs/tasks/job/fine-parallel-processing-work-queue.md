@@ -217,7 +217,7 @@ Pod Template:
   Labels:       controller-uid=b1c7e4e3-92e1-11e7-b85e-fa163ee3c11f
                 job-name=job-wq-2
   Containers:
-   c:
+  c:
     Image:              gcr.io/exampleproject/job-wq-2
     Port:
     Environment:        <none>

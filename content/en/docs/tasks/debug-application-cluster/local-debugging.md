@@ -57,5 +57,3 @@ Telepresence has [numerous proxying options](https://www.telepresence.io/referen
 For further reading, visit the [Telepresence website](https://www.telepresence.io).
 
 {{% /capture %}}
-
-

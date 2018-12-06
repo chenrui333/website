@@ -93,9 +93,9 @@ So, the example NetworkPolicy:
 
 1. isolates "role=db" pods in the "default" namespace for both ingress and egress traffic (if they weren't already isolated)
 2. allows connections to TCP port 6379 of "role=db" pods in the "default" namespace from:
-   * any pod in the "default" namespace with the label "role=frontend"
-   * any pod in a namespace with the label "project=myproject"
-   * IP addresses in the ranges 172.17.0.0–172.17.0.255 and 172.17.2.0–172.17.255.255 (ie, all of 172.17.0.0/16 except 172.17.1.0/24)
+  * any pod in the "default" namespace with the label "role=frontend"
+  * any pod in a namespace with the label "project=myproject"
+  * IP addresses in the ranges 172.17.0.0–172.17.0.255 and 172.17.2.0–172.17.255.255 (ie, all of 172.17.0.0/16 except 172.17.1.0/24)
 3. allows connections from any pod in the "default" namespace with the label "role=db" to CIDR 10.0.0.0/24 on TCP port 5978
 
 See the [Declare Network Policy](/docs/tasks/administer-cluster/declare-network-policy/) walkthrough for further examples.
@@ -264,4 +264,3 @@ The CNI plugin has to support SCTP as `protocol` value in `NetworkPolicy`.
 - See more [Recipes](https://github.com/ahmetb/kubernetes-network-policy-recipes) for common scenarios enabled by the NetworkPolicy resource.
 
 {{% /capture %}}
-

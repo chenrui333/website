@@ -176,6 +176,3 @@ kubectl delete replicaset my-repset --cascade=false
 [设计文档 2](https://git.k8s.io/community/contributors/design-proposals/synchronous-garbage-collection.md)
 
 {{% /capture %}}
-
-
-

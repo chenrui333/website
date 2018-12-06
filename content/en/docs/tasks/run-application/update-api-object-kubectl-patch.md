@@ -151,12 +151,12 @@ You can also see the patch strategy in the
 ```json
 "io.k8s.api.core.v1.PodSpec": {
     ...
-     "containers": {
+    "containers": {
       "description": "List of containers belonging to the pod. ...
       },
       "x-kubernetes-patch-merge-key": "name",
       "x-kubernetes-patch-strategy": "merge"
-     },
+    },
 ```
 
 And you can see the patch strategy in the
@@ -287,18 +287,18 @@ Create a file named `patch-file.json` that has this content:
 
 ```json
 {
-   "spec": {
+  "spec": {
       "template": {
-         "spec": {
+        "spec": {
             "containers": [
-               {
+              {
                   "name": "patch-demo-ctr-2",
                   "image": "redis"
-               }
+              }
             ]
-         }
+        }
       }
-   }
+  }
 }
 ```
 
@@ -336,5 +336,3 @@ and
 * [Declarative Management of Kubernetes Objects Using Configuration Files](/docs/concepts/overview/object-management-kubectl/declarative-config/)
 
 {{% /capture %}}
-
-

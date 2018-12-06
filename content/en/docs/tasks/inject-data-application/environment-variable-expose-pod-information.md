@@ -167,4 +167,3 @@ The output shows the values of selected environment variables:
 * [ResourceFieldSelector](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#resourcefieldselector-v1-core)
 
 {{% /capture %}}
-

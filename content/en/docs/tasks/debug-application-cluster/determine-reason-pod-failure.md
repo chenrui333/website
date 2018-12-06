@@ -115,6 +115,3 @@ is empty and the container exited with an error. The log output is limited to
 * Learn about [Go templates](https://golang.org/pkg/text/template/).
 
 {{% /capture %}}
-
-
-

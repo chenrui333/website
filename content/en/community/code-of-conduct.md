@@ -24,5 +24,3 @@ Your anonymity will be protected.
 {{< include "/static/cncf-code-of-conduct.md" >}}
 </div>
 </div>
-
-

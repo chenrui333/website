@@ -98,10 +98,10 @@ Name:          hostpath
 Namespace:     default
 StorageClass:  example-hostpath
 Status:        Terminating
-Volume:        
+Volume:
 Labels:        <none>
 Annotations:   volume.beta.kubernetes.io/storage-class=example-hostpath
-               volume.beta.kubernetes.io/storage-provisioner=example.com/hostpath
+              volume.beta.kubernetes.io/storage-provisioner=example.com/hostpath
 Finalizers:    [kubernetes.io/pvc-protection]
 ...
 ```
@@ -116,15 +116,15 @@ Annotations:     <none>
 Finalizers:      [kubernetes.io/pv-protection]
 StorageClass:    standard
 Status:          Available
-Claim:           
+Claim:
 Reclaim Policy:  Delete
 Access Modes:    RWO
 Capacity:        1Gi
-Message:         
+Message:
 Source:
     Type:          HostPath (bare host directory volume)
     Path:          /tmp/data
-    HostPathType:  
+    HostPathType:
 Events:            <none>
 ```
 

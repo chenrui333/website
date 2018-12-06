@@ -91,15 +91,15 @@ If you don't see a command prompt, try pressing enter.
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
 3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc noqueue
     link/ether 0a:58:0a:f4:03:08 brd ff:ff:ff:ff:ff:ff
     inet 10.244.3.8/24 scope global eth0
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
     inet6 fe80::188a:84ff:feb0:26a5/64 scope link
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
 
 # wget -qO - 10.0.170.92
 CLIENT VALUES:
@@ -147,10 +147,10 @@ Visually:
 
 ```
           client
-             \ ^
+            \ ^
               \ \
-               v \
-   node 1 <--- node 2
+              v \
+  node 1 <--- node 2
     | ^   SNAT
     | |   --->
     v |
@@ -195,10 +195,10 @@ Visually:
 
 ```
         client
-       ^ /   \
+      ^ /   \
       / /     \
-     / v       X
-   node 1     node 2
+    / v       X
+  node 1     node 2
     ^ |
     | |
     | v
@@ -243,12 +243,12 @@ Visually:
                       client
                         |
                       lb VIP
-                     / ^
+                    / ^
                     v /
 health check --->   node 1   node 2 <--- health check
         200  <---   ^ |             ---> 500
                     | V
-                 endpoint
+                endpoint
 ```
 
 You can test this by setting the annotation:
@@ -337,5 +337,3 @@ $ kubectl delete deployment source-ip-app
 * Learn more about [connecting applications via services](/docs/concepts/services-networking/connect-applications-service/)
 * Learn more about [loadbalancing](/docs/user-guide/load-balancer)
 {{% /capture %}}
-
-

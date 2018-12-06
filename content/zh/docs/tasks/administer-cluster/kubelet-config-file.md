@@ -62,5 +62,3 @@ content_template: templates/task
 请注意，`--init-config-dir` 文件的布局结构镜像了 ConfigMap 中用于动态 Kubelet 配置的数据结构；文件命名和 ConfigMap 的 key 相同，文件的内容是 ConfigMap 中相同数据结构的 JSON 或 YAML 表现形式。虽然以后可能会出现更多，但目前只有 kubelet:KubeletConfiguration 配置对。更多信息请查阅  [重新配置活动集群节点的 Kubelet](/docs/tasks/administer-cluster/reconfigure-kubelet)。
 
 {{% /capture %}}
-
-

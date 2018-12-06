@@ -31,7 +31,7 @@
 	clear:both;
 }
 .group {
-    zoom:1; /* For IE 6/7 */
+	zoom:1; /* For IE 6/7 */
 }
 
 /*  GRID OF THREE  */
@@ -52,13 +52,13 @@
 }
 
 .col-container {
-    display: table; /* Make the container element behave like a table */
-    width: 100%; /* Set full-width to expand the whole page */
+	display: table; /* Make the container element behave like a table */
+	width: 100%; /* Set full-width to expand the whole page */
 		padding-bottom: 30px;
 }
 
 .col-nav {
-    display: table-cell; /* Make elements inside the container behave like table cells */
+	display: table-cell; /* Make elements inside the container behave like table cells */
 		width: 18%;
 		background-color: #f9f9f9;
 		padding: 20px;
@@ -73,10 +73,10 @@
 }
 
 @media only screen and (max-width: 650px) {
-    .col-nav {
-        display: block;
-        width: 100%;
-    }
+	.col-nav {
+		display: block;
+		width: 100%;
+	}
 }
 
 .button{

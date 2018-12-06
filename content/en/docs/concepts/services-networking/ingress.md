@@ -30,9 +30,9 @@ Traffic routing is controlled by rules defined on the ingress resource.
 ```none
     internet
         |
-   [ Ingress ]
-   --|-----|--
-   [ Services ]
+  [ Ingress ]
+  --|-----|--
+  [ Services ]
 ```
 
 An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting. An [ingress controller](#ingress-controllers) is responsible for fulfilling the ingress, usually with a loadbalancer, though it may also configure your edge router or additional frontends to help handle the traffic.
@@ -120,7 +120,7 @@ spec:
           servicePort: 80
 ```
 
- As with all other Kubernetes resources, an ingress needs `apiVersion`, `kind`, and `metadata` fields.  
+ As with all other Kubernetes resources, an ingress needs `apiVersion`, `kind`, and `metadata` fields.
  For general information about working with config files, see [deploying applications](/docs/tasks/run-application/run-stateless-application-deployment/), [configuring containers](/docs/tasks/configure-pod-container/configure-pod-configmap/), [managing resources](/docs/concepts/cluster-administration/manage-deployment/).
  Ingress frequently uses annotations to configure some options depending on the ingress controller, an example of which
  is the [rewrite-target annotation](https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/rewrite/README.md).
@@ -195,7 +195,7 @@ down to a minimum. For example, a setup like:
 
 ```shell
 foo.bar.com -> 178.91.123.132 -> / foo    service1:4200
-                                 / bar    service2:8080
+                                / bar    service2:8080
 ```
 
 would require an ingress such as:
@@ -237,8 +237,8 @@ Rules:
   Host         Path  Backends
   ----         ----  --------
   foo.bar.com
-               /foo   service1:4200 (10.8.0.90:4200)
-               /bar   service2:8080 (10.8.0.91:8080)
+              /foo   service1:4200 (10.8.0.90:4200)
+              /bar   service2:8080 (10.8.0.91:8080)
 Annotations:
   nginx.ingress.kubernetes.io/rewrite-target:  /
 Events:
@@ -293,7 +293,7 @@ spec:
 
 If you create an ingress resource without any hosts defined in the rules, then any
 web traffic to the IP address of your ingress controller can be matched without a name based
-virtual host being required. For example, the following ingress resource will route traffic 
+virtual host being required. For example, the following ingress resource will route traffic
 requested for `first.bar.com` to `service1`, `second.bar.com` to `service2`, and any traffic
 to the IP address without a hostname defined in request (that is, without a request header being
 presented) to `service3`.
@@ -349,7 +349,7 @@ type: Opaque
 
 Referencing this secret in an ingress will tell the ingress controller to
 secure the channel from the client to the loadbalancer using TLS. You need to make
-sure the TLS secret you created came from a certificate that contains a CN 
+sure the TLS secret you created came from a certificate that contains a CN
 for `sslexample.foo.com`.
 
 ```yaml
@@ -414,7 +414,7 @@ Rules:
   Host         Path  Backends
   ----         ----  --------
   foo.bar.com
-               /foo   s1:80 (10.8.0.90:80)
+              /foo   s1:80 (10.8.0.90:80)
 Annotations:
   nginx.ingress.kubernetes.io/rewrite-target:  /
 Events:
@@ -465,9 +465,9 @@ Rules:
   Host         Path  Backends
   ----         ----  --------
   foo.bar.com
-               /foo   s1:80 (10.8.0.90:80)
+              /foo   s1:80 (10.8.0.90:80)
   bar.baz.com
-               /foo   s2:80 (10.8.0.91:80)
+              /foo   s2:80 (10.8.0.91:80)
 Annotations:
   nginx.ingress.kubernetes.io/rewrite-target:  /
 Events:
@@ -505,4 +505,3 @@ You can expose a Service in multiple ways that don't directly involve the ingres
 {{% capture whatsnext %}}
 
 {{% /capture %}}
-

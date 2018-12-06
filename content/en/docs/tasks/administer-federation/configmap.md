@@ -85,5 +85,3 @@ Deleting a Federated ConfigMap does not delete the corresponding ConfigMaps from
 {{< /note >}}
 
 {{% /capture %}}
-
-

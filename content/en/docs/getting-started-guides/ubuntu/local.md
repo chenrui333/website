@@ -12,7 +12,7 @@ The purpose of using [LXD](https://linuxcontainers.org/lxd/) on a local machine 
 {{% capture prerequisites %}}
 Install [conjure-up](http://conjure-up.io/), a tool for deploying big software.
 Add the current user to the `lxd` user group.
-    
+
 ```
 sudo snap install conjure-up --classic
 sudo usermod -a -G lxd $(whoami)
@@ -53,20 +53,17 @@ Review the final summary screen:
 
 ![Final Summary](/images/docs/ubuntu/05-final-summary.png)
 
-## Accessing the Cluster 
+## Accessing the Cluster
 
 You can access your Kubernetes cluster by running the following:
-    
-    
+
+
     kubectl --kubeconfig=~/.kube/config
-    
+
 
 Or if you've already run this once it'll create a new config file as shown in the summary screen.
-    
-    
+
+
     kubectl --kubeconfig=~/.kube/config.conjure-up
-    
+
 {{% /capture %}}
-
-
-

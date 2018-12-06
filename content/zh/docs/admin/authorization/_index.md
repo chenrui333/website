@@ -152,5 +152,3 @@ subjectaccessreview "" created
 * 要了解有关入学管理的更多信息，请参阅[使用 Admission 控制器](docs/admin/admission-controllers/)。
 *
 {{% /capture %}}
-
-

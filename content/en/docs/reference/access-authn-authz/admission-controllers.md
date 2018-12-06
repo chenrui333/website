@@ -90,7 +90,7 @@ kube-apiserver -h | grep enable-admission-plugins
 ```
 
 In 1.11, they are:
- 
+
 ```shell
 NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,Priority
 ```
@@ -163,10 +163,10 @@ This admission controller mitigates the problem where the API server gets floode
 event requests. The cluster admin can specify event rate limits by:
 
  * Ensuring that `eventratelimit.admission.k8s.io/v1alpha1=true` is included in the
-   `--runtime-config` flag for the API server;
+  `--runtime-config` flag for the API server;
  * Enabling the `EventRateLimit` admission controller;
  * Referencing an `EventRateLimit` configuration file from the file provided to the API
-   server's command line flag `--admission-control-config-file`:
+  server's command line flag `--admission-control-config-file`:
 
 ```yaml
 kind: AdmissionConfiguration
@@ -183,7 +183,7 @@ There are four types of limits that can be specified in the configuration:
  * `Namespace`: Each namespace has a dedicated bucket.
  * `User`: Each user is allocated a bucket.
  * `SourceAndObject`: A bucket is assigned by each combination of source and
-   involved object of the event.
+  involved object of the event.
 
 Below is a sample `eventconfig.yaml` for such a configuration:
 
@@ -214,7 +214,7 @@ add these tolerations.
 
 ### ImagePolicyWebhook {#imagepolicywebhook}
 
-The ImagePolicyWebhook admission controller allows a backend webhook to make admission decisions. 
+The ImagePolicyWebhook admission controller allows a backend webhook to make admission decisions.
 
 #### Configuration File Format
 
@@ -227,7 +227,7 @@ imagePolicy:
   # time in s to cache approval
   allowTTL: 50
   # time in s to cache denial
-  denyTTL: 50 
+  denyTTL: 50
   # time in ms to wait between retries
   retryBackoff: 500
   # determines behavior if the webhook backend fails
@@ -275,19 +275,19 @@ Note that webhook API objects are subject to the same versioning compatibility r
 An example request body:
 
 ```
-{  
+{
   "apiVersion":"imagepolicy.k8s.io/v1alpha1",
   "kind":"ImageReview",
-  "spec":{  
-    "containers":[  
-      {  
+  "spec":{
+    "containers":[
+      {
         "image":"myrepo/myimage:v1"
       },
-      {  
+      {
         "image":"myrepo/myimage@sha256:beb6bd6a68f114c1dc2ea4b28db81bdf91de202a9014972bec5e4d9171d90ed"
       }
     ],
-    "annotations":[  
+    "annotations":[
       "mycluster.image-policy.k8s.io/ticket-1234": "break-glass"
     ],
     "namespace":"mynamespace"
@@ -375,17 +375,17 @@ versions >= 1.9).
 #### Use caution when authoring and installing mutating webhooks
 
  * Users may be confused when the objects they try to create are different from
-   what they get back.
+  what they get back.
  * Built in control loops may break when the objects they try to create are
-   different when read back.
-   * Setting originally unset fields is less likely to cause problems than
-     overwriting fields set in the original request. Avoid doing the latter.
+  different when read back.
+  * Setting originally unset fields is less likely to cause problems than
+    overwriting fields set in the original request. Avoid doing the latter.
  * This is a beta feature. Future versions of Kubernetes may restrict the types of
-   mutations these webhooks can make.
+  mutations these webhooks can make.
  * Future changes to control loops for built-in resources or third-party resources
-   may break webhooks that work well today. Even when the webhook installation API
-   is finalized, not all possible webhook behaviors will be guaranteed to be supported
-   indefinitely.
+  may break webhooks that work well today. Even when the webhook installation API
+  is finalized, not all possible webhook behaviors will be guaranteed to be supported
+  indefinitely.
 
 ### NamespaceAutoProvision {#namespaceautoprovision}
 
@@ -489,7 +489,7 @@ plugin configuration file as the node selector.
 Conflicts result in rejection.
 
 {{< note >}}
-PodNodeSelector allows forcing pods to run on specifically labeled nodes. Also see the PodTolerationRestriction 
+PodNodeSelector allows forcing pods to run on specifically labeled nodes. Also see the PodTolerationRestriction
 admission plugin, which allows preventing pods from running on specifically tainted nodes.
 {{< /note >}}
 

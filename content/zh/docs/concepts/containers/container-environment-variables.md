@@ -8,7 +8,7 @@ content_template: templates/concept
 
 {{% capture overview %}}
 
-本文介绍容器环境中对容器可用的资源。 
+本文介绍容器环境中对容器可用的资源。
 
 {{% /capture %}}
 
@@ -58,5 +58,3 @@ FOO_SERVICE_PORT=<服务所启用的端口>
 * 获取[为容器生命周期事件附加处理程序](/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/)的实践经验。
 
 {{% /capture %}}
-
-

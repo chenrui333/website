@@ -346,13 +346,13 @@ Providers that don't return an `id_token` as part of their refresh token respons
 
 ```bash
 kubectl config set-credentials USER_NAME \
-   --auth-provider=oidc \
-   --auth-provider-arg=idp-issuer-url=( issuer url ) \
-   --auth-provider-arg=client-id=( your client id ) \
-   --auth-provider-arg=client-secret=( your client secret ) \
-   --auth-provider-arg=refresh-token=( your refresh token ) \
-   --auth-provider-arg=idp-certificate-authority=( path to your ca certificate ) \
-   --auth-provider-arg=id-token=( your id_token )
+  --auth-provider=oidc \
+  --auth-provider-arg=idp-issuer-url=( issuer url ) \
+  --auth-provider-arg=client-id=( your client id ) \
+  --auth-provider-arg=client-secret=( your client secret ) \
+  --auth-provider-arg=refresh-token=( your refresh token ) \
+  --auth-provider-arg=idp-certificate-authority=( path to your ca certificate ) \
+  --auth-provider-arg=id-token=( your id_token )
 ```
 
 As an example, running the below command after authenticating to your identity provider:

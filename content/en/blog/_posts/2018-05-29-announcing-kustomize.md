@@ -121,12 +121,12 @@ For example, if a file called `kustomization.yaml`
 containing
 
 ```
-   commonLabels:
-     app: hello
-   resources:
-   - deployment.yaml
-   - configMap.yaml
-   - service.yaml
+  commonLabels:
+    app: hello
+  resources:
+  - deployment.yaml
+  - configMap.yaml
+  - service.yaml
 ```
 
 is in the current working directory, along with
@@ -161,13 +161,13 @@ Here’s a file system layout to manage a *staging* and
 *production* variant of a given cluster app:
 
 ```
-   someapp/
-   ├── base/
-   │   ├── kustomization.yaml
-   │   ├── deployment.yaml
-   │   ├── configMap.yaml
-   │   └── service.yaml
-   └── overlays/
+  someapp/
+  ├── base/
+  │   ├── kustomization.yaml
+  │   ├── deployment.yaml
+  │   ├── configMap.yaml
+  │   └── service.yaml
+  └── overlays/
       ├── production/
       │   └── kustomization.yaml
       │   ├── replica_count.yaml
@@ -186,24 +186,24 @@ The contents of
 be
 
 ```
-   commonLabels:
+  commonLabels:
     env: production
-   bases:
-   - ../../base
-   patches:
-   - replica_count.yaml
+  bases:
+  - ../../base
+  patches:
+  - replica_count.yaml
 ```
 
 This kustomization specifies a *patch* file
 `replica_count.yaml`, which could be:
 
 ```
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: the-deployment
-   spec:
-     replicas: 100
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: the-deployment
+  spec:
+    replicas: 100
 ```
 
 A patch is a partial resource declaration, in this case

@@ -110,5 +110,3 @@ You may be able to put an apiserver proxy URL into the address bar of a browser.
     way that is unaware of the proxy path prefix.
 
 {{% /capture %}}
-
-

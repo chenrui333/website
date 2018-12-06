@@ -6,4 +6,3 @@ spec:
   containers:
   - name: constraints-mem-demo-4-ctr
     image: nginx
-

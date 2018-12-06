@@ -50,5 +50,3 @@ Here's an interesting thing to know about the steps you just did.
 * See [Using Page Templates - Task template](/docs/home/contribute/page-templates/#task_template) for how to use this template.
 
 {{% /capture %}}
-
-

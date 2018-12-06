@@ -86,5 +86,3 @@ StatefulSet的扩容/缩容操作. 一些分布式数据库在节点加入和同
 了解更多 [deleting a StatefulSet](/docs/tasks/manage-stateful-set/deleting-a-statefulset/).
 
 {{% /capture %}}
-
-

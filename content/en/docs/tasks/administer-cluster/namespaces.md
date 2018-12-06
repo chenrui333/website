@@ -31,9 +31,9 @@ kube-public   Active    11d
 
 Kubernetes starts with three initial namespaces:
 
-   * `default` The default namespace for objects with no other namespace
-   * `kube-system` The namespace for objects created by the Kubernetes system
-   * `kube-public` This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
+  * `default` The default namespace for objects with no other namespace
+  * `kube-system` The namespace for objects created by the Kubernetes system
+  * `kube-public` This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
 
 You can also get the summary of a specific namespace using:
 
@@ -70,8 +70,8 @@ See [Admission control: Limit Range](https://git.k8s.io/community/contributors/d
 
 A namespace can be in one of two phases:
 
-   * `Active` the namespace is in use
-   * `Terminating` the namespace is being deleted, and can not be used for new objects
+  * `Active` the namespace is in use
+  * `Terminating` the namespace is being deleted, and can not be used for new objects
 
 See the [design doc](https://git.k8s.io/community/contributors/design-proposals/architecture/namespaces.md#phases) for more details.
 
@@ -353,5 +353,3 @@ across namespaces, you need to use the fully qualified domain name (FQDN).
 * Learn more about [setting the namespace for a request](/docs/concepts/overview/working-with-objects/namespaces/#setting-the-namespace-for-a-request)
 * See [namespaces design](https://github.com/kubernetes/community/blob/{{< param "githubbranch" >}}/contributors/design-proposals/architecture/namespaces.md).
 {{% /capture %}}
-
-

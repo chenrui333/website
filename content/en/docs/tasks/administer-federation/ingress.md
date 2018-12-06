@@ -43,7 +43,7 @@ Once created, the Federated Ingress automatically:
 
 *  Creates matching Kubernetes Ingress objects in every cluster underlying your Cluster Federation
 *  Ensures that all of these in-cluster ingress objects share the same
-   logical global L7 (that is, HTTP(S)) load balancer and IP address
+  logical global L7 (that is, HTTP(S)) load balancer and IP address
 *  Monitors the health and capacity of the service shards (that is, your pods) behind this ingress in each cluster
 *  Ensures that all client connections are routed to an appropriate healthy backend service endpoint at all times, even in the event of pod, cluster, availability zone or regional outages
 
@@ -261,17 +261,17 @@ Check that:
 
 1. Your clusters are correctly registered in the Cluster Federation API. (`kubectl describe clusters`)
 2. Your clusters are all 'Active'.  This means that the cluster
-   Federation system was able to connect and authenticate against the
-   clusters' endpoints.  If not, consult the event logs of the federation-controller-manager pod to ascertain what the failure might be. (`kubectl --namespace=federation logs $(kubectl get pods --namespace=federation -l module=federation-controller-manager -o name`)
+  Federation system was able to connect and authenticate against the
+  clusters' endpoints.  If not, consult the event logs of the federation-controller-manager pod to ascertain what the failure might be. (`kubectl --namespace=federation logs $(kubectl get pods --namespace=federation -l module=federation-controller-manager -o name`)
 3. That the login credentials provided to the Cluster Federation API
-   for the clusters have the correct authorization and quota to create
-   ingresses/services/replicasets in the relevant namespace in the
-   clusters.  Again you should see associated error messages providing
-   more detail in the above event log file if this is not the case.
+  for the clusters have the correct authorization and quota to create
+  ingresses/services/replicasets in the relevant namespace in the
+  clusters.  Again you should see associated error messages providing
+  more detail in the above event log file if this is not the case.
 4. Whether any other error is preventing the service creation
-   operation from succeeding (look for `ingress-controller`,
-   `service-controller` or `replicaset-controller`,
-   errors in the output of `kubectl logs federation-controller-manager --namespace federation`).
+  operation from succeeding (look for `ingress-controller`,
+  `service-controller` or `replicaset-controller`,
+  errors in the output of `kubectl logs federation-controller-manager --namespace federation`).
 
 #### I can create a federated ingress successfully, but request load is not correctly distributed across the underlying clusters.
 
@@ -280,17 +280,17 @@ Check that:
 1. The services underlying your federated ingress in each cluster have
     identical node ports.  See [above](#creating_a_federated_ingress) for further explanation.
 2. The load balancer controllers in each of your clusters are of the
-   correct type ("GLBC") and have been correctly reconfigured by the
-   federation control plane to share a global GCE load balancer (this
-   should happen automatically).  If they are of the correct type, and
-   have been correctly reconfigured, the UID data item in the GLBC
-   configmap in each cluster will be identical across all clusters.
-   See
-   [the GLBC docs](https://github.com/kubernetes/ingress/blob/7dcb4ae17d5def23d3e9c878f3146ac6df61b09d/controllers/gce/README.md)
-   for further details.
-   If this is not the case, check the logs of your federation
-   controller manager to determine why this automated reconfiguration
-   might be failing.
+  correct type ("GLBC") and have been correctly reconfigured by the
+  federation control plane to share a global GCE load balancer (this
+  should happen automatically).  If they are of the correct type, and
+  have been correctly reconfigured, the UID data item in the GLBC
+  configmap in each cluster will be identical across all clusters.
+  See
+  [the GLBC docs](https://github.com/kubernetes/ingress/blob/7dcb4ae17d5def23d3e9c878f3146ac6df61b09d/controllers/gce/README.md)
+  for further details.
+  If this is not the case, check the logs of your federation
+  controller manager to determine why this automated reconfiguration
+  might be failing.
 3. No ingresses have been manually created in any of your clusters before the above
     reconfiguration of the load balancer controller completed
     successfully.  Ingresses created before the reconfiguration of
@@ -308,4 +308,3 @@ Check that:
  *  For details about use cases that motivated this work, see
  [Federation proposal](https://git.k8s.io/community/contributors/design-proposals/multicluster/federation.md).
 {{% /capture %}}
-

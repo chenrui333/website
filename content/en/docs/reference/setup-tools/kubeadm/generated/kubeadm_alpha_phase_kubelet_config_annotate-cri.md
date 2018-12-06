@@ -4,7 +4,7 @@ annotates the node with the given crisocket
 ### Synopsis
 
 
-Adds an annotation to the current node with the CRI socket specified in the kubeadm InitConfiguration object. 
+Adds an annotation to the current node with the CRI socket specified in the kubeadm InitConfiguration object.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -71,6 +71,3 @@ kubeadm alpha phase kubelet config annotate-cri [flags]
 
   </tbody>
 </table>
-
-
-

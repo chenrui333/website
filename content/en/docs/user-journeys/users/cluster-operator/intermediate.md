@@ -105,5 +105,3 @@ Cluster Administration:
 * [Using explorer to investigate your cluster](https://github.com/kubernetes/examples/blob/master/staging/explorer/README.md)
 
 {{% /capture %}}
-
-

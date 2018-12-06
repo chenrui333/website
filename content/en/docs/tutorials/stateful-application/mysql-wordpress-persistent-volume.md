@@ -7,7 +7,7 @@ weight: 20
 ---
 
 {{% capture overview %}}
-This tutorial shows you how to deploy a WordPress site and a MySQL database using Minikube. Both applications use PersistentVolumes and PersistentVolumeClaims to store data. 
+This tutorial shows you how to deploy a WordPress site and a MySQL database using Minikube. Both applications use PersistentVolumes and PersistentVolumeClaims to store data.
 
 A [PersistentVolume](/docs/concepts/storage/persistent-volumes/) (PV) is a piece of storage in the cluster that has been manually provisioned by an administrator, or dynamically provisioned by Kubernetes using a [StorageClass](/docs/concepts/storage/storage-classes).  A [PersistentVolumeClaim](/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) (PVC) is a request for storage by a user that can be fulfilled by a PV. PersistentVolumes and PersistentVolumeClaims are independent from Pod lifecycles and preserve data through restarting, rescheduling, and even deleting Pods.
 
@@ -32,7 +32,7 @@ The files provided in this tutorial are using GA Deployment APIs and are specifi
 
 {{% capture prerequisites %}}
 
-{{< include "task-tutorial-prereqs.md" >}} {{< version-check >}} 
+{{< include "task-tutorial-prereqs.md" >}} {{< version-check >}}
 
 Download the following configuration files:
 
@@ -42,7 +42,7 @@ Download the following configuration files:
 
 {{% /capture %}}
 
-{{% capture lessoncontent %}} 
+{{% capture lessoncontent %}}
 
 ## Create PersistentVolumeClaims and PersistentVolumes
 
@@ -69,12 +69,12 @@ If you have a Kubernetes cluster running on Google Kubernetes Engine, please fol
 A [Secret](/docs/concepts/configuration/secret/) is an object that stores a piece of sensitive data like a password or key. The manifest files are already configured to use a Secret, but you have to create your own Secret.
 
 1. Create the Secret object from the following command. You will need to replace
-   `YOUR_PASSWORD` with the password you want to use.
+  `YOUR_PASSWORD` with the password you want to use.
 
       ```shell
       kubectl create secret generic mysql-pass --from-literal=password=YOUR_PASSWORD
       ```
-       
+
 2. Verify that the Secret exists by running the following command:
 
       ```shell
@@ -89,12 +89,12 @@ A [Secret](/docs/concepts/configuration/secret/) is an object that stores a piec
       ```
 
 {{< note >}}
-To protect the Secret from exposure, neither `get` nor `describe` show its contents. 
+To protect the Secret from exposure, neither `get` nor `describe` show its contents.
 {{< /note >}}
 
 ## Deploy MySQL
 
-The following manifest describes a single-instance MySQL Deployment. The MySQL container mounts the PersistentVolume at /var/lib/mysql. The `MYSQL_ROOT_PASSWORD` environment variable sets the database password from the Secret. 
+The following manifest describes a single-instance MySQL Deployment. The MySQL container mounts the PersistentVolume at /var/lib/mysql. The `MYSQL_ROOT_PASSWORD` environment variable sets the database password from the Secret.
 
 {{< codenew file="application/wordpress/mysql-deployment.yaml" >}}
 
@@ -105,7 +105,7 @@ The following manifest describes a single-instance MySQL Deployment. The MySQL c
       ```
 
 2. Verify that a PersistentVolume got dynamically provisioned. Note that it can
-   It can take up to a few minutes for the PVs to be provisioned and bound.
+  It can take up to a few minutes for the PVs to be provisioned and bound.
 
       ```shell
       kubectl get pvc
@@ -195,9 +195,9 @@ The following manifest describes a single-instance WordPress Deployment and Serv
 
 5. Copy the IP address, and load the page in your browser to view your site.
 
-   You should see the WordPress set up page similar to the following screenshot.
+  You should see the WordPress set up page similar to the following screenshot.
 
-   ![wordpress-init](https://raw.githubusercontent.com/kubernetes/examples/master/mysql-wordpress-pd/WordPress.png)
+  ![wordpress-init](https://raw.githubusercontent.com/kubernetes/examples/master/mysql-wordpress-pd/WordPress.png)
 
 {{< warning >}}
 Do not leave your WordPress installation on this page. If another user finds it, they can set up a website on your instance and use it to serve malicious content. <br/><br/>Either install WordPress by creating a username and password or delete your instance.
@@ -236,4 +236,3 @@ Do not leave your WordPress installation on this page. If another user finds it,
 * Learn how to [Get a Shell to a Container](/docs/tasks/debug-application-cluster/get-shell-running-container/)
 
 {{% /capture %}}
-

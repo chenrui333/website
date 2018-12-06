@@ -112,6 +112,3 @@ kubeadm token create [token]
 
   </tbody>
 </table>
-
-
-

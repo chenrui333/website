@@ -71,8 +71,8 @@ Status:        Bound
 Volume:        pvc-bee8c30a-d6a3-11e7-9af0-42010a800002
 Labels:        <none>
 Annotations:   pv.kubernetes.io/bind-completed=yes
-               pv.kubernetes.io/bound-by-controller=yes
-               volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
+              pv.kubernetes.io/bound-by-controller=yes
+              volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
 Finalizers:    [kubernetes.io/pvc-protection]
 Capacity:      4Gi
 Access Modes:  RWO
@@ -124,8 +124,8 @@ Status:        Terminating (since Fri, 01 Dec 2017 14:47:55 +0000)
 Volume:        pvc-803a1f4d-d6a6-11e7-9af0-42010a800002
 Labels:        <none>
 Annotations:   pv.kubernetes.io/bind-completed=yes
-               pv.kubernetes.io/bound-by-controller=yes
-               volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
+              pv.kubernetes.io/bound-by-controller=yes
+              volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
 Finalizers:    [kubernetes.io/pvc-protection]
 Capacity:      4Gi
 Access Modes:  RWO
@@ -176,8 +176,8 @@ Status:        Terminating (since Fri, 01 Dec 2017 14:47:55 +0000)
 Volume:        pvc-803a1f4d-d6a6-11e7-9af0-42010a800002
 Labels:        <none>
 Annotations:   pv.kubernetes.io/bind-completed=yes
-               pv.kubernetes.io/bound-by-controller=yes
-               volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
+              pv.kubernetes.io/bound-by-controller=yes
+              volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
 Finalizers:    [kubernetes.io/pvc-protection]
 Capacity:      4Gi
 Access Modes:  RWO
@@ -262,11 +262,11 @@ Claim:           default/task-pv-claim
 Reclaim Policy:  Delete
 Access Modes:    RWO
 Capacity:        1Gi
-Message:         
+Message:
 Source:
     Type:          HostPath (bare host directory volume)
     Path:          /tmp/data
-    HostPathType:  
+    HostPathType:
 Events:            <none>
 ```
 

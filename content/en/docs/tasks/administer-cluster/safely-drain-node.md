@@ -20,10 +20,10 @@ This task assumes that you have met the following prerequisites:
 * You are using Kubernetes release >= 1.5.
 * Either:
   1. You do not require your applications to be highly available during the
-     node drain, or
+    node drain, or
   1. You have read about the [PodDisruptionBudget concept](/docs/concepts/workloads/pods/disruptions/)
-     and [Configured PodDisruptionBudgets](/docs/tasks/run-application/configure-pdb/) for
-     applications that need them.
+    and [Configured PodDisruptionBudgets](/docs/tasks/run-application/configure-pdb/) for
+    applications that need them.
 
 {{% /capture %}}
 
@@ -160,5 +160,3 @@ application owners and cluster owners to establish an agreement on behavior in t
 * Follow steps to protect your application by [configuring a Pod Disruption Budget](/docs/tasks/run-application/configure-pdb/).
 
 {{% /capture %}}
-
-

@@ -4,7 +4,7 @@ Generates the Client certificate for the API server to connect to kubelet
 ### Synopsis
 
 
-Renews the Client certificate for the API server to connect to kubelet, and saves them into apiserver-kubelet-client.cert and apiserver-kubelet-client.key files. 
+Renews the Client certificate for the API server to connect to kubelet, and saves them into apiserver-kubelet-client.cert and apiserver-kubelet-client.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew apiserver-kubelet-client [flags]
 
   </tbody>
 </table>
-
-
-

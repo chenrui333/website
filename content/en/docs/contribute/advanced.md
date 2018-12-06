@@ -112,4 +112,3 @@ When they submit their membership application, reply to the application with a
 membership in the Kubernetes organization.
 
 {{% /capture %}}
-

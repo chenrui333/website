@@ -83,5 +83,3 @@ content_template: templates/concept
 * [记录和监控集群活动](/docs/concepts/cluster-administration/logging/) 阐述了Kubernetes 的日志如何工作以及怎样实现。
 
 {{% /capture %}}
-
-

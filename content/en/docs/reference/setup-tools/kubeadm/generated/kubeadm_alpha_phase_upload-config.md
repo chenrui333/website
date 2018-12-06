@@ -4,9 +4,9 @@ Uploads the currently used configuration for kubeadm to a ConfigMap
 ### Synopsis
 
 
-Uploads the kubeadm init configuration of your cluster to a ConfigMap called kubeadm-config in the kube-system namespace. This enables correct configuration of system components and a seamless user experience when upgrading. 
+Uploads the kubeadm init configuration of your cluster to a ConfigMap called kubeadm-config in the kube-system namespace. This enables correct configuration of system components and a seamless user experience when upgrading.
 
-Alternatively, you can use kubeadm config. 
+Alternatively, you can use kubeadm config.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -74,6 +74,3 @@ kubeadm alpha phase upload-config [flags]
 
   </tbody>
 </table>
-
-
-

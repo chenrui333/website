@@ -1,7 +1,7 @@
 ---
 title: PKI Certificates and Requirements
 reviewers:
-- sig-cluster-lifecycle 
+- sig-cluster-lifecycle
 content_template: templates/concept
 ---
 
@@ -45,7 +45,7 @@ If you don't want kubeadm to generate the required certificates, you can create 
 
 ### Single root CA
 
-You can create a single root CA, controlled by an administrator. This root CA can then create multiple intermediate CAs, and delegate all further creation to Kubernetes itself. 
+You can create a single root CA, controlled by an administrator. This root CA can then create multiple intermediate CAs, and delegate all further creation to Kubernetes itself.
 
 Required CAs:
 
@@ -57,7 +57,7 @@ Required CAs:
 
 ### All certificates
 
-If you don't wish to copy these private keys to your API servers, you can generate all certificates yourself. 
+If you don't wish to copy these private keys to your API servers, you can generate all certificates yourself.
 
 Required certificates:
 
@@ -103,7 +103,7 @@ Certificates should be placed in a recommended path (as used by [kubeadm][kubead
 
 ## Configure certificates for user accounts
 
-You must manually configure these administrator account and service accounts: 
+You must manually configure these administrator account and service accounts:
 
 | filename                | credential name            | Default CN                     | O (in Subject) |
 |-------------------------|----------------------------|--------------------------------|----------------|

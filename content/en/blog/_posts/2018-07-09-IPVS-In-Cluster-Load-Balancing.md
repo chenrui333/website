@@ -82,15 +82,15 @@ Session Affinity:	None
 73: kube-ipvs0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN qlen 1000
     link/ether 1a:ce:f5:5f:c1:4d brd ff:ff:ff:ff:ff:ff
     inet 10.102.128.4/32 scope global kube-ipvs0
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
 
 # ipvsadm -ln
 IP Virtual Server version 1.2.1 (size=4096)
 Prot LocalAddress:Port Scheduler Flags
-  -> RemoteAddress:Port           Forward Weight ActiveConn InActConn     
+  -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
 TCP  10.102.128.4:3080 rr
-  -> 10.244.0.235:8080            Masq    1      0          0         
-  -> 10.244.1.237:8080            Masq    1      0          0   
+  -> 10.244.0.235:8080            Masq    1      0          0
+  -> 10.244.1.237:8080            Masq    1      0          0
 ```
 
 Please note that the relationship between a Kubernetes Service and IPVS virtual servers is `1:N`. For example, consider a Kubernetes Service that has more than one IP address. An External IP type Service has two IP addresses - ClusterIP and External IP. Then the IPVS proxier will create 2 IPVS virtual servers - one for Cluster IP and another one for External IP. The relationship between a Kubernetes Endpoint (each IP+Port pair) and an IPVS virtual server is `1:1`.
@@ -103,8 +103,8 @@ There are three proxy modes in IPVS: NAT (masq), IPIP and DR. Only NAT mode supp
 
 ```
 TCP  10.102.128.4:3080 rr
-  -> 10.244.0.235:8080            Masq    1      0          0         
-  -> 10.244.1.237:8080            Masq    1      0       
+  -> 10.244.0.235:8080            Masq    1      0          0
+  -> 10.244.1.237:8080            Masq    1      0
 ```
 
 #### Session Affinity

@@ -87,7 +87,7 @@ Services](/docs/concepts/services-networking/service/#headless-services) 的一�
 在 v1.3 版本中，PodSpec 具有 `hostname` 字段，可以用来指定 Pod 的主机名。这个字段的值优先于 annotation `pod.beta.kubernetes.io/hostname`。
 在 v1.2 版本中引入了 beta 特性，用户可以为 Pod 指定 annotation，其中 `pod.beta.kubernetes.io/subdomain` 指定了 Pod 的子域名。
 最终的域名将是 “<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>”。
-举个例子，Pod 的主机名 annotation 设置为 “foo”，子域名 annotation 设置为 “bar”，在 Namespace “my-namespace” 中对应的 FQDN 为 “foo.bar.my-namespace.svc.cluster.local”。 
+举个例子，Pod 的主机名 annotation 设置为 “foo”，子域名 annotation 设置为 “bar”，在 Namespace “my-namespace” 中对应的 FQDN 为 “foo.bar.my-namespace.svc.cluster.local”。
 
 
 
@@ -105,7 +105,7 @@ spec:
   clusterIP: None
   ports:
     - name: foo # Actually, no port is needed.
-      port: 1234 
+      port: 1234
       targetPort: 1234
 ---
 apiVersion: v1

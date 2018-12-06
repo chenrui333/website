@@ -6,14 +6,13 @@ full_link: /docs/reference/generated/kube-proxy
 short_description: >
   `kube-proxy` is a network proxy that runs on each node in the cluster.
 
-aka: 
+aka:
 tags:
 - fundamental
 - core-object
 ---
  `kube-proxy` is a network proxy that runs on each node in the cluster.
 
-<!--more--> 
+<!--more-->
 
 `kube-proxy` is responsible for request forwarding. `kube-proxy` allows TCP and UDP stream forwarding or round robin TCP and UDP forwarding across a set of backend functions.
-

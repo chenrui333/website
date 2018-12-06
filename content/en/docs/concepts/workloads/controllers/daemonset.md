@@ -109,9 +109,9 @@ created by the DaemonSet controller have the machine already selected (`.spec.no
 when the Pod is created, so it is ignored by the scheduler).  Therefore:
 
  - The [`unschedulable`](/docs/admin/node/#manual-node-administration) field of a node is not respected
-   by the DaemonSet controller.
+  by the DaemonSet controller.
  - The DaemonSet controller can make Pods even when the scheduler has not been started, which can help cluster
-   bootstrap.
+  bootstrap.
 
 
 ### Scheduled by default scheduler (enabled by default since 1.12)
@@ -124,11 +124,11 @@ DaemonSet pods are created and scheduled by the DaemonSet controller instead.
 That introduces the following issues:
 
  * Inconsistent Pod behavior: Normal Pods waiting to be scheduled are created
-   and in `Pending` state, but DaemonSet pods are not created in `Pending`
-   state. This is confusing to the user.
+  and in `Pending` state, but DaemonSet pods are not created in `Pending`
+  state. This is confusing to the user.
  * [Pod preemption](/docs/concepts/configuration/pod-priority-preemption/)
-   is handled by default scheduler. When preemption is enabled, the DaemonSet controller
-   will make scheduling decisions without considering pod priority and preemption.
+  is handled by default scheduler. When preemption is enabled, the DaemonSet controller
+  will make scheduling decisions without considering pod priority and preemption.
 
 `ScheduleDaemonSetPods` allows you to schedule DaemonSets using the default
 scheduler instead of the DaemonSet controller, by adding the `NodeAffinity` term

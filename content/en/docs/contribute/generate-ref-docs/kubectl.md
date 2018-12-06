@@ -258,6 +258,3 @@ topics will be visible in the
 * [Generating Reference Documentation for the Kubernetes Federation API](/docs/home/contribute/generated-reference/federation-api/)
 
 {{% /capture %}}
-
-
-

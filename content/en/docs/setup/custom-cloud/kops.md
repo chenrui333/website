@@ -108,7 +108,7 @@ the S3 bucket name.
 * Create the S3 bucket using `aws s3 mb s3://clusters.dev.example.com`
 
 * You can `export KOPS_STATE_STORE=s3://clusters.dev.example.com` and then kops will use this location by default.
-   We suggest putting this in your bash profile or similar.
+  We suggest putting this in your bash profile or similar.
 
 
 ### (4/5) Build your cluster configuration

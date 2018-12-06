@@ -77,6 +77,3 @@ kubeadm reset [flags]
 
   </tbody>
 </table>
-
-
-

@@ -114,8 +114,8 @@ The nodes which we see as agents (in the kubectl get nodes command) are part of 
 $ az vmss list-instances -g k8sblogkk1 -n k8s-agentpool1-92998111-vmss -o table
   InstanceId  LatestModelApplied    Location    Name                            ProvisioningState    ResourceGroup    VmId
 ------------  --------------------  ----------  ------------------------------  -------------------  ---------------  ------------------------------------
-           0  True                  westus2     k8s-agentpool1-92998111-vmss_0  Succeeded            K8SBLOGKK1       21c57d6c-9c8f-4a62-970f-63ed0fcba53f
-           1  True                  westus2     k8s-agentpool1-92998111-vmss_1  Succeeded            K8SBLOGKK1       840743b9-0076-4a2e-920e-5ba9da296665
+          0  True                  westus2     k8s-agentpool1-92998111-vmss_0  Succeeded            K8SBLOGKK1       21c57d6c-9c8f-4a62-970f-63ed0fcba53f
+          1  True                  westus2     k8s-agentpool1-92998111-vmss_1  Succeeded            K8SBLOGKK1       840743b9-0076-4a2e-920e-5ba9da296665
 ```
 
 The node name does not match the name in the vm scale set, but if we run the following command to list the providerID we can find the matching node which resembles the instance name:
@@ -218,26 +218,26 @@ status:
 Cluster-autoscaler status at 2018-10-02 01:21:17.850010508 +0000 UTC:
 Cluster-wide:
   Health:      Healthy (ready=3 unready=0 notStarted=0 longNotStarted=0 registered=3 longUnregistered=0)
-               LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
-               LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
+              LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
+              LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
   ScaleUp:     NoActivity (ready=3 registered=3)
-               LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
-               LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
+              LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
+              LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
   ScaleDown:   NoCandidates (candidates=0)
-               LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
-               LastTransitionTime: 2018-10-02 00:39:50.493307405 +0000 UTC m=+674.133759650
+              LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
+              LastTransitionTime: 2018-10-02 00:39:50.493307405 +0000 UTC m=+674.133759650
 
 NodeGroups:
   Name:        k8s-agentpool1-92998111-vmss
   Health:      Healthy (ready=2 unready=0 notStarted=0 longNotStarted=0 registered=2 longUnregistered=0 cloudProviderTarget=2 (minSize=1, maxSize=5))
-               LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
-               LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
+              LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
+              LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
   ScaleUp:     NoActivity (ready=2 cloudProviderTarget=2)
-               LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
-               LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
+              LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
+              LastTransitionTime: 2018-10-02 00:28:49.944222739 +0000 UTC m=+13.584675084
   ScaleDown:   NoCandidates (candidates=0)
-               LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
-               LastTransitionTime: 2018-10-02 00:39:50.493307405 +0000 UTC m=+674.133759650
+              LastProbeTime:      2018-10-02 01:21:17.772229859 +0000 UTC m=+3161.412682204
+              LastTransitionTime: 2018-10-02 00:39:50.493307405 +0000 UTC m=+674.133759650
 
 
 Events:

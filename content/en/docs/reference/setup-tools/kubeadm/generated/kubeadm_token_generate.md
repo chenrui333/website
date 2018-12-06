@@ -73,6 +73,3 @@ kubeadm token generate [flags]
 
   </tbody>
 </table>
-
-
-

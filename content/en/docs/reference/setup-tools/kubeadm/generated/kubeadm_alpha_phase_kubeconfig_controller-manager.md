@@ -4,7 +4,7 @@ Generates a kubeconfig file for the controller manager to use
 ### Synopsis
 
 
-Generates the kubeconfig file for the controller manager to use and saves it to /etc/kubernetes/controller-manager.conf file. 
+Generates the kubeconfig file for the controller manager to use and saves it to /etc/kubernetes/controller-manager.conf file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -86,6 +86,3 @@ kubeadm alpha phase kubeconfig controller-manager [flags]
 
   </tbody>
 </table>
-
-
-

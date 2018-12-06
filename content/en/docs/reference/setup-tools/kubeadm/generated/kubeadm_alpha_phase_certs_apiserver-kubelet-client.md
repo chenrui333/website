@@ -4,9 +4,9 @@ Generates the Client certificate for the API server to connect to kubelet
 ### Synopsis
 
 
-Generates the Client certificate for the API server to connect to kubelet, and saves them into apiserver-kubelet-client.cert and apiserver-kubelet-client.key files. 
+Generates the Client certificate for the API server to connect to kubelet, and saves them into apiserver-kubelet-client.cert and apiserver-kubelet-client.key files.
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -67,6 +67,3 @@ kubeadm alpha phase certs apiserver-kubelet-client [flags]
 
   </tbody>
 </table>
-
-
-

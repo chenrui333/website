@@ -58,7 +58,7 @@ const checkEndpoints = () => {
           return { statusCode: 404, body: msg };
         } else {
           const msg = `[SUCCESS] No improper X-Robots-Tag: noindex headers found on ${url}`;
-          
+
           return { statusCode: 200, body: msg };
         }
       })

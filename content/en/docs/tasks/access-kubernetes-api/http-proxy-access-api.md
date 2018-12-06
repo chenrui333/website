@@ -82,5 +82,3 @@ Get a list of pods:
 {{% capture whatsnext %}}
 Learn more about [kubectl proxy](/docs/reference/generated/kubectl/kubectl-commands#proxy).
 {{% /capture %}}
-
-

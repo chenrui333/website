@@ -139,4 +139,3 @@ system:serviceaccount:<namespace>:default
 需要重新启动 apiserver 以获取新的策略行.
 
 {{% /capture %}}
-

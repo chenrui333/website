@@ -319,5 +319,3 @@ to force all secrets to be decrypted.
 并重新启动所有 `kube-apiserver` 进程。然后运行命令 `kubectl get secrets --all-namespaces -o json | kubectl replace -f -` 强制解密所有 secret。
 
 {{% /capture %}}
-
-

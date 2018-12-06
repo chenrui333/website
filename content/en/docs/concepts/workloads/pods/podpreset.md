@@ -35,14 +35,14 @@ When a pod creation request occurs, the system does the following:
 
 1. Retrieve all `PodPresets` available for use.
 1. Check if the label selectors of any `PodPreset` matches the labels on the
-   pod being created.
+  pod being created.
 1. Attempt to merge the various resources defined by the `PodPreset` into the
-   Pod being created.
+  Pod being created.
 1. On error, throw an event documenting the merge error on the pod, and create
-   the pod _without_ any injected resources from the `PodPreset`.
+  the pod _without_ any injected resources from the `PodPreset`.
 1. Annotate the resulting modified Pod spec to indicate that it has been
-   modified by a `PodPreset`. The annotation is of the form
-   `podpreset.admission.kubernetes.io/podpreset-<pod-preset name>: "<resource version>"`.
+  modified by a `PodPreset`. The annotation is of the form
+  `podpreset.admission.kubernetes.io/podpreset-<pod-preset name>: "<resource version>"`.
 
 Each Pod can be matched by zero or more Pod Presets; and each `PodPreset` can be
 applied to zero or more pods. When a `PodPreset` is applied to one or more

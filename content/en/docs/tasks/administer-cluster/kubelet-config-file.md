@@ -78,5 +78,3 @@ feature, the combination of configuration provided via `--config` and any flags 
 is considered the default "last known good" configuration by the automatic rollback mechanism.
 
 {{% /capture %}}
-
-

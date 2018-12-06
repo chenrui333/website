@@ -134,8 +134,3 @@ kubectl delete namespace quota-pod-example
 * [Configure Quality of Service for Pods](/docs/tasks/configure-pod-container/quality-service-pod/)
 
 {{% /capture %}}
-
-
-
-
-

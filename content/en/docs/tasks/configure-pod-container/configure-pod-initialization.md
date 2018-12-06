@@ -89,5 +89,3 @@ The output shows that nginx is serving the web page that was written by the init
 * Learn more about [Debugging Init Containers](/docs/tasks/debug-application-cluster/debug-init-containers/)
 
 {{% /capture %}}
-
-

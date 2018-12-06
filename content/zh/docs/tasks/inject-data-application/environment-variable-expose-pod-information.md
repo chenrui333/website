@@ -150,6 +150,3 @@ kubectl logs dapi-envars-resourcefieldref
 * [ResourceFieldSelector](/docs/resources-reference/{{< param "version" >}}/#resourcefieldselector-v1-core)
 
 {{% /capture %}}
-
-
-

@@ -182,6 +182,3 @@ Pod 能有多个容器的主要原因是为了支持辅助应用（helper applic
 * 参见 [Pod](/docs/api-reference/{{< param "version" >}}/#pod-v1-core).
 
 {{% /capture %}}
-
-
-

@@ -65,6 +65,3 @@ kubeadm token list [flags]
 
   </tbody>
 </table>
-
-
-

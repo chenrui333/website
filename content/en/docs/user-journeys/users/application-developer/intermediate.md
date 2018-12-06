@@ -37,7 +37,7 @@ The following API objects provide functionality for additional workload types, w
 Like Deployments, these API objects run indefinitely on a cluster until they are manually terminated. They are best for long-running applications.
 
 *  **{{< glossary_tooltip text="StatefulSets" term_id="statefulset" >}}** - Like Deployments, StatefulSets allow you to specify that a
-   certain number of replicas should be running for your application.
+  certain number of replicas should be running for your application.
 
     {{< note  >}} It's misleading to say that Deployments can't handle stateful workloads. Using {{< glossary_tooltip text="PersistentVolumes" term_id="persistent-volume" >}}, you can persist data beyond the lifecycle of any individual Pod in your Deployment.
     {{< /note  >}}
@@ -162,5 +162,3 @@ If you feel fairly comfortable with the topics on this page and want to learn mo
 * {{< link text="Advanced App Developer" url="/docs/user-journeys/users/application-developer/advanced/" >}} - Dive deeper, with the next level of this journey.
 * {{< link text="Foundational Cluster Operator" url="/docs/user-journeys/users/cluster-operator/foundational/" >}} - Build breadth, by exploring other journeys.
 {{% /capture %}}
-
-

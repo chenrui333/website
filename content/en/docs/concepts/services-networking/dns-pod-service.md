@@ -265,5 +265,3 @@ For guidance on administering DNS configurations, check
 [Configure DNS Service](/docs/tasks/administer-cluster/dns-custom-nameservers/)
 
 {{% /capture %}}
-
-

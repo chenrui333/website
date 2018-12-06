@@ -29,7 +29,7 @@ The Kubernetes documentation is written in Markdown and processed and deployed u
 You can file issues, edit content, and review changes from others, all from the
 Github website. You can also use Github's embedded history and search tools.
 
-Not all tasks can be done in the Github UI, but these are discussed in the 
+Not all tasks can be done in the Github UI, but these are discussed in the
 [intermediate](/docs/contribute/intermediate/) and
 [advanced](/docs/contribute/advanced/) docs contribution guides.
 
@@ -65,9 +65,9 @@ We make use of the standard Hugo shortcodes, as well as a few that are custom to
 the Kubernetes documentation. See [Custom Hugo shortcodes](/docs/contribute/style/hugo-shortcodes/) for
 information about how to use them.
 
-### Multiple languages 
+### Multiple languages
 
-Documentation source is available in multiple languages in `/content/`. Each language has its own folder with a two-letter code determined by the [ISO 639-1 standard](https://www.loc.gov/standards/iso639-2/php/code_list.php). For example, English documentation source is stored in `/content/en/docs/`. 
+Documentation source is available in multiple languages in `/content/`. Each language has its own folder with a two-letter code determined by the [ISO 639-1 standard](https://www.loc.gov/standards/iso639-2/php/code_list.php). For example, English documentation source is stored in `/content/en/docs/`.
 
 For more information about contributing to documentation in multiple languages, see ["Localize content"](/docs/contribute/intermediate#localize-content) in the intermediate contributing guide.
 
@@ -93,7 +93,7 @@ you can instead [fix it](#fix-it) without filing a bug first.
     Using Markdown, fill in as many details as you can. In places where you see
     empty square brackets (`[ ]`), put an `x` between the set of brackets that
     represents the appropriate choice. If you have a proposed solution to fix
-    the issue, add it. 
+    the issue, add it.
 
 - **Request a new page**
 
@@ -113,7 +113,7 @@ in mind:
 - Clearly explain the specific impact the issue has on users.
 - Limit the scope of a given issue to a reasonable unit of work. For problems
   with a large scope, break them down into smaller issues.
-  
+
     For instance, "Fix the security docs" is not an actionable issue, but "Add
     details to the 'Restricting network access' topic" might be.
 - If the issue relates to another issue or pull request, you can refer to it
@@ -199,7 +199,7 @@ documentation.
 1.  On the page where you see the issue, click the pencil icon at the top left.
     A new page appears, with some help text.
 2.  Click the first blue button, which has the text **Edit &lt;page name&gt;**.
-    
+
     If you have never created a fork of the Kubernetes documentation
     repository, you are prompted to do so. Create the fork under your Github
     username, rather than another organization you may be a member of. The
@@ -220,7 +220,7 @@ Do not include references to other Github issues or pull
 requests in your commit message. You can add those to the pull request
 description later.
 {{< /note >}}
-      
+
     Click **Propose file change**. The change is saved as a commit in a
     new branch in your fork, which is automatically named something like
     `patch-1`.
@@ -232,14 +232,14 @@ description later.
     selection boxes, but don't do that now. Have a look at the difference
     viewer on the bottom of the screen, and if everything looks right, click
     **Create pull request**.
-    
+
     {{< note >}}
 If you don't want to create the pull request now, you can do it
 later, by browsing to the main URL of the Kubernetes website repository or
 your fork's repository. The Github website will prompt you to create the
 pull request if it detects that you pushed a new branch to your fork.
 {{< /note >}}
-    
+
 5.  The **Open a pull request** screen appears. The subject of the pull request
     is the same as the commit summary, but you can change it if needed. The
     body is populated by your extended commit message (if present) and some
@@ -247,7 +247,7 @@ pull request if it detects that you pushed a new branch to your fork.
     then delete the extra template text. Leave the
     **Allow edits from maintainers** checkbox selected. Click
     **Create pull request**.
-    
+
     Congratulations! Your pull request is available in
     [Pull requests](https://github.com/kubernetes/website/pulls).
 
@@ -297,7 +297,7 @@ conventions and etiquette and get used to the workflow.
     PR, and if applicable, also look at any linked issues. If you see a problem
     or room for improvement, hover over the line and click the `+` symbol that
     appears.
-    
+
       You can type a comment, and either choose **Add single comment** or **Start
       a review**. Typically, starting a review is better because it allows you to
       leave multiple comments and notifies the PR owner only when you have

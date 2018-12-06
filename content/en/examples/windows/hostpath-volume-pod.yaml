@@ -15,4 +15,4 @@ spec:
   volumes:
   - name: foo
     hostPath:
-     path: "C:\\etc\\foo"
+    path: "C:\\etc\\foo"

@@ -194,13 +194,13 @@ Whether a machine or a human using kubectl as above, the role of the approver is
 to verify that the CSR satisfies two requirements:
 
 1. The subject of the CSR controls the private key used to sign the CSR. This
-   addresses the threat of a third party masquerading as an authorized subject.
-   In the above example, this step would be to verify that the pod controls the
-   private key used to generate the CSR.
+  addresses the threat of a third party masquerading as an authorized subject.
+  In the above example, this step would be to verify that the pod controls the
+  private key used to generate the CSR.
 2. The subject of the CSR is authorized to act in the requested context. This
-   addresses the threat of an undesired subject joining the cluster. In the
-   above example, this step would be to verify that the pod is allowed to
-   participate in the requested service.
+  addresses the threat of an undesired subject joining the cluster. In the
+  above example, this step would be to verify that the pod is allowed to
+  participate in the requested service.
 
 If and only if these two requirements are met, the approver should approve
 the CSR and otherwise should deny the CSR.

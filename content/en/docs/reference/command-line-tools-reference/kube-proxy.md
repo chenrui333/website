@@ -305,6 +305,3 @@ kube-proxy [flags]
 
   </tbody>
 </table>
-
-
-

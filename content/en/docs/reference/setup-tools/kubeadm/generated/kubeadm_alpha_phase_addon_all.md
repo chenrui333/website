@@ -4,7 +4,7 @@ Installs all addons to a Kubernetes cluster
 ### Synopsis
 
 
-Installs the CoreDNS and the kube-proxy addons components via the API server. Please note that although the DNS server is deployed, it will not be scheduled until CNI is installed. 
+Installs the CoreDNS and the kube-proxy addons components via the API server. Please note that although the DNS server is deployed, it will not be scheduled until CNI is installed.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -17,7 +17,7 @@ kubeadm alpha phase addon all [flags]
 ```
   # Installs the CoreDNS and the kube-proxy addons components via the API server,
   # functionally equivalent to what installed by kubeadm init.
-  
+
   kubeadm alpha phase selfhosting from-staticpods
 ```
 
@@ -130,6 +130,3 @@ kubeadm alpha phase addon all [flags]
 
   </tbody>
 </table>
-
-
-

@@ -192,7 +192,7 @@ docker build -t hello-node:v1 .
 
 `kubectl run` 커맨드를 사용하여 파드를 관리하는 디플로이먼트를 만든다.
 파드는 `hello-node:v1` Docker 이미지를 기반으로 한 컨테이너를 실행한다.
-(이미지를 레지스트리에 Push하지 않았기 때문에) Docker 레지스트리에서 이미지를 가져오기 보다는, 
+(이미지를 레지스트리에 Push하지 않았기 때문에) Docker 레지스트리에서 이미지를 가져오기 보다는,
 항상 로컬 이미지를 사용하기 위해 `--image-pull-policy` 플래그를 `Never`로 설정한다.
 
 ```shell
@@ -274,7 +274,7 @@ kubernetes   ClusterIP   10.0.0.1     <none>        443/TCP    14d
 
 `--type=LoadBalancer` 플래그는 해당 서비스를 클러스터 바깥으로 노출시키는
 것을 지시한다. 로드 밸런서를 지원하는 클라우드 제공 업체의 경우, 외부
-IP 주소가 프로비저닝되어서 서비스에 접근할 수 있도록 해준다. Minikube에서 
+IP 주소가 프로비저닝되어서 서비스에 접근할 수 있도록 해준다. Minikube에서
 `LoadBalancer` 타입의 서비스는 `minikube service` 커맨드를 통해 접근할 수 있다.
 
 ```shell
@@ -344,7 +344,7 @@ minikube addons list
 - ingress: disabled
 ```
 
-이하의 커맨드를 적용하기 위해서는 Minikube가 실행 중이어야 한다. 예를 들어, `heapster` 애드온을 활성화하기 위해서는 
+이하의 커맨드를 적용하기 위해서는 Minikube가 실행 중이어야 한다. 예를 들어, `heapster` 애드온을 활성화하기 위해서는
 다음과 같이 실행한다.
 
 ```shell
@@ -426,5 +426,3 @@ minikube delete
 * [Service objects](/docs/concepts/services-networking/service/)에 대해서 더 배워 본다.
 
 {{% /capture %}}
-
-

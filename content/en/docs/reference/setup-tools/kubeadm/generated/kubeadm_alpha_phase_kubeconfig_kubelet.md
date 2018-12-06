@@ -4,9 +4,9 @@ Generates a kubeconfig file for the kubelet to use. Please note that this should
 ### Synopsis
 
 
-Generates the kubeconfig file for the kubelet to use and saves it to /etc/kubernetes/kubelet.conf file. 
+Generates the kubeconfig file for the kubelet to use and saves it to /etc/kubernetes/kubelet.conf file.
 
-Please note that this should only be used for bootstrapping purposes. After your control plane is up, you should request all kubelet credentials from the CSR API. 
+Please note that this should only be used for bootstrapping purposes. After your control plane is up, you should request all kubelet credentials from the CSR API.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -95,6 +95,3 @@ kubeadm alpha phase kubeconfig kubelet [flags]
 
   </tbody>
 </table>
-
-
-

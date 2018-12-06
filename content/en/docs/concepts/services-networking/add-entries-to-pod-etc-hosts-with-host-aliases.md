@@ -128,4 +128,3 @@ a container restart or a Pod reschedule. Thus, it is not suggested to modify
 the contents of the file.
 
 {{% /capture %}}
-

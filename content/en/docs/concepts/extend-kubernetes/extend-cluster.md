@@ -210,7 +210,3 @@ the nodes chosen for a pod.
   * [List of Operators](https://github.com/operator-framework/awesome-operators)
 
 {{% /capture %}}
-
-
-
-

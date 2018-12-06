@@ -8,11 +8,11 @@ weight: 30
 
 {{% capture overview %}}
 
-<img src="https://raw.githubusercontent.com/cncf/artwork/master/kubernetes/certified-kubernetes/versionless/color/certified-kubernetes-color.png" align="right" width="150px">**kubeadm** helps you bootstrap a minimum viable Kubernetes cluster that conforms to best practices.  With kubeadm, your cluster should pass [Kubernetes Conformance tests](https://kubernetes.io/blog/2017/10/software-conformance-certification). Kubeadm also supports other cluster 
-lifecycle functions, such as upgrades, downgrade, and managing [bootstrap tokens](/docs/reference/access-authn-authz/bootstrap-tokens/). 
+<img src="https://raw.githubusercontent.com/cncf/artwork/master/kubernetes/certified-kubernetes/versionless/color/certified-kubernetes-color.png" align="right" width="150px">**kubeadm** helps you bootstrap a minimum viable Kubernetes cluster that conforms to best practices.  With kubeadm, your cluster should pass [Kubernetes Conformance tests](https://kubernetes.io/blog/2017/10/software-conformance-certification). Kubeadm also supports other cluster
+lifecycle functions, such as upgrades, downgrade, and managing [bootstrap tokens](/docs/reference/access-authn-authz/bootstrap-tokens/).
 
-Because you can install kubeadm on various types of machine (e.g. laptop, server, 
-Raspberry Pi, etc.), it's well suited for integration with provisioning systems 
+Because you can install kubeadm on various types of machine (e.g. laptop, server,
+Raspberry Pi, etc.), it's well suited for integration with provisioning systems
 such as Terraform or Ansible.
 
 kubeadm's simplicity means it can serve a wide range of use cases:
@@ -77,11 +77,11 @@ timeframe; which also applies to `kubeadm`.
 
 - One or more machines running a deb/rpm-compatible OS, for example Ubuntu or CentOS
 - 2 GB or more of RAM per machine. Any less leaves little room for your
-   apps.
+  apps.
 - 2 CPUs or more on the master
 - Full network connectivity among all machines in the cluster. A public or
-   private network is fine.
- 
+  private network is fine.
+
 {{% /capture %}}
 
 {{% capture steps %}}
@@ -103,7 +103,7 @@ If you have already installed kubeadm, run `apt-get update &&
 apt-get upgrade` or `yum update` to get the latest version of kubeadm.
 
 When you upgrade, the kubelet restarts every few seconds as it waits in a crashloop for
-kubeadm to tell it what to do. This crashloop is expected and normal. 
+kubeadm to tell it what to do. This crashloop is expected and normal.
 After you initialize your master, the kubelet runs normally.
 {{< /note >}}
 
@@ -113,22 +113,22 @@ The master is the machine where the control plane components run, including
 etcd (the cluster database) and the API server (which the kubectl CLI
 communicates with).
 
-1. Choose a pod network add-on, and verify whether it requires any arguments to 
+1. Choose a pod network add-on, and verify whether it requires any arguments to
 be passed to kubeadm initialization. Depending on which
 third-party provider you choose, you might need to set the `--pod-network-cidr` to
 a provider-specific value. See [Installing a pod network add-on](#pod-network).
-1. (Optional) Unless otherwise specified, kubeadm uses the network interface associated 
-with the default gateway to advertise the master's IP. To use a different 
-network interface, specify the `--apiserver-advertise-address=<ip-address>` argument 
-to `kubeadm init`. To deploy an IPv6 Kubernetes cluster using IPv6 addressing, you 
+1. (Optional) Unless otherwise specified, kubeadm uses the network interface associated
+with the default gateway to advertise the master's IP. To use a different
+network interface, specify the `--apiserver-advertise-address=<ip-address>` argument
+to `kubeadm init`. To deploy an IPv6 Kubernetes cluster using IPv6 addressing, you
 must specify an IPv6 address, for example `--apiserver-advertise-address=fd00::101`
-1. (Optional) Run `kubeadm config images pull` prior to `kubeadm init` to verify 
-connectivity to gcr.io registries.   
+1. (Optional) Run `kubeadm config images pull` prior to `kubeadm init` to verify
+connectivity to gcr.io registries.
 
 Now run:
 
 ```bash
-kubeadm init <args> 
+kubeadm init <args>
 ```
 
 ### More information
@@ -147,7 +147,7 @@ components do not currently support multi-architecture.
 
 `kubeadm init` first runs a series of prechecks to ensure that the machine
 is ready to run Kubernetes. These prechecks expose warnings and exit on errors. `kubeadm init`
-then downloads and installs the cluster control plane components. This may take several minutes. 
+then downloads and installs the cluster control plane components. This may take several minutes.
 The output should look like:
 
 ```none
@@ -238,8 +238,8 @@ each other.
 kubeadm only supports Container Network Interface (CNI) based networks (and does not support kubenet).**
 
 Several projects provide Kubernetes pod networks using CNI, some of which also
-support [Network Policy](/docs/concepts/services-networking/networkpolicies/). See the [add-ons page](/docs/concepts/cluster-administration/addons/) for a complete list of available network add-ons. 
-- IPv6 support was added in [CNI v0.6.0](https://github.com/containernetworking/cni/releases/tag/v0.6.0). 
+support [Network Policy](/docs/concepts/services-networking/networkpolicies/). See the [add-ons page](/docs/concepts/cluster-administration/addons/) for a complete list of available network add-ons.
+- IPv6 support was added in [CNI v0.6.0](https://github.com/containernetworking/cni/releases/tag/v0.6.0).
 - [CNI bridge](https://github.com/containernetworking/plugins/blob/master/plugins/main/bridge/README.md) and [local-ipam](https://github.com/containernetworking/plugins/blob/master/plugins/ipam/host-local/README.md) are the only supported IPv6 network plugins in Kubernetes version 1.9.
 
 Note that kubeadm sets up a more secure cluster by default and enforces use of [RBAC](/docs/reference/access-authn-authz/rbac/).
@@ -436,9 +436,9 @@ The output is similar to this:
 ``` console
 TOKEN                    TTL  EXPIRES              USAGES           DESCRIPTION            EXTRA GROUPS
 8ewj1p.9r9hcjoqgajrj4gi  23h  2018-06-12T02:51:28Z authentication,  The default bootstrap  system:
-                                                   signing          token generated by     bootstrappers:
+                                                  signing          token generated by     bootstrappers:
                                                                     'kubeadm init'.        kubeadm:
-                                                                                           default-node-token
+                                                                                          default-node-token
 ```
 
 By default, tokens expire after 24 hours. If you are joining a node to the cluster after the current token has expired,
@@ -458,7 +458,7 @@ If you don't have the value of `--discovery-token-ca-cert-hash`, you can get it 
 
 ``` bash
 openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \
-   openssl dgst -sha256 -hex | sed 's/^.* //'
+  openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
 
 The output is similar to this:
@@ -608,19 +608,15 @@ Please note: kubeadm is a work in progress and these limitations will be
 addressed in due course.
 
 1. The cluster created here has a single master, with a single etcd database
-   running on it. This means that if the master fails, your cluster may lose
-   data and may need to be recreated from scratch. Adding HA support
-   (multiple etcd servers, multiple API servers, etc) to kubeadm is
-   still a work-in-progress.
+  running on it. This means that if the master fails, your cluster may lose
+  data and may need to be recreated from scratch. Adding HA support
+  (multiple etcd servers, multiple API servers, etc) to kubeadm is
+  still a work-in-progress.
 
-   Workaround: regularly
-   [back up etcd](https://coreos.com/etcd/docs/latest/admin_guide.html). The
-   etcd data directory configured by kubeadm is at `/var/lib/etcd` on the master.
+  Workaround: regularly
+  [back up etcd](https://coreos.com/etcd/docs/latest/admin_guide.html). The
+  etcd data directory configured by kubeadm is at `/var/lib/etcd` on the master.
 
 ## Troubleshooting {#troubleshooting}
 
 If you are running into difficulties with kubeadm, please consult our [troubleshooting docs](/docs/setup/independent/troubleshooting-kubeadm/).
-
-
-
-

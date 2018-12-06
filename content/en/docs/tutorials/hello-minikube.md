@@ -14,7 +14,7 @@ menu:
 
 This tutorial shows you how to run a simple Hello World Node.js app
 on Kubernetes using [Minikube](/docs/getting-started-guides/minikube) and Katacoda.
-Katacoda provides a free, in-browser Kubernetes environment. 
+Katacoda provides a free, in-browser Kubernetes environment.
 
 {{< note >}}
 You can also follow this tutorial if you've installed [Minikube locally](/docs/tasks/tools/install-minikube/).
@@ -46,7 +46,7 @@ For more information on the `docker build` command, read the [Docker documentati
 
 ## Create a Minikube cluster
 
-1. Click **Launch Terminal** 
+1. Click **Launch Terminal**
 
     {{< kat-button >}}
 
@@ -60,7 +60,7 @@ For more information on the `docker build` command, read the [Docker documentati
 
 3. Katacoda environment only: At the top of the terminal pane, click the plus sign, and then click **Select port to view on Host 1**.
 
-4. Katacoda environment only: Type 30000, and then click **Display Port**. 
+4. Katacoda environment only: Type 30000, and then click **Display Port**.
 
 ## Create a Deployment
 
@@ -72,7 +72,7 @@ Pod and restarts the Pod's Container if it terminates. Deployments are the
 recommended way to manage the creation and scaling of Pods.
 
 1. Use the `kubectl create` command to create a Deployment that manages a Pod. The
-Pod runs a Container based on the provided Docker image. 
+Pod runs a Container based on the provided Docker image.
 
     ```shell
     kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node --port=8080
@@ -114,7 +114,7 @@ Pod runs a Container based on the provided Docker image.
     ```shell
     kubectl config view
     ```
-  
+
     {{< note >}}For more information about `kubectl`commands, see the [kubectl overview](/docs/user-guide/kubectl-overview/).{{< /note >}}
 
 ## Create a Service
@@ -129,7 +129,7 @@ Kubernetes [*Service*](/docs/concepts/services-networking/service/).
     ```shell
     kubectl expose deployment hello-node --type=LoadBalancer
     ```
-    
+
     The `--type=LoadBalancer` flag indicates that you want to expose your Service
     outside of the cluster.
 
@@ -160,7 +160,7 @@ Kubernetes [*Service*](/docs/concepts/services-networking/service/).
 
 4. Katacoda environment only: Click the plus sign, and then click **Select port to view on Host 1**.
 
-5. Katacoda environment only: Type in the Port number following `8080:`, and then click **Display Port**. 
+5. Katacoda environment only: Type in the Port number following `8080:`, and then click **Display Port**.
 
     This opens up a browser window that serves your app and shows the "Hello World" message.
 
@@ -193,13 +193,13 @@ Minikube has a set of built-in addons that can be enabled, disabled and opened i
     registry-creds: disabled
     storage-provisioner: enabled
     ```
-   
+
 2. Enable an addon, for example, `heapster`:
 
     ```shell
     minikube addons enable heapster
     ```
-  
+
     Output:
 
     ```shell
@@ -236,7 +236,7 @@ Minikube has a set of built-in addons that can be enabled, disabled and opened i
     ```shell
     minikube addons disable heapster
     ```
-  
+
     Output:
 
     ```shell

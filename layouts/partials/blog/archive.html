@@ -2,11 +2,11 @@
 {{ with $.Site.Params.language_alternatives }}
   {{ range . }}
           {{ with (where $.CurrentSection.Translations ".Lang" . ) }}
-          {{ $p := index . 0 }}      
+          {{ $p := index . 0 }}
           {{ $pages = $pages | lang.Merge $p.Pages }}
           {{ end }}
   {{ end }}
- {{ end }}  
+ {{ end }}
 <div class="panel-group" id="blog-archive">
   {{ range $i, $e := $pages.GroupByPublishDate "2006" }}
   <div class="panel panel-default">

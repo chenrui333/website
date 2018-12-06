@@ -11,4 +11,3 @@ data:
   etcdctl_peers: http://etcd:2379
   duplicate_key: FROM_CONFIG_MAP
   REPLACE_ME: "a value"
-

@@ -40,9 +40,9 @@ Auth-related operations:
 In future releases, the node authorizer may add or remove permissions to ensure kubelets
 have the minimal set of permissions required to operate correctly.
 
-In order to be authorized by the Node authorizer, kubelets must use a credential that identifies them as 
+In order to be authorized by the Node authorizer, kubelets must use a credential that identifies them as
 being in the `system:nodes` group, with a username of `system:node:<nodeName>`.
-This group and user name format match the identity created for each kubelet as part of 
+This group and user name format match the identity created for each kubelet as part of
 [kubelet TLS bootstrapping](/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/).
 
 To enable the Node authorizer, start the apiserver with `--authorization-mode=Node`.

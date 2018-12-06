@@ -11,4 +11,3 @@ spec:
       image: ecorp/website
       ports:
         - containerPort: 80
-

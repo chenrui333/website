@@ -4,7 +4,7 @@ Generates the certificate for serving the kubernetes API
 ### Synopsis
 
 
-Renews the certificate for serving the kubernetes API, and saves them into apiserver.cert and apiserver.key files. 
+Renews the certificate for serving the kubernetes API, and saves them into apiserver.cert and apiserver.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew apiserver [flags]
 
   </tbody>
 </table>
-
-
-

@@ -140,6 +140,3 @@ kubeadm upgrade apply [version]
 
   </tbody>
 </table>
-
-
-

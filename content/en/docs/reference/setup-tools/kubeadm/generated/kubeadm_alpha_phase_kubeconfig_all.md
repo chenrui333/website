@@ -4,7 +4,7 @@ Generates all kubeconfig files necessary to establish the control plane and the 
 ### Synopsis
 
 
-Generates all kubeconfig files necessary to establish the control plane and the admin kubeconfig file. 
+Generates all kubeconfig files necessary to establish the control plane and the admin kubeconfig file.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -18,7 +18,7 @@ kubeadm alpha phase kubeconfig all [flags]
   # Generates all kubeconfig files, functionally equivalent to what generated
   # by kubeadm init.
   kubeadm alpha phase kubeconfig all
-  
+
   # Generates all kubeconfig files using options read from a configuration file.
   kubeadm alpha phase kubeconfig all --config masterconfiguration.yaml
 ```
@@ -104,6 +104,3 @@ kubeadm alpha phase kubeconfig all [flags]
 
   </tbody>
 </table>
-
-
-

@@ -33,7 +33,7 @@ To create a Kubernetes cluster on AWS, you will need an Access Key ID and a Secr
 
 1. Configure Your Cluster
 
-    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster. 
+    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster.
 
 1. Run the Cluster
 
@@ -62,7 +62,7 @@ To create a Kubernetes cluster on GCE, you will need the Service Account JSON Da
 
 1. Configure Your Cluster
 
-    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster. 
+    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster.
 
 1. Run the Cluster
 
@@ -91,7 +91,7 @@ To create a Kubernetes cluster on Google Kubernetes Engine, you will need the Se
 
 1. Configure Your Cluster
 
-    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster. 
+    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster.
 
 1. Run the Cluster
 
@@ -120,7 +120,7 @@ To create a Kubernetes cluster on DigitalOcean, you will need a DigitalOcean API
 
 1. Configure Your Cluster
 
-    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster. 
+    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster.
 
 1. Run the Cluster
 
@@ -149,7 +149,7 @@ To create a Kubernetes cluster on Microsoft Azure, you will need an Azure Subscr
 
 1. Configure Your Cluster
 
-    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster. 
+    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster.
 
 1. Run the Cluster
 
@@ -178,7 +178,7 @@ To create a Kubernetes cluster on Packet, you will need a Packet API Key.
 
 1. Configure Your Cluster
 
-    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster. 
+    Choose any extra options you may want to include with your cluster, then click **SUBMIT** to create the cluster.
 
 1. Run the Cluster
 

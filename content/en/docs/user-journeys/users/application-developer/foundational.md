@@ -45,11 +45,11 @@ Minikube can be installed locally, and runs a simple, single-node Kubernetes clu
 
 * *(Optional)* {{< link text="Install Docker" url="/docs/setup/independent/install-kubeadm/#installing-docker" >}} if you plan to run your Minikube cluster as part of a local development environment.
 
-   Minikube includes a Docker daemon, but if you're developing applications locally, you'll want an independent Docker instance to support your workflow. This allows you to create {{< glossary_tooltip text="containers" term_id="container" >}} and push them to a container registry.
+  Minikube includes a Docker daemon, but if you're developing applications locally, you'll want an independent Docker instance to support your workflow. This allows you to create {{< glossary_tooltip text="containers" term_id="container" >}} and push them to a container registry.
 
-   {{< note  >}}
-   Version 1.12 is recommended for full compatibility with Kubernetes, but a few other versions are tested and known to work.
-   {{< /note  >}}
+  {{< note  >}}
+  Version 1.12 is recommended for full compatibility with Kubernetes, but a few other versions are tested and known to work.
+  {{< /note  >}}
 
 You can get basic information about your cluster with the commands `kubectl cluster-info` and `kubectl get nodes`. However, to get a good idea of what's really going on, you need to deploy an application to your cluster. This is covered in the next section.
 
@@ -221,9 +221,9 @@ All of these controllers implement a *control loop*. For simplicity, you can thi
 
 1. X == Y ?
 
-   * `true` - Do nothing.
-   * `false` - Perform tasks to get to Y, such as starting or restarting containers,
-   or scaling the number of replicas of a given application. Return to 1.
+  * `true` - Do nothing.
+  * `false` - Perform tasks to get to Y, such as starting or restarting containers,
+  or scaling the number of replicas of a given application. Return to 1.
 {{< /note >}}
 
 By continuously looping, these controllers ensure the cluster can pick up new updates and avoid drifting from the desired state. These ideas are covered in more detail {{< link text="here" url="https://kubernetes.io/docs/concepts/" >}}.
@@ -258,6 +258,3 @@ If you feel fairly comfortable with the topics on this page and want to learn mo
 * {{< link text="Foundational Cluster Operator" url="/docs/user-journeys/users/cluster-operator/foundational/" >}} - Build breadth, by exploring other journeys.
 
 {{% /capture %}}
-
-
-

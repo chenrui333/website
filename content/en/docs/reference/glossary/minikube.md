@@ -6,14 +6,13 @@ full_link: /docs/getting-started-guides/minikube/
 short_description: >
   A tool for running Kubernetes locally.
 
-aka: 
+aka:
 tags:
 - fundamental
 - tool
 ---
  A tool for running Kubernetes locally.
 
-<!--more--> 
+<!--more-->
 
 Minikube runs a single-node cluster inside a VM on your computer.
-

@@ -33,7 +33,7 @@ my-kubernetes-cluster*    aws/us-east-2  available        12     22  admin   2 m
 You can then destroy the model, which will in turn destroy the cluster inside of it:
 
     juju destroy-model my-kubernetes-cluster
-    
+
 ```
 $ juju destroy-model my-kubernetes-cluster
 WARNING! This command will destroy the "my-kubernetes-cluster" model.
@@ -52,20 +52,20 @@ $
 
 This will destroy and decommission all nodes. You can confirm all nodes are destroyed by running `juju status`.
 
-If you're using a public cloud this will terminate the instances. If you're on bare metal using MAAS this will release the nodes, optionally wipe the disk, power off the machines, and return them to available pool of machines to deploy from. 
+If you're using a public cloud this will terminate the instances. If you're on bare metal using MAAS this will release the nodes, optionally wipe the disk, power off the machines, and return them to available pool of machines to deploy from.
 
 ## Cleaning up the Controller
 
-If you're not using the controller for anything else, you will also need to remove the controller instance: 
+If you're not using the controller for anything else, you will also need to remove the controller instance:
 
 ```
 $ juju list-controllers
 Use --refresh flag with this command to see the latest information.
 
 Controller      Model  User   Access     Cloud/Region   Models  Machines    HA  Version
-aws-us-east-2*  -      admin  superuser  aws/us-east-2       2         1  none  2.0.1  
+aws-us-east-2*  -      admin  superuser  aws/us-east-2       2         1  none  2.0.1
 
-$ juju destroy-controller aws-us-east-2 
+$ juju destroy-controller aws-us-east-2
 WARNING! This command will destroy the "aws-us-east-2" controller.
 This includes all machines, applications, data and other resources.
 
@@ -73,8 +73,6 @@ Continue? (y/N):y
 Destroying controller
 Waiting for hosted model resources to be reclaimed
 All hosted models reclaimed, cleaning up controller machines
-$ 
+$
 ```
 {{% /capture %}}
-
-

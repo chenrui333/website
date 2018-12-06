@@ -93,15 +93,15 @@ If you don't see a command prompt, try pressing enter.
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
 3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc noqueue
     link/ether 0a:58:0a:f4:03:08 brd ff:ff:ff:ff:ff:ff
     inet 10.244.3.8/24 scope global eth0
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
     inet6 fe80::188a:84ff:feb0:26a5/64 scope link
-       valid_lft forever preferred_lft forever
+      valid_lft forever preferred_lft forever
 
 # wget -qO - 10.0.170.92
 CLIENT VALUES:
@@ -150,10 +150,10 @@ client_address=10.240.0.3
 
 ```
           client
-             \ ^
+            \ ^
               \ \
-               v \
-   node 1 <--- node 2
+              v \
+  node 1 <--- node 2
     | ^   SNAT
     | |   --->
     v |
@@ -164,7 +164,7 @@ client_address=10.240.0.3
 为了防止这种情况发生，Kubernetes 提供了一个特性来保留客户端的源 IP 地址[(点击此处查看可用特性)](/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip)。设置 `service.spec.externalTrafficPolicy` 的值为 `Local`，请求就只会被代理到本地 endpoints 而不会被转发到其它节点。这样就保留了最初的源 IP 地址。如果没有本地 endpoints，发送到这个节点的数据包将会被丢弃。这样在应用到数据包的任何包处理规则下，你都能依赖这个正确的 source-ip 使数据包通过并到达 endpoint。
 
 
-设置 `service.spec.externalTrafficPolicy` 字段如下： 
+设置 `service.spec.externalTrafficPolicy` 字段如下：
 
 ```console
 $ kubectl patch svc nodeport -p '{"spec":{"externalTrafficPolicy":"Local"}}'
@@ -195,10 +195,10 @@ client_address=104.132.1.79
 
 ```
         client
-       ^ /   \
+      ^ /   \
       / /     \
-     / v       X
-   node 1     node 2
+    / v       X
+  node 1     node 2
     ^ |
     | |
     | v
@@ -239,12 +239,12 @@ client_address=10.240.0.5
                       client
                         |
                       lb VIP
-                     / ^
+                    / ^
                     v /
 health check --->   node 1   node 2 <--- health check
         200  <---   ^ |             ---> 500
                     | V
-                 endpoint
+                endpoint
 ```
 
 
@@ -327,5 +327,3 @@ $ kubectl delete deployment source-ip-app
 * 学习更多关于 [通过 services 连接应用](/docs/concepts/services-networking/connect-applications-service/)
 * 学习更多关于 [负载均衡](/docs/user-guide/load-balancer)
 {{% /capture %}}
-
-

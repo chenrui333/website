@@ -24,7 +24,7 @@ Below is a demo of the feature state snippet, which displays the feature as stab
 {{</* feature-state for_k8s_version="v1.10" state="stable" */>}}
 ```
 
-Renders to: 
+Renders to:
 
 {{< feature-state for_k8s_version="v1.10" state="stable" >}}
 
@@ -111,7 +111,7 @@ The `tabs` shortcode takes these parameters:
 
 * `name`: The name as shown on the tab.
 * `codelang`: If you provide inner content to the `tab` shortcode, you can tell Hugo what code language to use for highlighting.
-* `include`: The file to include in the tab. If the tab lives in a Hugo [leaf bundle](https://gohugo.io/content-management/page-bundles/#leaf-bundles), the file -- which can be any MIME type supported by Hugo -- is looked up in the bundle itself. If not, the content page that needs to be included is looked up relative to the current page. Note that with the `include`, you do not have any shortcode inner content and must use the self-closing syntax. For example, <code>{{</* tab name="Content File #1" include="example1" /*/>}}</code>. The language needs to be specified under `codelang` or the language is taken based on the file name. Non-content files are code-highlighted by default. 
+* `include`: The file to include in the tab. If the tab lives in a Hugo [leaf bundle](https://gohugo.io/content-management/page-bundles/#leaf-bundles), the file -- which can be any MIME type supported by Hugo -- is looked up in the bundle itself. If not, the content page that needs to be included is looked up relative to the current page. Note that with the `include`, you do not have any shortcode inner content and must use the self-closing syntax. For example, <code>{{</* tab name="Content File #1" include="example1" /*/>}}</code>. The language needs to be specified under `codelang` or the language is taken based on the file name. Non-content files are code-highlighted by default.
 * If your inner content is markdown, you must use the `%`-delimiter to surround the tab. For example, `{{%/* tab name="Tab 1" %}}This is **markdown**{{% /tab */%}}`
 * You can combine the variations mentioned above inside a tab set.
 
@@ -134,7 +134,7 @@ println "This is tab 2."
 {{< /tabs */>}}
 ```
 
-Renders to: 
+Renders to:
 
 {{< tabs name="tab_with_code" >}}
 {{< tab name="Tab 1" codelang="bash" >}}
@@ -157,8 +157,8 @@ It can even contain shortcodes.
 {{% /tab %}}
 {{< tab name="HTML" >}}
 <div>
-	<h3>Plain HTML</h3>
-	<p>This is some <i>plain</i> HTML.</p>
+  <h3>Plain HTML</h3>
+  <p>This is some <i>plain</i> HTML.</p>
 </div>
 {{< /tab >}}
 {{< /tabs */>}}
@@ -177,8 +177,8 @@ It can even contain shortcodes.
 {{% /tab %}}
 {{< tab name="HTML" >}}
 <div>
-	<h3>Plain HTML</h3>
-	<p>This is some <i>plain</i> HTML.</p>
+  <h3>Plain HTML</h3>
+  <p>This is some <i>plain</i> HTML.</p>
 </div>
 {{< /tab >}}
 {{< /tabs >}}
@@ -211,4 +211,3 @@ Renders to:
 * Learn about [staging your changes](/docs/home/contribute/stage-documentation-changes/)
 * Learn about [creating a pull request](/docs/home/contribute/create-pull-request/).
 {{% /capture %}}
-

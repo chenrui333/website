@@ -7,7 +7,7 @@ weight: 40
 ---
 
 {{% capture overview %}}
-{{< glossary_definition term_id="service-catalog" length="all" prepend="Service Catalog is" >}}  
+{{< glossary_definition term_id="service-catalog" length="all" prepend="Service Catalog is" >}}
 
 A service broker, as defined by the [Open service broker API spec](https://github.com/openservicebrokerapi/servicebroker/blob/v2.13/spec.md), is an endpoint for a set of managed services offered and maintained by a third-party, which could be a cloud provider such as AWS, GCP, or Azure.
 Some examples of managed services are Microsoft Azure Cloud Queue, Amazon Simple Queue Service, and Google Cloud Pub/Sub, but they can be any software offering that can be used by an application.
@@ -218,8 +218,8 @@ The following example describes how to map secret values into application enviro
           - name: "TOPIC"
             valueFrom:
                 secretKeyRef:
-                   name: provider-queue-credentials
-                   key: topic
+                  name: provider-queue-credentials
+                  key: topic
 ```
 
 {{% /capture %}}
@@ -232,6 +232,3 @@ The following example describes how to map secret values into application enviro
 * View [svc-cat.io](https://svc-cat.io/docs/).
 
 {{% /capture %}}
-
-
-

@@ -87,6 +87,3 @@ These files are published at
 * [Generating Reference Pages for Kubernetes Components and Tools](/docs/home/contribute/generated-reference/kubernetes-components/)
 
 {{% /capture %}}
-
-
-

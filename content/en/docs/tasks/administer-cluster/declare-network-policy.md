@@ -128,5 +128,3 @@ Connecting to nginx (10.100.0.16:80)
 / #
 ```
 {{% /capture %}}
-
-

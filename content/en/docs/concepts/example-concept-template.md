@@ -36,5 +36,3 @@ To use ...
 * See [Using Page Templates - Concept template](/docs/home/contribute/page-templates/#concept_template) for how to use this template.
 
 {{% /capture %}}
-
-

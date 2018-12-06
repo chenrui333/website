@@ -128,5 +128,3 @@ At this point, deleting a federated ReplicaSet will not delete the corresponding
 {{< /note >}}
 
 {{% /capture %}}
-
-

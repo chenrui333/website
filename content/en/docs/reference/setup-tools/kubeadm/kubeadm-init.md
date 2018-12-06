@@ -20,74 +20,74 @@ This command initializes a Kubernetes master node.
 following steps:
 
 1. Runs a series of pre-flight checks to validate the system state
-   before making changes. Some checks only trigger warnings, others are
-   considered errors and will exit kubeadm until the problem is corrected or the
-   user specifies `--ignore-preflight-errors=<list-of-errors>`.
+  before making changes. Some checks only trigger warnings, others are
+  considered errors and will exit kubeadm until the problem is corrected or the
+  user specifies `--ignore-preflight-errors=<list-of-errors>`.
 
 1. Generates a self-signed CA (or using an existing one if provided) to set up
-   identities for each component in the cluster. If the user has provided their
-   own CA cert and/or key by dropping it in the cert directory configured via `--cert-dir`
-   (`/etc/kubernetes/pki` by default) this step is skipped as described in the
-   [Using custom certificates](#custom-certificates) document.
-   The APIServer certs will have additional SAN entries for any `--apiserver-cert-extra-sans` arguments, lowercased if necessary.
+  identities for each component in the cluster. If the user has provided their
+  own CA cert and/or key by dropping it in the cert directory configured via `--cert-dir`
+  (`/etc/kubernetes/pki` by default) this step is skipped as described in the
+  [Using custom certificates](#custom-certificates) document.
+  The APIServer certs will have additional SAN entries for any `--apiserver-cert-extra-sans` arguments, lowercased if necessary.
 
 1. Writes kubeconfig files in `/etc/kubernetes/`  for
-   the kubelet, the controller-manager and the scheduler to use to connect to the
-   API server, each with its own identity, as well as an additional
-   kubeconfig file for administration named `admin.conf`.
+  the kubelet, the controller-manager and the scheduler to use to connect to the
+  API server, each with its own identity, as well as an additional
+  kubeconfig file for administration named `admin.conf`.
 
 1. If kubeadm is invoked with `--feature-gates=DynamicKubeletConfig` enabled,
-   it writes the kubelet init configuration into the `/var/lib/kubelet/config/init/kubelet` file.
-   See [Set Kubelet parameters via a config file](/docs/tasks/administer-cluster/kubelet-config-file/)
-   and [Reconfigure a Node's Kubelet in a Live Cluster](/docs/tasks/administer-cluster/reconfigure-kubelet/)
-   for more information about Dynamic Kubelet Configuration.
-   This functionality is now by default disabled as it is behind a feature gate, but is expected to be a default in future versions.
+  it writes the kubelet init configuration into the `/var/lib/kubelet/config/init/kubelet` file.
+  See [Set Kubelet parameters via a config file](/docs/tasks/administer-cluster/kubelet-config-file/)
+  and [Reconfigure a Node's Kubelet in a Live Cluster](/docs/tasks/administer-cluster/reconfigure-kubelet/)
+  for more information about Dynamic Kubelet Configuration.
+  This functionality is now by default disabled as it is behind a feature gate, but is expected to be a default in future versions.
 
 1. Generates static Pod manifests for the API server,
-   controller manager and scheduler. In case an external etcd is not provided,
-   an additional static Pod manifest are generated for etcd.
+  controller manager and scheduler. In case an external etcd is not provided,
+  an additional static Pod manifest are generated for etcd.
 
-   Static Pod manifests are written to `/etc/kubernetes/manifests`; the kubelet
-   watches this directory for Pods to create on startup.
+  Static Pod manifests are written to `/etc/kubernetes/manifests`; the kubelet
+  watches this directory for Pods to create on startup.
 
-   Once control plane Pods are up and running, the `kubeadm init` sequence can continue.
+  Once control plane Pods are up and running, the `kubeadm init` sequence can continue.
 
 1. If kubeadm is invoked with `--feature-gates=DynamicKubeletConfig` enabled,
-   it completes the kubelet dynamic configuration by creating a ConfigMap and some RBAC rules that enable
-   kubelets to access to it, and updates the node by pointing `Node.spec.configSource` to the
-   newly-created ConfigMap.
-   This functionality is now by default disabled as it is behind a feature gate, but is expected to be a default in future versions.
+  it completes the kubelet dynamic configuration by creating a ConfigMap and some RBAC rules that enable
+  kubelets to access to it, and updates the node by pointing `Node.spec.configSource` to the
+  newly-created ConfigMap.
+  This functionality is now by default disabled as it is behind a feature gate, but is expected to be a default in future versions.
 
 1. Apply labels and taints to the master node so that no additional workloads will
-   run there.
+  run there.
 
 1. Generates the token that additional nodes can use to register
-   themselves with the master in the future.  Optionally, the user can provide a
-   token via `--token`, as described in the
-   [kubeadm token](/docs/reference/setup-tools/kubeadm/kubeadm-token/) docs.
+  themselves with the master in the future.  Optionally, the user can provide a
+  token via `--token`, as described in the
+  [kubeadm token](/docs/reference/setup-tools/kubeadm/kubeadm-token/) docs.
 
 1. Makes all the necessary configurations for allowing node joining with the
-   [Bootstrap Tokens](/docs/reference/access-authn-authz/bootstrap-tokens/) and
-   [TLS Bootstrap](/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/)
-   mechanism:
+  [Bootstrap Tokens](/docs/reference/access-authn-authz/bootstrap-tokens/) and
+  [TLS Bootstrap](/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/)
+  mechanism:
 
-   - Write a ConfigMap for making available all the information required
-     for joining, and set up related RBAC access rules.
+  - Write a ConfigMap for making available all the information required
+    for joining, and set up related RBAC access rules.
 
-   - Let Bootstrap Tokens access the CSR signing API.
+  - Let Bootstrap Tokens access the CSR signing API.
 
-   - Configure auto-approval for new CSR requests.
+  - Configure auto-approval for new CSR requests.
 
-   See [kubeadm join](/docs/reference/setup-tools/kubeadm/kubeadm-join/) for additional info.
+  See [kubeadm join](/docs/reference/setup-tools/kubeadm/kubeadm-join/) for additional info.
 
 1. Installs a DNS server (CoreDNS) and the kube-proxy addon components via the API server.
-   In Kubernetes version 1.11 and later CoreDNS is the default DNS server.
-   To install kube-dns instead of CoreDNS, kubeadm must be invoked with `--feature-gates=CoreDNS=false`.
-   Please note that although the DNS server is deployed, it will not be scheduled until CNI is installed.
+  In Kubernetes version 1.11 and later CoreDNS is the default DNS server.
+  To install kube-dns instead of CoreDNS, kubeadm must be invoked with `--feature-gates=CoreDNS=false`.
+  Please note that although the DNS server is deployed, it will not be scheduled until CNI is installed.
 
 1. If `kubeadm init` is invoked with the alpha self-hosting feature enabled,
-   (`--feature-gates=SelfHosting=true`), the static Pod based control plane is
-   transformed into a [self-hosted control plane](#self-hosting).
+  (`--feature-gates=SelfHosting=true`), the static Pod based control plane is
+  transformed into a [self-hosted control plane](#self-hosting).
 
 ### Using kubeadm init with a configuration file {#config-file}
 
@@ -188,28 +188,28 @@ ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_SYSTEM_PODS_ARGS $K
 Here's a breakdown of what/why:
 
 * `--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf` path to a kubeconfig
-   file that is used to get client certificates for kubelet during node join.
-   On success, a kubeconfig file is written to the path specified by `--kubeconfig`.
+  file that is used to get client certificates for kubelet during node join.
+  On success, a kubeconfig file is written to the path specified by `--kubeconfig`.
 * `--kubeconfig=/etc/kubernetes/kubelet.conf` points to the kubeconfig file that
-   tells the kubelet where the API server is. This file also has the kubelet's
-   credentials.
+  tells the kubelet where the API server is. This file also has the kubelet's
+  credentials.
 * `--pod-manifest-path=/etc/kubernetes/manifests` specifies from where to read
-   static Pod manifests used for starting the control plane.
+  static Pod manifests used for starting the control plane.
 * `--allow-privileged=true` allows this kubelet to run privileged Pods.
 * `--network-plugin=cni` uses CNI networking.
 * `--cni-conf-dir=/etc/cni/net.d` specifies where to look for the
-   [CNI spec file(s)](https://github.com/containernetworking/cni/blob/master/SPEC.md).
+  [CNI spec file(s)](https://github.com/containernetworking/cni/blob/master/SPEC.md).
 * `--cni-bin-dir=/opt/cni/bin` specifies where to look for the actual CNI binaries.
 * `--cluster-dns=10.96.0.10` use this cluster-internal DNS server for `nameserver`
-   entries in Pods' `/etc/resolv.conf`.
+  entries in Pods' `/etc/resolv.conf`.
 * `--cluster-domain=cluster.local` uses this cluster-internal DNS domain for
-   `search` entries in Pods' `/etc/resolv.conf`.
+  `search` entries in Pods' `/etc/resolv.conf`.
 * `--client-ca-file=/etc/kubernetes/pki/ca.crt` authenticates requests to the Kubelet
-   API using this CA certificate.
+  API using this CA certificate.
 * `--authorization-mode=Webhook` authorizes requests to the Kubelet API by `POST`-ing
-   a `SubjectAccessReview` to the API server.
+  a `SubjectAccessReview` to the API server.
 * `--rotate-certificates` auto rotate the kubelet client certificates by requesting new
-   certificates from the `kube-apiserver` when the certificate expiration approaches.
+  certificates from the `kube-apiserver` when the certificate expiration approaches.
 * `--cert-dir`the directory where the TLS certs are located.
 
 ### Use kubeadm with CRI runtimes
@@ -231,10 +231,10 @@ After you have successfully installed `kubeadm` and `kubelet`, execute
 these two additional steps:
 
 1. Install the runtime shim on every node, following the installation
-   document in the runtime shim project listing above.
+  document in the runtime shim project listing above.
 
 1. Configure kubelet to use the remote CRI runtime. Please remember to change
-   `RUNTIME_ENDPOINT` to your own value like `/var/run/{your_runtime}.sock`:
+  `RUNTIME_ENDPOINT` to your own value like `/var/run/{your_runtime}.sock`:
 
 ```shell
 cat > /etc/systemd/system/kubelet.service.d/20-cri.conf <<EOF
@@ -256,18 +256,18 @@ In order to set up a cluster where the master and worker nodes communicate with 
 
 1. When running init, you must make sure you specify an internal IP for the API server's bind address, like so:
 
-   `kubeadm init --apiserver-advertise-address=<private-master-ip>`
+  `kubeadm init --apiserver-advertise-address=<private-master-ip>`
 
 2. When a master or worker node has been provisioned, add a flag to `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf` that specifies the private IP of the worker node:
 
-   `--node-ip=<private-node-ip>`
+  `--node-ip=<private-node-ip>`
 
 3. Finally, when you run `kubeadm join`, make sure you provide the private IP of the API server addressed as defined in step 1.
 
 ### Setting the node name
 
 By default, `kubeadm` assigns a node name based on a machine's host address. You can override this setting with the  `--node-name`flag.
-The flag passes the appropriate [`--hostname-override`](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/#options) 
+The flag passes the appropriate [`--hostname-override`](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/#options)
 to the kubelet.
 
 Be aware that overriding the hostname can [interfere with cloud providers](https://github.com/kubernetes/website/pull/8873).
@@ -327,11 +327,11 @@ In summary, `kubeadm init --feature-gates=SelfHosting=true` works as follows:
     for secrets.
 
   1. Creates DaemonSets in the `kube-system` namespace and waits for the
-     resulting Pods to be running.
+    resulting Pods to be running.
 
   1. Once self-hosted Pods are operational, their associated static Pods are deleted
-     and kubeadm moves on to install the next component. This triggers kubelet to
-     stop those static Pods.
+    and kubeadm moves on to install the next component. This triggers kubelet to
+    stop those static Pods.
 
   1. When the original static control plane stops, the new self-hosted control
     plane is able to bind to listening ports and become active.
@@ -389,8 +389,8 @@ know the IP address that the master will have after it is started.
     ```
 
 1. Start both the master node and the worker nodes concurrently with this token.
-   As they come up they should find each other and form the cluster.  The same
-   `--token` argument can be used on both `kubeadm init` and `kubeadm join`.
+  As they come up they should find each other and form the cluster.  The same
+  `--token` argument can be used on both `kubeadm init` and `kubeadm join`.
 
 Once the cluster is up, you can grab the admin credentials from the master node
 at `/etc/kubernetes/admin.conf` and use that to talk to the cluster.

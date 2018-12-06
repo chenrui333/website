@@ -4,7 +4,7 @@ content_template: templates/task
 ---
 
 {{% capture overview %}}
-This page gives recommendations and hints for people managing long lived clusters 
+This page gives recommendations and hints for people managing long lived clusters
 {{% /capture %}}
 {{% capture prerequisites %}}
 This page assumes you understand the basics of Juju and Kubernetes.
@@ -12,17 +12,17 @@ This page assumes you understand the basics of Juju and Kubernetes.
 
 {{% capture steps %}}
 
-## Managing Juju 
+## Managing Juju
 
 ### Sizing your controller node
 
-The Juju Controller: 
+The Juju Controller:
 
-* requires about 2 to 2.5GB RAM to operate. 
+* requires about 2 to 2.5GB RAM to operate.
 * uses a MongoDB database as a storage backend for the configuration and state of the cluster. This database can grow significantly, and can also be the biggest consumer of CPU cycles on the instance
-* aggregates and stores the log data of all services and units. Therefore, significant storage is needed for long lived models. If your intention is to keep the cluster running, make sure to provision at least 64GB for the logs. 
+* aggregates and stores the log data of all services and units. Therefore, significant storage is needed for long lived models. If your intention is to keep the cluster running, make sure to provision at least 64GB for the logs.
 
-To bootstrap a controller with constraints run the following command: 
+To bootstrap a controller with constraints run the following command:
 
 ```
 juju bootstrap --constraints "mem=8GB cpu-cores=4 root-disk=128G"
@@ -36,7 +36,7 @@ Additional information about logging can be found in the [logging section](/docs
 
 By default, Juju will create a pair of SSH keys that it will use to automate the connection to units. They are stored on the client node in ```~/.local/share/juju/ssh/```
 
-After deployment, Juju Controller is a "silent unit" that acts as a proxy between the client and the deployed applications. Nevertheless it can be useful to SSH into it. 
+After deployment, Juju Controller is a "silent unit" that acts as a proxy between the client and the deployed applications. Nevertheless it can be useful to SSH into it.
 
 First you need to understand your environment, especially if you run several Juju models and controllers. Run
 
@@ -51,21 +51,21 @@ admin/default     lxd/localhost  available         0      -  admin   2017-01-23
 admin/whale*      lxd/localhost  available         6      -  admin   3 minutes ago
 ```
 
-The first line ```Controller: k8s``` refers to how you bootstrapped. 
+The first line ```Controller: k8s``` refers to how you bootstrapped.
 
-Then you will see 2, 3 or more models listed below. 
+Then you will see 2, 3 or more models listed below.
 
 * admin/controller is the default model that hosts all controller units of juju
 * admin/default is created by default as the primary model to host the user application, such as the Kubernetes cluster
-* admin/whale is an additional model created if you use conjure-up as an overlay on top of Juju. 
+* admin/whale is an additional model created if you use conjure-up as an overlay on top of Juju.
 
-Now to ssh into a controller node, you first ask Juju to switch context, then ssh as you would with a normal unit: 
+Now to ssh into a controller node, you first ask Juju to switch context, then ssh as you would with a normal unit:
 
 ```
 juju switch controller
 ```
 
-At this stage, you can query the controller model as well: 
+At this stage, you can query the controller model as well:
 
 ```
 juju status
@@ -77,12 +77,12 @@ App  Version  Status  Scale  Charm  Store  Rev  OS  Notes
 Unit  Workload  Agent  Machine  Public address  Ports  Message
 
 Machine  State    DNS           Inst id        Series  AZ
-0        started  10.191.22.15  juju-2a5ed8-0  xenial  
+0        started  10.191.22.15  juju-2a5ed8-0  xenial
 ```
 
-Note that if you had bootstrapped in HA mode, you would see several machines listed. 
+Note that if you had bootstrapped in HA mode, you would see several machines listed.
 
-Now ssh-ing into the controller follows the same semantic as classic Juju commands: 
+Now ssh-ing into the controller follows the same semantic as classic Juju commands:
 
 ```
 $ juju ssh 0
@@ -100,7 +100,7 @@ Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.8.0-34-generic x86_64)
 
 
 Last login: Tue Jan 24 16:38:13 2017 from 10.191.22.1
-ubuntu@juju-2a5ed8-0:~$ 
+ubuntu@juju-2a5ed8-0:~$
 ```
 
 When you are done and want to come back to your initial model, exit the controller and
@@ -161,5 +161,3 @@ juju run-action kubernetes-worker/0 registry delete=true ingress=true
 
 
 {{% /capture %}}
-
-

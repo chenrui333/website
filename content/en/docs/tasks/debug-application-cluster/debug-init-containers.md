@@ -132,6 +132,3 @@ Status | Meaning
 `PodInitializing` or `Running` | The Pod has already finished executing Init Containers.
 
 {{% /capture %}}
-
-
-

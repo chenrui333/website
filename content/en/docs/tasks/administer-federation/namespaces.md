@@ -88,5 +88,3 @@ At this point, deleting a federated Namespace will not delete the corresponding 
 {{< /note >}}
 
 {{% /capture %}}
-
-

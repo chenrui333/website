@@ -71,5 +71,3 @@ calico-policy-controller-65rw1                       1/1       Running   0      
 {{% capture whatsnext %}}
 集群部署完成之后，您可以通过 [NetworkPolicy 入门指南](/docs/getting-started-guides/network-policy/walkthrough)去尝试使用 Kubernetes NetworkPolicy
 {{% /capture %}}
-
-

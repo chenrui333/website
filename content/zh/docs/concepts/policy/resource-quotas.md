@@ -12,7 +12,7 @@ title: 资源配额
 
 资源配额的工作方式如下：
 
-- 不同的团队在不同的namespace下工作。 目前这是自愿的， 但计划通过ACL (Access Control List 访问控制列表) 
+- 不同的团队在不同的namespace下工作。 目前这是自愿的， 但计划通过ACL (Access Control List 访问控制列表)
   使其变为强制性的。
 - 管理员为每个namespace创建一个或多个资源配额对象。
 - 用户在namespace下创建资源 (pods、 services等)，同时配额系统会跟踪使用情况，来确保其不超过
@@ -20,7 +20,7 @@ title: 资源配额
 - 如果资源的创建或更新违反了配额约束，则请求会失败，并返回 HTTP状态码 `403 FORBIDDEN` ，以及说明违反配额
   约束的信息。
 - 如果namespace下的计算资源 （如 `cpu` 和 `memory`）的配额被启用，则用户必须为这些资源设定请求值（request）
-  和约束值（limit），否则配额系统将拒绝Pod的创建。  
+  和约束值（limit），否则配额系统将拒绝Pod的创建。
   提示: 可使用 LimitRange 准入控制器来为没有设置计算资源需求的Pod设置默认值。
   作为示例，请参考 [演练](/docs/tasks/administer-cluster/quota-memory-cpu-namespace/) 来避免这个问题。
 
@@ -36,10 +36,10 @@ title: 资源配额
 
 ## 启用资源配额
 
-资源配额的支持在很多Kubernetes版本中是默认开启的。 当 apiserver 的 
+资源配额的支持在很多Kubernetes版本中是默认开启的。 当 apiserver 的
 `--admission-control=` 参数中包含 `ResourceQuota` 时，资源配额会被启用。
 
-当namespace中存在一个 `ResourceQuota` 对象时，该namespace即开始实施资源配额管理。 
+当namespace中存在一个 `ResourceQuota` 对象时，该namespace即开始实施资源配额管理。
 一个namespace中最多只应存在一个 `ResourceQuota` 对象
 
 ## 计算资源配额

@@ -95,12 +95,12 @@ data:
 1. 查询首先被发送到 kube-dns 中的 DNS 缓存层。
 
 1. 从缓存层，检查请求的后缀，并根据下面的情况转发到对应的 DNS 上：
- 
-   * *具有集群后缀的名字*（例如 ".cluster.local"）：请求被发送到 kube-dns。
 
-   * *具有存根域后缀的名字*（例如 ".acme.local"）：请求被发送到配置的自定义 DNS 解析器（例如：监听在 1.2.3.4）。
+  * *具有集群后缀的名字*（例如 ".cluster.local"）：请求被发送到 kube-dns。
 
-   * *未能匹配上后缀的名字*（例如 "widget.com"）：请求被转发到上游 DNS（例如：Google 公共 DNS 服务器，8.8.8.8 和 8.8.4.4）。
+  * *具有存根域后缀的名字*（例如 ".acme.local"）：请求被发送到配置的自定义 DNS 解析器（例如：监听在 1.2.3.4）。
+
+  * *未能匹配上后缀的名字*（例如 "widget.com"）：请求被转发到上游 DNS（例如：Google 公共 DNS 服务器，8.8.8.8 和 8.8.4.4）。
 
 ![DNS 查询流程](/docs/tasks/administer-cluster/dns-custom-nameservers/dns.png)
 
@@ -158,5 +158,3 @@ metadata:
 ```
 
 {{% /capture %}}
-
-

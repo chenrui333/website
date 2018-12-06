@@ -111,7 +111,7 @@ of 800 MiB. These satisfy the constraints imposed by the LimitRange.
 ```yaml
 resources:
   limits:
-     memory: 800Mi
+    memory: 800Mi
   requests:
     memory: 600Mi
 ```
@@ -266,8 +266,3 @@ kubectl delete namespace constraints-mem-example
 * [Configure Quality of Service for Pods](/docs/tasks/configure-pod-container/quality-service-pod/)
 
 {{% /capture %}}
-
-
-
-
-

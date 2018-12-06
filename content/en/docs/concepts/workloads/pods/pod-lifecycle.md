@@ -55,7 +55,7 @@ array has six possible fields:
 
 * The `message` field is a human-readable message indicating details
   about the transition.
-  
+
 * The `reason` field is a unique, one-word, CamelCase reason for the condition's last transition.
 
 * The `status` field is a string, with possible values "`True`", "`False`", and "`Unknown`".
@@ -105,15 +105,15 @@ The kubelet can optionally perform and react to two kinds of probes on running
 Containers:
 
 * `livenessProbe`: Indicates whether the Container is running. If
-   the liveness probe fails, the kubelet kills the Container, and the Container
-   is subjected to its [restart policy](#restart-policy). If a Container does not
-   provide a liveness probe, the default state is `Success`.
+  the liveness probe fails, the kubelet kills the Container, and the Container
+  is subjected to its [restart policy](#restart-policy). If a Container does not
+  provide a liveness probe, the default state is `Success`.
 
 * `readinessProbe`: Indicates whether the Container is ready to service requests.
-   If the readiness probe fails, the endpoints controller removes the Pod's IP
-   address from the endpoints of all Services that match the Pod. The default
-   state of readiness before the initial delay is `Failure`. If a Container does
-   not provide a readiness probe, the default state is `Success`.
+  If the readiness probe fails, the endpoints controller removes the Pod's IP
+  address from the endpoints of all Services that match the Pod. The default
+  state of readiness before the initial delay is `Failure`. If a Container does
+  not provide a readiness probe, the default state is `Success`.
 
 ### When should you use liveness or readiness probes?
 
@@ -164,7 +164,7 @@ extra feedbacks or signals into `PodStatus`, Kubernetes 1.11 introduced a
 feature named [Pod ready++](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md).
 You can use the new field `ReadinessGate` in the `PodSpec` to specify additional
 conditions to be evaluated for Pod readiness. If Kubernetes cannot find such a
-condition in the `status.conditions` field of a Pod, the status of the condition 
+condition in the `status.conditions` field of a Pod, the status of the condition
 is default to "`False`". Below is an example:
 
 ```yaml
@@ -290,51 +290,51 @@ spec:
 
 ### Example states
 
-   * Pod is running and has one Container. Container exits with success.
-     * Log completion event.
-     * If `restartPolicy` is:
-       * Always: Restart Container; Pod `phase` stays Running.
-       * OnFailure: Pod `phase` becomes Succeeded.
-       * Never: Pod `phase` becomes Succeeded.
+  * Pod is running and has one Container. Container exits with success.
+    * Log completion event.
+    * If `restartPolicy` is:
+      * Always: Restart Container; Pod `phase` stays Running.
+      * OnFailure: Pod `phase` becomes Succeeded.
+      * Never: Pod `phase` becomes Succeeded.
 
-   * Pod is running and has one Container. Container exits with failure.
-     * Log failure event.
-     * If `restartPolicy` is:
-       * Always: Restart Container; Pod `phase` stays Running.
-       * OnFailure: Restart Container; Pod `phase` stays Running.
-       * Never: Pod `phase` becomes Failed.
+  * Pod is running and has one Container. Container exits with failure.
+    * Log failure event.
+    * If `restartPolicy` is:
+      * Always: Restart Container; Pod `phase` stays Running.
+      * OnFailure: Restart Container; Pod `phase` stays Running.
+      * Never: Pod `phase` becomes Failed.
 
-   * Pod is running and has two Containers. Container 1 exits with failure.
-     * Log failure event.
-     * If `restartPolicy` is:
-       * Always: Restart Container; Pod `phase` stays Running.
-       * OnFailure: Restart Container; Pod `phase` stays Running.
-       * Never: Do not restart Container; Pod `phase` stays Running.
-     * If Container 1 is not running, and Container 2 exits:
-       * Log failure event.
-       * If `restartPolicy` is:
-         * Always: Restart Container; Pod `phase` stays Running.
-         * OnFailure: Restart Container; Pod `phase` stays Running.
-         * Never: Pod `phase` becomes Failed.
+  * Pod is running and has two Containers. Container 1 exits with failure.
+    * Log failure event.
+    * If `restartPolicy` is:
+      * Always: Restart Container; Pod `phase` stays Running.
+      * OnFailure: Restart Container; Pod `phase` stays Running.
+      * Never: Do not restart Container; Pod `phase` stays Running.
+    * If Container 1 is not running, and Container 2 exits:
+      * Log failure event.
+      * If `restartPolicy` is:
+        * Always: Restart Container; Pod `phase` stays Running.
+        * OnFailure: Restart Container; Pod `phase` stays Running.
+        * Never: Pod `phase` becomes Failed.
 
-   * Pod is running and has one Container. Container runs out of memory.
-     * Container terminates in failure.
-     * Log OOM event.
-     * If `restartPolicy` is:
-       * Always: Restart Container; Pod `phase` stays Running.
-       * OnFailure: Restart Container; Pod `phase` stays Running.
-       * Never: Log failure event; Pod `phase` becomes Failed.
+  * Pod is running and has one Container. Container runs out of memory.
+    * Container terminates in failure.
+    * Log OOM event.
+    * If `restartPolicy` is:
+      * Always: Restart Container; Pod `phase` stays Running.
+      * OnFailure: Restart Container; Pod `phase` stays Running.
+      * Never: Log failure event; Pod `phase` becomes Failed.
 
-   * Pod is running, and a disk dies.
-     * Kill all Containers.
-     * Log appropriate event.
-     * Pod `phase` becomes Failed.
-     * If running under a controller, Pod is recreated elsewhere.
+  * Pod is running, and a disk dies.
+    * Kill all Containers.
+    * Log appropriate event.
+    * Pod `phase` becomes Failed.
+    * If running under a controller, Pod is recreated elsewhere.
 
-   * Pod is running, and its node is segmented out.
-     * Node controller waits for timeout.
-     * Node controller sets Pod `phase` to Failed.
-     * If running under a controller, Pod is recreated elsewhere.
+  * Pod is running, and its node is segmented out.
+    * Node controller waits for timeout.
+    * Node controller sets Pod `phase` to Failed.
+    * If running under a controller, Pod is recreated elsewhere.
 
 {{% /capture %}}
 
@@ -350,6 +350,3 @@ spec:
 * Learn more about [Container lifecycle hooks](/docs/concepts/containers/container-lifecycle-hooks/).
 
 {{% /capture %}}
-
-
-

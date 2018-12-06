@@ -4,9 +4,9 @@ Generates the self-signed kubernetes CA to provision identities for other kubere
 ### Synopsis
 
 
-Generates the self-signed kubernetes CA to provision identities for other kuberenets components, and saves them into ca.cert and ca.key files. 
+Generates the self-signed kubernetes CA to provision identities for other kuberenets components, and saves them into ca.cert and ca.key files.
 
-If both files already exist, kubeadm skips the generation step and existing files will be used. 
+If both files already exist, kubeadm skips the generation step and existing files will be used.
 
 Alpha Disclaimer: this command is currently alpha.
 
@@ -67,6 +67,3 @@ kubeadm alpha phase certs ca [flags]
 
   </tbody>
 </table>
-
-
-

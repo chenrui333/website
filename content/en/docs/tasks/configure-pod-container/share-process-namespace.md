@@ -58,9 +58,9 @@ Process Namespace Sharing is enabled using the `ShareProcessNamespace` field of
         PID   USER     TIME  COMMAND
             1 root      0:00 /pause
             8 root      0:00 nginx: master process nginx -g daemon off;
-           14 101       0:00 nginx: worker process
-           15 root      0:00 sh
-           21 root      0:00 ps ax
+          14 101       0:00 nginx: worker process
+          15 root      0:00 sh
+          21 root      0:00 ps ax
         ```
 
 You can signal processes in other containers. For example, send `SIGHUP` to
@@ -71,9 +71,9 @@ nginx to restart the worker process. This requires the `SYS_PTRACE` capability.
         PID   USER     TIME  COMMAND
             1 root      0:00 /pause
             8 root      0:00 nginx: master process nginx -g daemon off;
-           15 root      0:00 sh
-           22 101       0:00 nginx: worker process
-           23 root      0:00 ps ax
+          15 root      0:00 sh
+          22 101       0:00 nginx: worker process
+          23 root      0:00 ps ax
 
 It's even possible to access another container image using the
 `/proc/$pid/root` link.
@@ -101,19 +101,17 @@ namespace. Some container images may expect to be isolated from other
 containers, though, so it's important to understand these differences:
 
 1. **The container process no longer has PID 1.** Some container images refuse
-   to start without PID 1 (for example, containers using `systemd`) or run
-   commands like `kill -HUP 1` to signal the container process. In pods with a
-   shared process namespace, `kill -HUP 1` will signal the pod sandbox.
-   (`/pause` in the above example.)
+  to start without PID 1 (for example, containers using `systemd`) or run
+  commands like `kill -HUP 1` to signal the container process. In pods with a
+  shared process namespace, `kill -HUP 1` will signal the pod sandbox.
+  (`/pause` in the above example.)
 
 1. **Processes are visible to other containers in the pod.** This includes all
-   information visible in `/proc`, such as passwords that were passed as arguments
-   or environment variables. These are protected only by regular Unix permissions.
+  information visible in `/proc`, such as passwords that were passed as arguments
+  or environment variables. These are protected only by regular Unix permissions.
 
 1. **Container filesystems are visible to other containers in the pod through the
-   `/proc/$pid/root` link.** This makes debugging easier, but it also means
-   that filesystem secrets are protected only by filesystem permissions.
+  `/proc/$pid/root` link.** This makes debugging easier, but it also means
+  that filesystem secrets are protected only by filesystem permissions.
 
 {{% /capture %}}
-
-

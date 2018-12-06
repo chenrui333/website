@@ -379,10 +379,10 @@ deployments "nginx-deployment" revision 2
           pod-template-hash=1159050644
   Annotations:  kubernetes.io/change-cause=kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
   Containers:
-   nginx:
+  nginx:
     Image:      nginx:1.9.1
     Port:       80/TCP
-     QoS Tier:
+    QoS Tier:
         cpu:      BestEffort
         memory:   BestEffort
     Environment Variables:      <none>
@@ -943,5 +943,3 @@ in a similar fashion. But Deployments are recommended, since they are declarativ
 additional features, such as rolling back to any previous revision even after the rolling update is done.
 
 {{% /capture %}}
-
-

@@ -20,5 +20,3 @@ This page explains some of the terminology used in deploying Kubernetes with Juj
 
 **machine** - A physical node, these can either be bare metal nodes, or virtual machines provided by a cloud.
 {{% /capture %}}
-
-

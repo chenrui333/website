@@ -62,6 +62,3 @@ Example usage:
 
   </tbody>
 </table>
-
-
-

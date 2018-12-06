@@ -271,8 +271,3 @@ kubectl delete namespace constraints-cpu-example
 
 
 {{% /capture %}}
-
-
-
-
-

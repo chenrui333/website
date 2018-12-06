@@ -1,4 +1,4 @@
-﻿---
+---
 title: 配置命名空间下pod总数
 ---
 
@@ -127,8 +127,3 @@ kubectl delete namespace quota-pod-example
 * [配置pod的QoS](/docs/tasks/configure-pod-container/quality-service-pod/)
 
 {{% /capture %}}
-
-
-
-
-

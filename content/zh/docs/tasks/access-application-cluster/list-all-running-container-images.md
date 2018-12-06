@@ -189,5 +189,3 @@ kubectl get pods --all-namespaces -o go-template --template="{{range .items}}{{r
 * [Go template](https://golang.org/pkg/text/template/) 参考指南
 
 {{% /capture %}}
-
-

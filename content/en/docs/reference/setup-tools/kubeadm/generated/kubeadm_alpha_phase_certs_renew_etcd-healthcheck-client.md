@@ -4,7 +4,7 @@ Generates the client certificate for liveness probes to healtcheck etcd
 ### Synopsis
 
 
-Renews the client certificate for liveness probes to healtcheck etcd, and saves them into etcd/healthcheck-client.cert and etcd/healthcheck-client.key files. 
+Renews the client certificate for liveness probes to healtcheck etcd, and saves them into etcd/healthcheck-client.cert and etcd/healthcheck-client.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew etcd-healthcheck-client [flags]
 
   </tbody>
 </table>
-
-
-

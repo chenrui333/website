@@ -66,7 +66,7 @@ Kubernetes cluster.
 -->
 1. 验证你选择的节点是否有 `disktype=ssd` 标签：
 
-       kubectl get nodes --show-labels
+      kubectl get nodes --show-labels
 
 
     <!--
@@ -102,7 +102,7 @@ a `disktype=ssd` label.
 
 <!--
 1. Use the configuration file to create a pod that will get scheduled on your
-   chosen node:
+  chosen node:
 -->
 1. 使用该配置文件去创建一个 pod，该 pod 将被调度到你选择的节点上：
 

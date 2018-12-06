@@ -52,7 +52,7 @@ username and password:
 
 1. View information about the Secret:
 
-       kubectl get secret test-secret
+      kubectl get secret test-secret
 
     Output:
 
@@ -62,7 +62,7 @@ username and password:
 
 1. View more detailed information about the Secret:
 
-       kubectl describe secret test-secret
+      kubectl describe secret test-secret
 
     Output:
 
@@ -183,7 +183,7 @@ Here is a configuration file you can use to create a Pod:
     ...
     SECRET_PASSWORD=39528$vdg7Jb
     ```
-    
+
 {{% /capture %}}
 
 {{% capture whatsnext %}}
@@ -198,5 +198,3 @@ Here is a configuration file you can use to create a Pod:
 * [Pod](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#pod-v1-core)
 
 {{% /capture %}}
-
-

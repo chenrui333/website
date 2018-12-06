@@ -455,8 +455,3 @@ kubectl delete namespace constraints-cpu-example
 * [为Pod配置Service数量](/docs/tasks/configure-pod-container/quality-service-pod/)
 
 {{% /capture %}}
-
-
-
-
-

@@ -15,5 +15,3 @@ menu:
     post: >
       <p>Lær å bruke Kubernetes gjenom eksempler of referansedokumentasjon. Du kan også <a href="/editdocs/" data-auto-burger-exclude>hjelpe</a>!</p>
 ---
-
-

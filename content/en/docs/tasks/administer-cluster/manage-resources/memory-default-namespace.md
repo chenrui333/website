@@ -189,5 +189,3 @@ it can be allowed to run in a namespace that is restricted by a quota.
 * [Configure Quality of Service for Pods](/docs/tasks/configure-pod-container/quality-service-pod/)
 
 {{% /capture %}}
-
-

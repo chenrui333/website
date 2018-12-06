@@ -33,5 +33,3 @@ Kubernetes 提供 ...
 * 查看 [Using Page Templates - Concept template](/docs/home/contribute/page-templates/#concept_template) 了解如何使用本模板。
 
 {{% /capture %}}
-
-

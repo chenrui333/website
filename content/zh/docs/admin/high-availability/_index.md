@@ -23,11 +23,11 @@ title: 构建高可用集群
 
 相关步骤如下：
 
-   * [创建可靠的组成节点，共同形成我们的高可用主节点实现。](#可靠的节点)
-   * [使用etcd集群，搭建一个冗余的，可靠的存储层。](#建立一个冗余的，可靠的存储层)
-   * [启动具有备份和负载均衡能力的Kubernetes API 服务](#复制的API服务)
-   * [搭建运行master选举的Kubernetes scheduler和controller-manager守护程序](#进行master选举的组件)
-  
+  * [创建可靠的组成节点，共同形成我们的高可用主节点实现。](#可靠的节点)
+  * [使用etcd集群，搭建一个冗余的，可靠的存储层。](#建立一个冗余的，可靠的存储层)
+  * [启动具有备份和负载均衡能力的Kubernetes API 服务](#复制的API服务)
+  * [搭建运行master选举的Kubernetes scheduler和controller-manager守护程序](#进行master选举的组件)
+
 系统完成时看起来应该像这样：
 
 ![High availability Kubernetes diagram](/images/docs/ha.svg)
@@ -51,7 +51,7 @@ title: 构建高可用集群
 我们在每个主节点上都将运行数个实现Kubernetes API的进程。使他们可靠的第一步是保证在发生故障时，每一个进程都可以自动重启。为了实现这个目标，我们需要安装一个进程监视器。我们选择了在每个工作者节点上都会运行的`kubelet`进程。这会带来便利性，因为我们使用了容器来分发我们的二进制文件，所以我们能够为每一个守护程序建立资源限制并省查它们的资源消耗。当然，我们也需要一些手段来监控kubelete本身（在此监测监控者本身是一个有趣的话题）。对于Debian系统我们选择了monit，但也有许多可替代的工具。例如在基于systemd的系统上（如RHEL, CentOS），你可以运行 'systemctl enable kubelet'。
 
 
-如果你是从标准的Kubernetes安装扩展而来，那么`kubelet`二进制文件应该已经存在于你的系统中。你可以运行`which kubelet`来判断是否确实安装了这个二进制文件。如果没有安装的话，你应该手动安装 [kubelet binary](https://storage.googleapis.com/kubernetes-release/release/v0.19.3/bin/linux/amd64/kubelet), 
+如果你是从标准的Kubernetes安装扩展而来，那么`kubelet`二进制文件应该已经存在于你的系统中。你可以运行`which kubelet`来判断是否确实安装了这个二进制文件。如果没有安装的话，你应该手动安装 [kubelet binary](https://storage.googleapis.com/kubernetes-release/release/v0.19.3/bin/linux/amd64/kubelet),
 [kubelet init file](http://releases.k8s.io/{{< param "githubbranch" >}}/cluster/saltbase/salt/kubelet/initd) 和 [default-kubelet](/docs/admin/high-availability/default-kubelet)脚本。
 
 如果使用monit，你还需要安装monit守护程序（`apt-get install monit`）以及[monit-kubelet](/docs/admin/high-availability/monit-kubelet) 和
@@ -140,13 +140,13 @@ touch /var/log/kube-apiserver.log
 
 接下来，你需要在每个节点上创建一个`/srv/kubernetes/`文件夹。这个文件夹包含：
 
-   * basic_auth.csv  - 基本认证的用户名和密码
-   * ca.crt - CA证书
-   * known_tokens.csv - 实体（例如kubelet）用来和apiserver通信的令牌
-   * kubecfg.crt - 客户端证书，公钥
-   * kubecfg.key - 客户端证书，私钥
-   * server.cert - 服务端证书，公钥
-   * server.key - 服务端证书，私钥
+  * basic_auth.csv  - 基本认证的用户名和密码
+  * ca.crt - CA证书
+  * known_tokens.csv - 实体（例如kubelet）用来和apiserver通信的令牌
+  * kubecfg.crt - 客户端证书，公钥
+  * kubecfg.key - 客户端证书，私钥
+  * server.cert - 服务端证书，公钥
+  * server.key - 服务端证书，私钥
 
 
 创建这个文件夹最简单的方法可以是从一个工作正常的集群的主节点拷贝，或者你也可以手动生成它们。

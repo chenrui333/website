@@ -139,6 +139,3 @@ kubeadm config upload from-flags [flags]
 
   </tbody>
 </table>
-
-
-

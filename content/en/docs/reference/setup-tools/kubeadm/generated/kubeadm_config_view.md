@@ -60,6 +60,3 @@ kubeadm config view [flags]
 
   </tbody>
 </table>
-
-
-

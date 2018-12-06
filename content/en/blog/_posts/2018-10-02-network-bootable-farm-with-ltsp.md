@@ -15,13 +15,13 @@ You don't need to think about installing an OS and binaries on each node anymore
 
 You can buy and put 100 new servers into a production environment and get them working immediately - it's really amazing!
 
-Intrigued? Let me walk you through how it works. 
+Intrigued? Let me walk you through how it works.
 
 # Summary
 
 _**Please note:** this is a cool hack, but is not officially supported in Kubernetes._
 
-First, we need to understand how exactly it works. 
+First, we need to understand how exactly it works.
 
 In short, for all nodes we have prepared the image with the OS, Docker, Kubelet and everything else that you need there. This image with the kernel is building automatically by CI using Dockerfile. End nodes are booting the kernel and OS from this image via the network.
 
@@ -97,18 +97,18 @@ We will use [stage building](https://docs.docker.com/develop/develop-images/mult
 ```
 ltsp-base
 (install basic LTSP server software)
-   |
-   |---basesystem
-   |   (prepare chroot with main software and kernel)
-   |     |
-   |     |---builder
-   |     |   (build additional software from sources, if needed)
-   |     |
-   |     '---ltsp-image
-   |         (install additional software, docker, kubelet and build squashed image)
-   |
-   '---final-stage
-       (copy squashed image, kernel and initramfs into first stage)
+  |
+  |---basesystem
+  |   (prepare chroot with main software and kernel)
+  |     |
+  |     |---builder
+  |     |   (build additional software from sources, if needed)
+  |     |
+  |     '---ltsp-image
+  |         (install additional software, docker, kubelet and build squashed image)
+  |
+  '---final-stage
+      (copy squashed image, kernel and initramfs into first stage)
 ```
 
 ### Stage 1: ltsp-base
@@ -241,21 +241,21 @@ RUN cp /proc/cpuinfo /opt/ltsp/amd64/proc/cpuinfo
 
 # Compile Mellanox driver
 RUN ltsp-chroot sh -cx \
-   '  VERSION=4.3-1.0.1.0-ubuntu16.04-x86_64 \
-   && curl -L http://www.mellanox.com/downloads/ofed/MLNX_EN-${VERSION%%-ubuntu*}/mlnx-en-${VERSION}.tgz \
+  '  VERSION=4.3-1.0.1.0-ubuntu16.04-x86_64 \
+  && curl -L http://www.mellanox.com/downloads/ofed/MLNX_EN-${VERSION%%-ubuntu*}/mlnx-en-${VERSION}.tgz \
       | tar xzf - \
-   && export \
+  && export \
         DRIVER_DIR="$(ls -1 | grep "MLNX_OFED_LINUX-\|mlnx-en-")" \
         KERNEL="$(ls -1t /lib/modules/ | head -n1)" \
-   && cd "$DRIVER_DIR" \
-   && ./*install --kernel "$KERNEL" --without-dkms --add-kernel-support \
-   && cd - \
-   && rm -rf "$DRIVER_DIR" /tmp/mlnx-en* /tmp/ofed*'
+  && cd "$DRIVER_DIR" \
+  && ./*install --kernel "$KERNEL" --without-dkms --add-kernel-support \
+  && cd - \
+  && rm -rf "$DRIVER_DIR" /tmp/mlnx-en* /tmp/ofed*'
 
 # Save kernel modules
 RUN ltsp-chroot sh -c \
     ' export KERNEL="$(ls -1t /usr/src/ | grep -m1 "^linux-headers" | sed "s/^linux-headers-//g")" \
-   && tar cpzf /modules.tar.gz /lib/modules/${KERNEL}/updates'
+  && tar cpzf /modules.tar.gz /lib/modules/${KERNEL}/updates'
 
 ```
 
@@ -272,9 +272,9 @@ COPY --from=builder /opt/ltsp/amd64/modules.tar.gz /opt/ltsp/amd64/modules.tar.g
 # Install kernel modules
 RUN ltsp-chroot sh -c \
     ' export KERNEL="$(ls -1t /usr/src/ | grep -m1 "^linux-headers" | sed "s/^linux-headers-//g")" \
-   && tar xpzf /modules.tar.gz \
-   && depmod -a "${KERNEL}" \
-   && rm -f /modules.tar.gz'
+  && tar xpzf /modules.tar.gz \
+  && depmod -a "${KERNEL}" \
+  && rm -f /modules.tar.gz'
 ```
 
 Then do some additional changes to finalize our ltsp-image:
@@ -282,11 +282,11 @@ Then do some additional changes to finalize our ltsp-image:
 ```Dockerfile
 # Install docker
 RUN ltsp-chroot sh -c \
-   '  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
-   && echo "deb https://download.docker.com/linux/ubuntu xenial stable" \
+  '  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
+  && echo "deb https://download.docker.com/linux/ubuntu xenial stable" \
         > /etc/apt/sources.list.d/docker.list \
-   && apt-get -y update \
-   && apt-get -y install \
+  && apt-get -y update \
+  && apt-get -y install \
         docker-ce=$(apt-cache madison docker-ce | grep 18.06 | head -1 | awk "{print $ 3}")'
 
 # Configure docker options
@@ -306,7 +306,7 @@ RUN DOCKER_OPTS="$(echo \
 RUN ltsp-chroot sh -c \
       '  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \
       && echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" \
-           > /etc/apt/sources.list.d/kubernetes.list \
+          > /etc/apt/sources.list.d/kubernetes.list \
       && apt-get -y update \
       && apt-get -y install kubelet kubeadm kubectl cri-tools'
 
@@ -477,7 +477,7 @@ shared-network ltsp-netowrk {
             filename "/ltsp/amd64/grub/i386-pc/core.0";
         }
 
-        range 10.9.200.0 10.9.250.254; 
+        range 10.9.200.0 10.9.250.254;
     }
 ```
 

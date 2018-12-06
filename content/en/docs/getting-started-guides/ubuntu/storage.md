@@ -37,10 +37,10 @@ List the storage pools available to Juju for your cloud:
 Output:
 ```
 Name     Provider  Attrs
-ebs      ebs       
+ebs      ebs
 ebs-ssd  ebs       volume-type=ssd
-loop     loop      
-rootfs   rootfs    
+loop     loop
+rootfs   rootfs
 tmpfs    tmpfs
 ```
 
@@ -63,7 +63,7 @@ Next relate the storage cluster with the Kubernetes cluster:
 juju add-relation kubernetes-master ceph-mon
 ```
 
-We are now ready to enlist 
+We are now ready to enlist
 [Persistent Volumes](/docs/concepts/storage/persistent-volumes/)
 in Kubernetes which our workloads can consume via Persistent Volume (PV) claims.
 
@@ -78,7 +78,7 @@ become enlisted and be marked as available:
 
     watch kubectl get pv
 
-Output: 
+Output:
 
 ```
 NAME CAPACITY   ACCESSMODES   STATUS    CLAIM              REASON    AGE
@@ -91,5 +91,3 @@ Persistent Volume Claim with them, and is outside the scope of this README. See 
 [Persistent Volumes](/docs/concepts/storage/persistent-volumes/)
 documentation for more information.
 {{% /capture %}}
-
-

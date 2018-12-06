@@ -63,7 +63,7 @@ a Deployment that runs the nginx:1.7.9 Docker image:
         Pod Template:
           Labels:       app=nginx
           Containers:
-           nginx:
+          nginx:
             Image:              nginx:1.7.9
             Port:               80/TCP
             Environment:        <none>
@@ -103,11 +103,11 @@ specifies that the deployment should be updated to use nginx 1.8.
 
 1. Apply the new YAML file:
 
-         kubectl apply -f https://k8s.io/examples/application/deployment-update.yaml
+        kubectl apply -f https://k8s.io/examples/application/deployment-update.yaml
 
 1. Watch the deployment create pods with new names and delete the old pods:
 
-         kubectl get pods -l app=nginx
+        kubectl get pods -l app=nginx
 
 ## Scaling the application by increasing the replica count
 
@@ -154,5 +154,3 @@ added to Kubernetes, replicated applications were configured using a
 * Learn more about [Deployment objects](/docs/concepts/workloads/controllers/deployment/).
 
 {{% /capture %}}
-
-

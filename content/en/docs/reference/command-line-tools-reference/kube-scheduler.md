@@ -248,6 +248,3 @@ kube-scheduler [flags]
 
   </tbody>
 </table>
-
-
-

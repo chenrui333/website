@@ -37,11 +37,11 @@ content_template: templates/tutorial
 
 1. 通过YAML文件创建一个Deployment:
 
-       kubectl create -f https://k8s.io/docs/tasks/run-application/deployment.yaml
+      kubectl create -f https://k8s.io/docs/tasks/run-application/deployment.yaml
 
 1. 展示Deployment相关信息:
 
-       kubectl describe deployment nginx-deployment
+      kubectl describe deployment nginx-deployment
 
         user@computer:~/website$ kubectl describe deployment nginx-deployment
         Name:     nginx-deployment
@@ -57,7 +57,7 @@ content_template: templates/tutorial
         Pod Template:
           Labels:       app=nginx
           Containers:
-           nginx:
+          nginx:
             Image:              nginx:1.7.9
             Port:               80/TCP
             Environment:        <none>
@@ -74,7 +74,7 @@ content_template: templates/tutorial
 
 1. 列出deployment创建的pods:
 
-       kubectl get pods -l app=nginx
+      kubectl get pods -l app=nginx
 
         NAME                                READY     STATUS    RESTARTS   AGE
         nginx-deployment-1771418926-7o5ns   1/1       Running   0          16h
@@ -82,7 +82,7 @@ content_template: templates/tutorial
 
 1. 展示某一个pod信息:
 
-       kubectl describe pod <pod-name>
+      kubectl describe pod <pod-name>
 
     该处 `<pod-name>` 指某一pod的名称.
 
@@ -94,11 +94,11 @@ content_template: templates/tutorial
 
 1. 应用新的YAML:
 
-       kubectl apply -f https://k8s.io/docs/tutorials/stateless-application/deployment-update.yaml
+      kubectl apply -f https://k8s.io/docs/tutorials/stateless-application/deployment-update.yaml
 
 1. 查看该deployment创建的pods以新的名称同时删除旧的pods:
 
-       kubectl get pods -l app=nginx
+      kubectl get pods -l app=nginx
 
 ## 通过增加副本数来弹缩应用
 
@@ -108,11 +108,11 @@ content_template: templates/tutorial
 
 1. 应用新的YAML文件:
 
-       kubectl apply -f https://k8s.io/docs/tutorials/stateless-application/deployment-scale.yaml
+      kubectl apply -f https://k8s.io/docs/tutorials/stateless-application/deployment-scale.yaml
 
 1. 验证Deployment有4个pods:
 
-       kubectl get pods -l app=nginx
+      kubectl get pods -l app=nginx
 
     输出的结果类似于:
 
@@ -140,5 +140,3 @@ content_template: templates/tutorial
 * 了解更多 [Deployment objects](/docs/concepts/workloads/controllers/deployment/).
 
 {{% /capture %}}
-
-

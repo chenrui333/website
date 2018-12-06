@@ -4,7 +4,7 @@ Generates the credentials for etcd nodes to communicate with each other
 ### Synopsis
 
 
-Renews the credentials for etcd nodes to communicate with each other, and saves them into etcd/peer.cert and etcd/peer.key files. 
+Renews the credentials for etcd nodes to communicate with each other, and saves them into etcd/peer.cert and etcd/peer.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew etcd-peer [flags]
 
   </tbody>
 </table>
-
-
-

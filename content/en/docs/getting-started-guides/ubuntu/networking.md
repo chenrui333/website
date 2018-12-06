@@ -59,5 +59,3 @@ also good practice to ensure you allot yourself a large enough IP range to suppo
 how large your cluster will potentially scale.  Class A IP ranges with /24 are
 a good option.
 {{% /capture %}}
-
-

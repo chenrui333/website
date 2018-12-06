@@ -51,4 +51,3 @@ title: 关键插件 Pod 的调度保证
 * 将 PodSpec 的 `tolerations` 字段设置为 `[{"key":"CriticalAddonsOnly", "operator":"Exists"}]`
 
 第一个表示是一个关键 Pod。第二个是二次调度器算法必需的。
-

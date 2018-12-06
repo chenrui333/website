@@ -240,7 +240,7 @@ Fluent-plugin-forest and fluent-plugin-rewrite-tag-filter are plugins for fluent
         @type record_transformer
         enable_ruby
         <record>
-         namespace ${record["objectRef"].nil? ? "none":(record["objectRef"]["namespace"].nil? ? "none":record["objectRef"]["namespace"])}
+        namespace ${record["objectRef"].nil? ? "none":(record["objectRef"]["namespace"].nil? ? "none":record["objectRef"]["namespace"])}
         </record>
     </filter>
 
@@ -251,8 +251,8 @@ Fluent-plugin-forest and fluent-plugin-rewrite-tag-filter are plugins for fluent
     </match>
 
     <filter audit.**>
-       @type record_transformer
-       remove_keys namespace
+      @type record_transformer
+      remove_keys namespace
     </filter>
 
     <match audit.**>

@@ -79,5 +79,3 @@ kubectl --context=federation-cluster delete daemonset mydaemonset
 ```
 
 {{% /capture %}}
-
-

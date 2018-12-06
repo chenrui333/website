@@ -168,6 +168,3 @@ kubeadm init [flags]
 
   </tbody>
 </table>
-
-
-

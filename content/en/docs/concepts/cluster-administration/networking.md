@@ -11,7 +11,7 @@ Kubernetes approaches networking somewhat differently than Docker does by
 default.  There are 4 distinct networking problems to solve:
 
 1. Highly-coupled container-to-container communications: this is solved by
-   [pods](/docs/concepts/workloads/pods/pod/) and `localhost` communications.
+  [pods](/docs/concepts/workloads/pods/pod/) and `localhost` communications.
 2. Pod-to-Pod communications: this is the primary focus of this document.
 3. Pod-to-Service communications: this is covered by [services](/docs/concepts/services-networking/service/).
 4. External-to-Service communications: this is covered by [services](/docs/concepts/services-networking/service/).
@@ -68,9 +68,9 @@ different approach.
 Kubernetes imposes the following fundamental requirements on any networking
 implementation (barring any intentional network segmentation policies):
 
-   * all containers can communicate with all other containers without NAT
-   * all nodes can communicate with all containers (and vice-versa) without NAT
-   * the IP that a container sees itself as is the same IP that others see it as
+  * all containers can communicate with all other containers without NAT
+  * all nodes can communicate with all containers (and vice-versa) without NAT
+  * the IP that a container sees itself as is the same IP that others see it as
 
 What this means in practice is that you can not just take two computers
 running Docker and expect Kubernetes to work.  You must ensure that the
@@ -155,11 +155,11 @@ CNI-Genie also supports [assigning multiple IP addresses to a pod](https://githu
 
 [DANM](https://github.com/nokia/danm) is a networking solution for telco workloads running in a Kubernetes cluster. It's built up from the following components:
 
-   * A CNI plugin capable of provisioning IPVLAN interfaces with advanced features
-   * An in-built IPAM module with the capability of managing multiple, cluster-wide, discontinuous L3 networks and provide a dynamic, static, or no IP allocation scheme on-demand
-   * A CNI metaplugin capable of attaching multiple network interfaces to a container, either through its own CNI, or through delegating the job to any of the popular CNI solution like SRI-OV, or Flannel in parallel
-   * A Kubernetes controller capable of centrally managing both VxLAN and VLAN interfaces of all Kubernetes hosts
-   * Another Kubernetes controller extending Kubernetes' Service-based service discovery concept to work over all network interfaces of a Pod
+  * A CNI plugin capable of provisioning IPVLAN interfaces with advanced features
+  * An in-built IPAM module with the capability of managing multiple, cluster-wide, discontinuous L3 networks and provide a dynamic, static, or no IP allocation scheme on-demand
+  * A CNI metaplugin capable of attaching multiple network interfaces to a container, either through its own CNI, or through delegating the job to any of the popular CNI solution like SRI-OV, or Flannel in parallel
+  * A Kubernetes controller capable of centrally managing both VxLAN and VLAN interfaces of all Kubernetes hosts
+  * Another Kubernetes controller extending Kubernetes' Service-based service discovery concept to work over all network interfaces of a Pod
 
 With this toolset DANM is able to provide multiple separated network interfaces, the possibility to use different networking back ends and advanced IPAM features for the pods.
 

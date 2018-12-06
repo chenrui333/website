@@ -46,5 +46,3 @@ In a production environment you may want to configure prometheus or some other m
 to periodically gather these metrics and make them available in some kind of time series database.
 
 {{% /capture %}}
-
-

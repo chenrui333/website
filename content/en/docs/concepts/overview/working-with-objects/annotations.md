@@ -63,5 +63,3 @@ and the like.
 {{% capture whatsnext %}}
 Learn more about [Labels and Selectors](/docs/concepts/overview/working-with-objects/labels/).
 {{% /capture %}}
-
-

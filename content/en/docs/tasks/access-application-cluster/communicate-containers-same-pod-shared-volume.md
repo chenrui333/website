@@ -146,6 +146,3 @@ the shared Volume is lost.
 * See [Pod](/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#pod-v1-core).
 
 {{% /capture %}}
-
-
-

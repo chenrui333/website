@@ -109,7 +109,7 @@ same way that the Kubernetes project sorts Kubernetes versions. Versions start w
 `v` followed by a number, an optional `beta` or `alpha` designation, and
 optional additional numeric versioning information. Broadly, a version string might look
 like `v2` or `v2beta1`. Versions are sorted using the following algorithm:
-  
+
 - Entries that follow Kubernetes version patterns are sorted before those that
   do not.
 - For entries that follow Kubernetes version patterns, the numeric portions of

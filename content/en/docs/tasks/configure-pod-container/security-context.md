@@ -357,5 +357,3 @@ After you specify an MCS label for a Pod, all Pods with the same label can acces
 
 
 {{% /capture %}}
-
-

@@ -117,7 +117,7 @@ PersistentVolumeLabels控制器将Kubernetes API服务器的依赖于云的功�
 
 节点控制器仅适用于节点对象。它需要完全访问权限来获取、列出、创建、更新、修补、监视和删除节点对象。
 
-v1/Node: 
+v1/Node:
 - Get
 - List
 - Create
@@ -129,7 +129,7 @@ v1/Node:
 
 路由控制器监听节点对象的创建并配置合适的路由。它需要对节点对象的访问权限。
 
-v1/Node: 
+v1/Node:
 - Get
 
 ### 服务控制器

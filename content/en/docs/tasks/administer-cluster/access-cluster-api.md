@@ -126,19 +126,19 @@ as the kubectl CLI does to locate and authenticate to the API server. See this [
 
 ```golang
 import (
-   "fmt"
-   "k8s.io/client-go/1.4/kubernetes"
-   "k8s.io/client-go/1.4/pkg/api/v1"
-   "k8s.io/client-go/1.4/tools/clientcmd"
+  "fmt"
+  "k8s.io/client-go/1.4/kubernetes"
+  "k8s.io/client-go/1.4/pkg/api/v1"
+  "k8s.io/client-go/1.4/tools/clientcmd"
 )
 ...
-   // uses the current context in kubeconfig
-   config, _ := clientcmd.BuildConfigFromFlags("", "path to kubeconfig")
-   // creates the clientset
-   clientset, _:= kubernetes.NewForConfig(config)
-   // access the API to list pods
-   pods, _:= clientset.CoreV1().Pods("").List(v1.ListOptions{})
-   fmt.Printf("There are %d pods in the cluster\n", len(pods.Items))
+  // uses the current context in kubeconfig
+  config, _ := clientcmd.BuildConfigFromFlags("", "path to kubeconfig")
+  // creates the clientset
+  clientset, _:= kubernetes.NewForConfig(config)
+  // access the API to list pods
+  pods, _:= clientset.CoreV1().Pods("").List(v1.ListOptions{})
+  fmt.Printf("There are %d pods in the cluster\n", len(pods.Items))
 ...
 ```
 
@@ -177,7 +177,7 @@ one of the official [client libraries](/docs/reference/using-api/client-librarie
 libraries can automatically discover the API server and authenticate.
 
 While running in a Pod, the Kubernetes apiserver is accessible via a Service named
-`kubernetes` in the `default` namespace. Therefore, Pods can use the 
+`kubernetes` in the `default` namespace. Therefore, Pods can use the
 `kubernetes.default.svc` hostname to query the API server. Official client libraries
 do this automatically.
 
@@ -211,5 +211,3 @@ In each case, the service account credentials of the Pod are used to communicate
 securely with the API server.
 
 {{% /capture %}}
-
-

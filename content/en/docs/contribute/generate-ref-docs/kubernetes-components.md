@@ -117,12 +117,12 @@ The `update-imported-docs` tool is located in the `kubernetes/website/update-imp
 directory. The tool performs the following steps:
 
 1. Clones the related repositories specified in a configuration file. For the
-   purpose of generating reference docs, the repositories that are cloned by
-   default are `kubernetes-incubator/reference-docs` and `kubernetes/federation`.
+  purpose of generating reference docs, the repositories that are cloned by
+  default are `kubernetes-incubator/reference-docs` and `kubernetes/federation`.
 1. Runs commands under the cloned repositories to prepare the docs generator and
-   then generates the Markdown files.
+  then generates the Markdown files.
 1. Copies the generated Markdown files to a local clone of the `kubernetes/website`
-   repository under locations specified in the configuration file.
+  repository under locations specified in the configuration file.
 
 When the Markdown files are in your local clone of the `kubernetes/website`
 repository, you can submit them in a
@@ -141,7 +141,7 @@ repos:
   remote: https://github.com/kubernetes-incubator/reference-docs.git
   # This and the generate-command below needs a change when reference-docs has
   # branches properly defined
-  branch: master  
+  branch: master
   generate-command: |
     cd $GOPATH
     git clone https://github.com/kubernetes/kubernetes.git src/k8s.io/kubernetes
@@ -234,7 +234,7 @@ topics will be visible in the
 
 {{% capture whatsnext %}}
 
-* [Generating Reference Documentation for kubectl Commands](/docs/home/contribute/generated-reference/kubectl/) 
+* [Generating Reference Documentation for kubectl Commands](/docs/home/contribute/generated-reference/kubectl/)
 * [Generating Reference Documentation for the Kubernetes API](/docs/home/contribute/generated-reference/kubernetes-api/)
 * [Generating Reference Documentation for the Kubernetes Federation API](/docs/home/contribute/generated-reference/federation-api/)
 

@@ -4,7 +4,7 @@ Generates the certificate for serving etcd
 ### Synopsis
 
 
-Renews the certificate for serving etcd, and saves them into etcd/server.cert and etcd/server.key files. 
+Renews the certificate for serving etcd, and saves them into etcd/server.cert and etcd/server.key files.
 
 Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.
 
@@ -79,6 +79,3 @@ kubeadm alpha phase certs renew etcd-server [flags]
 
   </tbody>
 </table>
-
-
-

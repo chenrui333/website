@@ -275,11 +275,11 @@ A question that pops up every now and then is why we do all this stuff with
 virtual IPs rather than just use standard round-robin DNS.  There are a few
 reasons:
 
-   * There is a long history of DNS libraries not respecting DNS TTLs and
-     caching the results of name lookups.
-   * Many apps do DNS lookups once and cache the results.
-   * Even if apps and libraries did proper re-resolution, the load of every
-     client re-resolving DNS over and over would be difficult to manage.
+  * There is a long history of DNS libraries not respecting DNS TTLs and
+    caching the results of name lookups.
+  * Many apps do DNS lookups once and cache the results.
+  * Even if apps and libraries did proper re-resolution, the load of every
+    client re-resolving DNS over and over would be difficult to manage.
 
 We try to discourage users from doing things that hurt themselves.  That said,
 if enough people ask for this, we may implement it as an alternative.
@@ -383,21 +383,21 @@ The default is `ClusterIP`.
 
 `Type` values and their behaviors are:
 
-   * `ClusterIP`: Exposes the service on a cluster-internal IP. Choosing this value
-     makes the service only reachable from within the cluster. This is the
-     default `ServiceType`.
-   * [`NodePort`](#nodeport): Exposes the service on each Node's IP at a static port
-     (the `NodePort`). A `ClusterIP` service, to which the `NodePort` service will
-     route, is automatically created.  You'll be able to contact the `NodePort` service,
-     from outside the cluster,
-     by requesting `<NodeIP>:<NodePort>`.
-   * [`LoadBalancer`](#loadbalancer): Exposes the service externally using a cloud
-     provider's load balancer. `NodePort` and `ClusterIP` services, to which the external
-     load balancer will route, are automatically created.
-   * [`ExternalName`](#externalname): Maps the service to the contents of the
-     `externalName` field (e.g. `foo.bar.example.com`), by returning a `CNAME` record
-     with its value. No proxying of any kind is set up. This requires version 1.7 or
-     higher of `kube-dns`.
+  * `ClusterIP`: Exposes the service on a cluster-internal IP. Choosing this value
+    makes the service only reachable from within the cluster. This is the
+    default `ServiceType`.
+  * [`NodePort`](#nodeport): Exposes the service on each Node's IP at a static port
+    (the `NodePort`). A `ClusterIP` service, to which the `NodePort` service will
+    route, is automatically created.  You'll be able to contact the `NodePort` service,
+    from outside the cluster,
+    by requesting `<NodeIP>:<NodePort>`.
+  * [`LoadBalancer`](#loadbalancer): Exposes the service externally using a cloud
+    provider's load balancer. `NodePort` and `ClusterIP` services, to which the external
+    load balancer will route, are automatically created.
+  * [`ExternalName`](#externalname): Maps the service to the contents of the
+    `externalName` field (e.g. `foo.bar.example.com`), by returning a `CNAME` record
+    with its value. No proxying of any kind is set up. This requires version 1.7 or
+    higher of `kube-dns`.
 
 ### Type NodePort {#nodeport}
 

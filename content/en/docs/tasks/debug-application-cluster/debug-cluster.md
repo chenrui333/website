@@ -36,14 +36,14 @@ of the relevant log files.  (note that on systemd-based systems, you may need to
 
 ### Master
 
-   * /var/log/kube-apiserver.log - API Server, responsible for serving the API
-   * /var/log/kube-scheduler.log - Scheduler, responsible for making scheduling decisions
-   * /var/log/kube-controller-manager.log - Controller that manages replication controllers
+  * /var/log/kube-apiserver.log - API Server, responsible for serving the API
+  * /var/log/kube-scheduler.log - Scheduler, responsible for making scheduling decisions
+  * /var/log/kube-controller-manager.log - Controller that manages replication controllers
 
 ### Worker Nodes
 
-   * /var/log/kubelet.log - Kubelet, responsible for running containers on the node
-   * /var/log/kube-proxy.log - Kube Proxy, responsible for service load balancing
+  * /var/log/kubelet.log - Kubelet, responsible for running containers on the node
+  * /var/log/kube-proxy.log - Kube Proxy, responsible for service load balancing
 
 ## A general overview of cluster failure modes
 

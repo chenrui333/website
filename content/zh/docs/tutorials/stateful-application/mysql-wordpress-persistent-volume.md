@@ -325,4 +325,3 @@ kubectl delete pv wordpress-pv-1 wordpress-pv-2
 
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/mysql-wordpress-pd/README.md?pixel)]()
-

@@ -9778,13 +9778,13 @@ p a:hover
 .katacoda__steps .btn__prev:before,
 .katacoda__steps .btn__prev:after,
 .btn-default
-  .btn__next:before,
+	.btn__next:before,
 .btn-default
-  .btn__next:after,
+	.btn__next:after,
 .katacoda__steps
-  .btn__next:before,
+	.btn__next:before,
 .katacoda__steps
-  .btn__next:after
+	.btn__next:after
 {
 	background: #326de6;
 }

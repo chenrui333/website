@@ -133,4 +133,3 @@ kubectl create --edit -f /tmp/srv.yaml
  -  [Kubectl 命令参考](/docs/user-guide/kubectl/v1.6/)
  -  [Kubernetes 对象模式参考](/docs/resources-reference/v1.6/)
  {{% /capture %}}
-

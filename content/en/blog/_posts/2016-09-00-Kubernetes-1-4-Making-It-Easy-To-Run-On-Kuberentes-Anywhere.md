@@ -80,6 +80,3 @@ We’re very grateful to our community of over 900 contributors who contributed 
 Thank you for your support!&nbsp;
 
 _-- Aparna Sinha, Product Manager, Google_
-
-
-

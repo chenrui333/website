@@ -218,10 +218,10 @@ body > #wrapper {
 }
 
 .body-content pre.code-block code {
-  overflow: auto;
-  overflow-wrap: normal;
-  word-wrap: normal;
-  white-space: pre;
+	overflow: auto;
+	overflow-wrap: normal;
+	word-wrap: normal;
+	white-space: pre;
 }
 
 .code-block {

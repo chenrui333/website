@@ -175,12 +175,12 @@ body > #wrapper {
 }
 
 .body-content pre.code-block code {
-  word-wrap: normal;
-  white-space: pre;
+	word-wrap: normal;
+	white-space: pre;
 }
 
 .body-content code {
-  color: Brown !important;
+	color: Brown !important;
 }
 
 .code-block {

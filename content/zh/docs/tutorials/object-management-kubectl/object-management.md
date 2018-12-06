@@ -149,4 +149,3 @@ kubectl apply -R -f configs/
  {{< comment >}}
  {{< /comment >}}
  {{% /capture %}}
-
